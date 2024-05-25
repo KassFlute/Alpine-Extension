@@ -51,29 +51,29 @@ object MyLanguageServer extends LanguageServer with LanguageClientAware {
 
   override def getTextDocumentService(): TextDocumentService = new TextDocumentService {
     override def didOpen(params: DidOpenTextDocumentParams): Unit = {
-      //println("Text document opened: " + params.getTextDocument.getUri)
+      Logger.log("Text document opened: " + params.getTextDocument.getUri)
     }
 
     override def didChange(params: DidChangeTextDocumentParams): Unit = {
-      //println("Text document changed: " + params.getTextDocument.getUri)
+      Logger.log("Text document changed: " + params.getTextDocument.getUri)
     }
 
     override def didClose(params: DidCloseTextDocumentParams): Unit = {
-      //println("Text document closed: " + params.getTextDocument.getUri)
+      Logger.log("Text document closed: " + params.getTextDocument.getUri)
     }
 
     override def didSave(params: DidSaveTextDocumentParams): Unit = {
-      //println("Text document saved: " + params.getTextDocument.getUri)
+      Logger.log("Text document saved: " + params.getTextDocument.getUri)
     }
   }
 
   override def getWorkspaceService(): WorkspaceService = new WorkspaceService {
     override def didChangeConfiguration(params: DidChangeConfigurationParams): Unit = {
-      //println("Workspace configuration changed")
+      Logger.log("Configuration changed")
     }
 
     override def didChangeWatchedFiles(params: DidChangeWatchedFilesParams): Unit = {
-      //println("Watched files changed")
+      Logger.log("Watched files changed")
     }
   }
 
@@ -81,6 +81,7 @@ object MyLanguageServer extends LanguageServer with LanguageClientAware {
     super.cancelProgress(params)
 
   override def connect(client: LanguageClient): Unit = {
+    Logger.log("Client connected")
     this.client = client
   }
 
