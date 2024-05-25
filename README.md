@@ -2,6 +2,7 @@ Alpine-Extension
 ============
 
 A VS-Code extension for the Alpine language
+
 Requirements
 ------------
 
