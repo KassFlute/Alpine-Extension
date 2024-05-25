@@ -28,7 +28,7 @@ export function activate(context: vscode.ExtensionContext) {
 
 	// Run alpine LSP server
 	const serverModule = context.asAbsolutePath(
-		path.join('server', 'out', 'alpine-lsp.js')
+		path.join('..', 'alpine-lsp', 'target', 'scala-2.13', 'alpine-lsp-assembly-1.0.jar')
 	);
 	const debugOptions = { execArgv: ['--nolazy', '--inspect=6009'] };
 

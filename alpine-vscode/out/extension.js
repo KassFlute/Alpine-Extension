@@ -47,7 +47,7 @@ function activate(context) {
     });
     context.subscriptions.push(disposable);
     // Run alpine LSP server
-    const serverModule = context.asAbsolutePath(path.join('server', 'out', 'alpine-lsp.js'));
+    const serverModule = context.asAbsolutePath(path.join('..', 'alpine-lsp', 'target', 'scala-2.13', 'alpine-lsp-assembly-1.0.jar'));
     const debugOptions = { execArgv: ['--nolazy', '--inspect=6009'] };
     const serverOptions = {
         run: { module: serverModule, transport: node_1.TransportKind.ipc },
