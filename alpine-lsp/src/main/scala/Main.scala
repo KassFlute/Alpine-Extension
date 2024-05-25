@@ -13,11 +13,11 @@ object MyLanguageServer extends LanguageServer with LanguageClientAware{
   }
 
   override def initialized(params: InitializedParams): Unit = {
-    println("initialized with params = " + params.toString())
+    //println("initialized with params = " + params.toString())
   }
 
   override def initialized(): Unit = {
-    println("initialized")
+    //println("initialized")
   }
 
   override def shutdown(): CompletableFuture[AnyRef] = {
@@ -30,29 +30,29 @@ object MyLanguageServer extends LanguageServer with LanguageClientAware{
 
   override def getTextDocumentService(): TextDocumentService = new TextDocumentService {
     override def didOpen(params: DidOpenTextDocumentParams): Unit = {
-      println("didOpen")
+      //println("didOpen")
     }
 
     override def didChange(params: DidChangeTextDocumentParams): Unit = {
-      println("didChange")
+      //println("didChange")
     }
 
     override def didClose(params: DidCloseTextDocumentParams): Unit = {
-      println("didClose")
+      //println("didClose")
     }
 
     override def didSave(params: DidSaveTextDocumentParams): Unit = {
-      println("didSave")
+      //println("didSave")
     }
   }
 
   override def getWorkspaceService(): WorkspaceService = new WorkspaceService {
     override def didChangeConfiguration(params: DidChangeConfigurationParams): Unit = {
-      println("didChangeConfiguration")
+      //println("didChangeConfiguration")
     }
 
     override def didChangeWatchedFiles(params: DidChangeWatchedFilesParams): Unit = {
-      println("didChangeWatchedFiles")
+      //println("didChangeWatchedFiles")
     }
   }
 
@@ -67,7 +67,7 @@ object MyLanguageServer extends LanguageServer with LanguageClientAware{
 }
 
 object Main extends App {
-  println("Server started")
+  //println("Server started")
   val launcher = LSPLauncher.createServerLauncher(MyLanguageServer, System.in, System.out)
   val future = launcher.startListening()
   future.get()
