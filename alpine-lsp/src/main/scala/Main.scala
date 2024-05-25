@@ -4,12 +4,16 @@ import org.eclipse.lsp4j._ // I don't want to spend my life figuring out what to
 import org.eclipse.lsp4j.jsonrpc.services._
 import java.util.concurrent.CompletableFuture
 
-object MyLanguageServer extends LanguageServer with LanguageClientAware{
+object MyLanguageServer extends LanguageServer with LanguageClientAware {
 
   private var client: LanguageClient = _
 
   override def initialize(params: InitializeParams): CompletableFuture[InitializeResult] = {
-    CompletableFuture.completedFuture(new InitializeResult(new ServerCapabilities))
+    //println("Server initializing...")
+    
+    val capabilities = new ServerCapabilities()
+    // Define your server capabilities here
+    CompletableFuture.completedFuture(new InitializeResult(capabilities))
   }
 
   override def initialized(params: InitializedParams): Unit = {
@@ -30,29 +34,29 @@ object MyLanguageServer extends LanguageServer with LanguageClientAware{
 
   override def getTextDocumentService(): TextDocumentService = new TextDocumentService {
     override def didOpen(params: DidOpenTextDocumentParams): Unit = {
-      //println("didOpen")
+      //println("Text document opened: " + params.getTextDocument.getUri)
     }
 
     override def didChange(params: DidChangeTextDocumentParams): Unit = {
-      //println("didChange")
+      //println("Text document changed: " + params.getTextDocument.getUri)
     }
 
     override def didClose(params: DidCloseTextDocumentParams): Unit = {
-      //println("didClose")
+      //println("Text document closed: " + params.getTextDocument.getUri)
     }
 
     override def didSave(params: DidSaveTextDocumentParams): Unit = {
-      //println("didSave")
+      //println("Text document saved: " + params.getTextDocument.getUri)
     }
   }
 
   override def getWorkspaceService(): WorkspaceService = new WorkspaceService {
     override def didChangeConfiguration(params: DidChangeConfigurationParams): Unit = {
-      //println("didChangeConfiguration")
+      //println("Workspace configuration changed")
     }
 
     override def didChangeWatchedFiles(params: DidChangeWatchedFilesParams): Unit = {
-      //println("didChangeWatchedFiles")
+      //println("Watched files changed")
     }
   }
 
