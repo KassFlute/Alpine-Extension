@@ -3,13 +3,28 @@ import org.eclipse.lsp4j.services._
 import org.eclipse.lsp4j._ // I don't want to spend my life figuring out what to import
 import org.eclipse.lsp4j.jsonrpc.services._
 import java.util.concurrent.CompletableFuture
+import java.io.{File, PrintWriter}
+import java.time.LocalDateTime
+
+object Logger {
+  private val logFile = new PrintWriter(new File("/Users/cassien/Desktop/server.log"))
+
+  def log(message: String): Unit = {
+    logFile.write(s"${LocalDateTime.now}: $message\n")
+    logFile.flush()
+  }
+
+  def close(): Unit = {
+    logFile.close()
+  }
+}
 
 object MyLanguageServer extends LanguageServer with LanguageClientAware {
 
   private var client: LanguageClient = _
 
   override def initialize(params: InitializeParams): CompletableFuture[InitializeResult] = {
-    //println("Server initializing...")
+    Logger.log("initialize called with params = " + params.toString())
     
     val capabilities = new ServerCapabilities()
     // Define your server capabilities here
@@ -17,18 +32,20 @@ object MyLanguageServer extends LanguageServer with LanguageClientAware {
   }
 
   override def initialized(params: InitializedParams): Unit = {
-    //println("initialized with params = " + params.toString())
+    Logger.log("initialized called with params = " + params.toString())
   }
 
   override def initialized(): Unit = {
-    //println("initialized")
+    Logger.log("initialized called")
   }
 
   override def shutdown(): CompletableFuture[AnyRef] = {
+    Logger.log("shutdown called")
     CompletableFuture.completedFuture(null)
   }
 
   override def exit(): Unit = {
+    Logger.log("exit called")
     System.exit(0)
   }
 
@@ -72,6 +89,7 @@ object MyLanguageServer extends LanguageServer with LanguageClientAware {
 
 object Main extends App {
   //println("Server started")
+  Logger.log("Starting server...")
   val launcher = LSPLauncher.createServerLauncher(MyLanguageServer, System.in, System.out)
   val future = launcher.startListening()
   future.get()

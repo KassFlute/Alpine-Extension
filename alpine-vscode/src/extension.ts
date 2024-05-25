@@ -32,16 +32,30 @@ export function activate(context: vscode.ExtensionContext) {
 	);
 	const debugOptions = { execArgv: ['--nolazy', '--inspect=6009'] };
 
+	// const serverOptions: ServerOptions = {
+	// 	run: { module: serverModule, transport: TransportKind.ipc },
+	// 	debug: { module: serverModule, transport: TransportKind.ipc, options: debugOptions }
+	// };
+
 	const serverOptions: ServerOptions = {
-		run: { module: serverModule, transport: TransportKind.ipc },
-		debug: { module: serverModule, transport: TransportKind.ipc, options: debugOptions }
+		run: {
+			command: 'java',
+			transport: TransportKind.stdio,
+			args: ['-jar', serverModule],
+		},
+		debug: {
+			command: 'java',
+			transport: TransportKind.stdio,
+			args: ['-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5005', '-jar', serverModule],
+		}
 	};
 
 	const clientOptions: LanguageClientOptions = {
 		documentSelector: [{ scheme: 'file', language: 'alpine' }],
 		synchronize: {
 			fileEvents: vscode.workspace.createFileSystemWatcher('**/.clientrc')
-		}
+		},
+		outputChannel: vscode.window.createOutputChannel('Alpine LSP')
 	};
 
 	client = new LanguageClient(

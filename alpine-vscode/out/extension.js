@@ -49,15 +49,28 @@ function activate(context) {
     // Run alpine LSP server
     const serverModule = context.asAbsolutePath(path.join('..', 'alpine-lsp', 'target', 'scala-2.13', 'alpine-lsp-assembly-1.0.jar'));
     const debugOptions = { execArgv: ['--nolazy', '--inspect=6009'] };
+    // const serverOptions: ServerOptions = {
+    // 	run: { module: serverModule, transport: TransportKind.ipc },
+    // 	debug: { module: serverModule, transport: TransportKind.ipc, options: debugOptions }
+    // };
     const serverOptions = {
-        run: { module: serverModule, transport: node_1.TransportKind.ipc },
-        debug: { module: serverModule, transport: node_1.TransportKind.ipc, options: debugOptions }
+        run: {
+            command: 'java',
+            transport: node_1.TransportKind.stdio,
+            args: ['-jar', serverModule],
+        },
+        debug: {
+            command: 'java',
+            transport: node_1.TransportKind.stdio,
+            args: ['-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5005', '-jar', serverModule],
+        }
     };
     const clientOptions = {
         documentSelector: [{ scheme: 'file', language: 'alpine' }],
         synchronize: {
             fileEvents: vscode.workspace.createFileSystemWatcher('**/.clientrc')
-        }
+        },
+        outputChannel: vscode.window.createOutputChannel('Alpine LSP')
     };
     client = new node_1.LanguageClient('alpine-lsp', 'Alpine LSP', serverOptions, clientOptions);
     client.start();
