@@ -5,6 +5,7 @@ import org.eclipse.lsp4j.jsonrpc.services._
 import java.util.concurrent.CompletableFuture
 import java.io.{File, PrintWriter}
 import java.time.LocalDateTime
+import java.io.{PrintStream, ByteArrayOutputStream}
 
 object Logger {
   private val logFile = new PrintWriter(new File("/Users/cassien/Desktop/server.log"))
@@ -18,6 +19,36 @@ object Logger {
     logFile.close()
   }
 }
+
+class LoggerOutputStream(out: PrintStream) extends java.io.OutputStream {
+  private val buffer = new StringBuilder()
+  private var braceCount = 0
+
+  override def write(b: Int): Unit = {
+    if (b == '{') {
+      braceCount += 1
+    } else if (b == '}') {
+      braceCount -= 1
+      if (braceCount == 0) {
+        flushBuffer()
+      }
+    }
+
+    buffer.append(b.toChar)
+
+    if (b == '\n') {
+      flushBuffer()
+      braceCount = 0
+    }
+    out.write(b)
+  }
+
+  private def flushBuffer(): Unit = {
+    Logger.log(buffer.toString())
+    buffer.setLength(0)
+  }
+}
+
 
 object MyLanguageServer extends LanguageServer with LanguageClientAware {
 
@@ -89,7 +120,9 @@ object MyLanguageServer extends LanguageServer with LanguageClientAware {
 }
 
 object Main extends App {
-  //println("Server started")
+  val loggerPrintStream = new PrintStream(new LoggerOutputStream(System.out))
+  System.setOut(loggerPrintStream)
+
   Logger.log("Starting server...")
   val launcher = LSPLauncher.createServerLauncher(MyLanguageServer, System.in, System.out)
   val future = launcher.startListening()
