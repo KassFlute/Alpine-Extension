@@ -20,4 +20,4 @@ sbt assembly
 
 ### Run the extension in VS-Code
 - Open alpine-vscode in a VS-Code window
-- Press f5 to start debugging
+- Press ^f5 to run without debugging
