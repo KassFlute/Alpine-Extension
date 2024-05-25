@@ -1,0 +1,1359 @@
+2024.05.20 01:05:19 INFO  Started: Metals version 1.3.1 in folders '/private/var/folders/sw/6sshlmnn0wd1qy8k73zfhr180000gn/T/alpine-lsp' for client Visual Studio Code 1.89.1.
+SLF4J(W): Class path contains multiple SLF4J providers.
+SLF4J(W): Found provider [scribe.slf4j.ScribeServiceProvider@23820be8]
+SLF4J(W): Found provider [ch.qos.logback.classic.spi.LogbackServiceProvider@66697209]
+SLF4J(W): See https://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J(I): Actual provider is of type [scribe.slf4j.ScribeServiceProvider@23820be8]
+2024.05.20 01:05:19 WARN  Flyway upgrade recommended: H2 2.2.224 is newer than this version of Flyway and support has not been tested. The latest supported version of H2 is 2.2.220.
+2024.05.20 01:05:22 INFO  running '/Users/cassien/Library/Application Support/Coursier/bin/sbt -Dbloop.export-jar-classifiers=sources bloopInstall'
+2024.05.20 01:05:23 ERROR [info] [launcher] getting org.scala-sbt sbt 1.9.9  (this may take some time)...
+2024.05.20 01:05:24 INFO  no build target found for /private/var/folders/sw/6sshlmnn0wd1qy8k73zfhr180000gn/T/alpine-lsp/build.sbt. Using presentation compiler with project's scala-library version: 3.3.3
+2024.05.20 01:05:26 INFO  no build target found for /private/var/folders/sw/6sshlmnn0wd1qy8k73zfhr180000gn/T/alpine-lsp/src/main/scala/Main.scala. Using presentation compiler with project's scala-library version: 3.3.3
+2024.05.20 01:05:29 ERROR [info] [launcher] getting Scala 2.12.18 (for sbt)...
+2024.05.20 01:05:31 INFO  [info] welcome to sbt 1.9.9 (Eclipse Adoptium Java 11.0.23)
+2024.05.20 01:05:33 INFO  no build target found for /private/var/folders/sw/6sshlmnn0wd1qy8k73zfhr180000gn/T/alpine-lsp/build.sbt. Using presentation compiler with project's scala-library version: 3.3.3
+2024.05.20 01:05:35 INFO  [info] loading settings for project alpine-lsp-build-build from metals.sbt ...
+2024.05.20 01:05:35 INFO  no build target found for /private/var/folders/sw/6sshlmnn0wd1qy8k73zfhr180000gn/T/alpine-lsp/build.sbt. Using presentation compiler with project's scala-library version: 3.3.3
+2024.05.20 01:05:37 INFO  [info] loading project definition from /private/var/folders/sw/6sshlmnn0wd1qy8k73zfhr180000gn/T/alpine-lsp/project/project
+2024.05.20 01:05:41 INFO  [info] loading settings for project alpine-lsp-build from metals.sbt ...
+2024.05.20 01:05:41 INFO  [info] loading project definition from /private/var/folders/sw/6sshlmnn0wd1qy8k73zfhr180000gn/T/alpine-lsp/project
+2024.05.20 01:05:44 INFO  no build target found for /private/var/folders/sw/6sshlmnn0wd1qy8k73zfhr180000gn/T/alpine-lsp/src/main/scala/Main.scala. Using presentation compiler with project's scala-library version: 3.3.3
+2024.05.20 01:05:47 INFO  [success] Generated .bloop/alpine-lsp-build.json
+2024.05.20 01:05:47 INFO  [success] Total time: 5 s, completed 20 mai 2024 à 01:05:47
+2024.05.20 01:05:50 INFO  [info] loading settings for project alpine-lsp from build.sbt ...
+2024.05.20 01:05:50 INFO  [info] set current project to hello-world (in build file:/private/var/folders/sw/6sshlmnn0wd1qy8k73zfhr180000gn/T/alpine-lsp/)
+2024.05.20 01:05:52 INFO  [success] Generated .bloop/alpine-lsp.json
+2024.05.20 01:05:52 INFO  [success] Generated .bloop/alpine-lsp-test.json
+2024.05.20 01:05:52 INFO  [success] Total time: 1 s, completed 20 mai 2024 à 01:05:52
+2024.05.20 01:05:52 INFO  time: ran 'sbt bloopInstall' in 29s
+2024.05.20 01:05:52 INFO  Attempting to connect to the build server...
+2024.05.20 01:05:52 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /private/var/folders/sw/6sshlmnn0wd1qy8k73zfhr180000gn/T/alpine-lsp/.metals/bsp.trace.json or /Users/cassien/Library/Caches/org.scalameta.metals/bsp.trace.json
+2024.05.20 01:05:52 INFO  Attempting to connect to the build server...
+2024.05.20 01:05:52 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /private/var/folders/sw/6sshlmnn0wd1qy8k73zfhr180000gn/T/alpine-lsp/project/.metals/bsp.trace.json or /Users/cassien/Library/Caches/org.scalameta.metals/bsp.trace.json
+2024.05.20 01:05:52 INFO  time: Connected to build server in 0.96s
+2024.05.20 01:05:52 INFO  Connected to Build server: Bloop v1.5.17
+2024.05.20 01:05:59 INFO  time: indexed workspace in 5.74s
+2024.05.20 01:05:59 INFO  compiling alpine-lsp (1 scala source)
+2024.05.20 01:05:59 INFO  time: compiled alpine-lsp in 0.66s
+2024.05.20 01:06:01 INFO  time: code lens generation in 1.83s
+2024.05.20 01:06:01 INFO  time: code lens generation in 1.83s
+2024.05.20 01:06:01 INFO  time: code lens generation in 1.84s
+mai 20, 2024 1:07:24 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+AVERTISSEMENT: Unmatched cancel notification for request id 109
+mai 20, 2024 1:07:24 AM scala.meta.internal.pc.CompilerAccess handleError
+GRAVE: A severe compiler error occurred, full details of the error can be found in the error report /private/var/folders/sw/6sshlmnn0wd1qy8k73zfhr180000gn/T/alpine-lsp/.metals/.reports/metals-full/2024-05-20/r_compiler-error_(alpine-lsp-build)_01-07-24-164.md
+mai 20, 2024 1:07:24 AM scala.meta.internal.pc.CompilerAccess handleError
+GRAVE: A severe compiler error occurred, full details of the error can be found in the error report /private/var/folders/sw/6sshlmnn0wd1qy8k73zfhr180000gn/T/alpine-lsp/.metals/.reports/metals-full/2024-05-20/r_compiler-error_(alpine-lsp-build)_01-07-24-785.md
+mai 20, 2024 1:07:25 AM scala.meta.internal.pc.CompilerAccess handleError
+GRAVE: A severe compiler error occurred, full details of the error can be found in the error report /private/var/folders/sw/6sshlmnn0wd1qy8k73zfhr180000gn/T/alpine-lsp/.metals/.reports/metals-full/2024-05-20/r_compiler-error_(alpine-lsp-build)_01-07-25-689.md
+mai 20, 2024 1:07:27 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+AVERTISSEMENT: Unmatched cancel notification for request id 142
+mai 20, 2024 1:07:27 AM scala.meta.internal.pc.CompilerAccess handleError
+GRAVE: A severe compiler error occurred, full details of the error can be found in the error report /private/var/folders/sw/6sshlmnn0wd1qy8k73zfhr180000gn/T/alpine-lsp/.metals/.reports/metals-full/2024-05-20/r_compiler-error_(alpine-lsp-build)_01-07-27-978.md
+mai 20, 2024 1:07:28 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+AVERTISSEMENT: Unmatched cancel notification for request id 154
+mai 20, 2024 1:07:28 AM scala.meta.internal.pc.CompilerAccess handleError
+GRAVE: A severe compiler error occurred, full details of the error can be found in the error report /private/var/folders/sw/6sshlmnn0wd1qy8k73zfhr180000gn/T/alpine-lsp/.metals/.reports/metals-full/2024-05-20/r_compiler-error_(alpine-lsp-build)_01-07-28-824.md
+2024.05.20 01:07:31 INFO  running '/Users/cassien/Library/Application Support/Coursier/bin/sbt -Dbloop.export-jar-classifiers=sources bloopInstall'
+2024.05.20 01:07:35 INFO  [info] welcome to sbt 1.9.9 (Eclipse Adoptium Java 11.0.23)
+2024.05.20 01:07:36 INFO  [info] loading settings for project alpine-lsp-build-build from metals.sbt ...
+2024.05.20 01:07:38 INFO  [info] loading project definition from /private/var/folders/sw/6sshlmnn0wd1qy8k73zfhr180000gn/T/alpine-lsp/project/project
+2024.05.20 01:07:40 INFO  [info] loading settings for project alpine-lsp-build from metals.sbt ...
+2024.05.20 01:07:40 INFO  [info] loading project definition from /private/var/folders/sw/6sshlmnn0wd1qy8k73zfhr180000gn/T/alpine-lsp/project
+2024.05.20 01:07:44 INFO  [success] Generated .bloop/alpine-lsp-build.json
+2024.05.20 01:07:44 INFO  [success] Total time: 4 s, completed 20 mai 2024 à 01:07:45
+2024.05.20 01:07:49 INFO  [info] loading settings for project alpine-lsp from build.sbt ...
+2024.05.20 01:07:49 INFO  [info] set current project to hello-world (in build file:/private/var/folders/sw/6sshlmnn0wd1qy8k73zfhr180000gn/T/alpine-lsp/)
+2024.05.20 01:07:52 INFO  [success] Generated .bloop/alpine-lsp.json
+2024.05.20 01:07:52 INFO  [success] Generated .bloop/alpine-lsp-test.json
+2024.05.20 01:07:52 INFO  [success] Total time: 3 s, completed 20 mai 2024 à 01:07:52
+2024.05.20 01:07:52 INFO  time: ran 'sbt bloopInstall' in 21s
+2024.05.20 01:07:52 INFO  Disconnecting from Bloop session...
+2024.05.20 01:07:52 INFO  Shut down connection with build server.
+2024.05.20 01:07:52 INFO  Shut down connection with build server.
+2024.05.20 01:07:52 INFO  Attempting to connect to the build server...
+2024.05.20 01:07:52 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /private/var/folders/sw/6sshlmnn0wd1qy8k73zfhr180000gn/T/alpine-lsp/.metals/bsp.trace.json or /Users/cassien/Library/Caches/org.scalameta.metals/bsp.trace.json
+2024.05.20 01:07:52 INFO  Attempting to connect to the build server...
+2024.05.20 01:07:52 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /private/var/folders/sw/6sshlmnn0wd1qy8k73zfhr180000gn/T/alpine-lsp/project/.metals/bsp.trace.json or /Users/cassien/Library/Caches/org.scalameta.metals/bsp.trace.json
+2024.05.20 01:07:52 INFO  time: Connected to build server in 60ms
+2024.05.20 01:07:52 INFO  Connected to Build server: Bloop v1.5.17
+2024.05.20 01:07:56 INFO  time: indexed workspace in 3.45s
+2024.05.20 01:08:09 INFO  compiling alpine-lsp (1 scala source)
+2024.05.20 01:08:09 INFO  time: compiled alpine-lsp in 0.55s
+2024.05.20 01:08:29 INFO  compiling alpine-lsp (1 scala source)
+2024.05.20 01:08:29 INFO  time: compiled alpine-lsp in 0.19s
+2024.05.20 01:09:21 INFO  compiling alpine-lsp (1 scala source)
+2024.05.20 01:09:21 INFO  time: compiled alpine-lsp in 0.16s
+2024.05.20 01:16:24 INFO  compiling alpine-lsp (1 scala source)
+2024.05.20 01:16:24 INFO  time: compiled alpine-lsp in 0.12s
+2024.05.20 01:16:44 INFO  compiling alpine-lsp (1 scala source)
+2024.05.20 01:16:44 INFO  time: compiled alpine-lsp in 0.14s
+2024.05.20 01:16:53 INFO  compiling alpine-lsp (1 scala source)
+2024.05.20 01:16:53 INFO  time: compiled alpine-lsp in 0.1s
+2024.05.20 01:16:53 WARN  Flyway upgrade recommended: H2 2.2.224 is newer than this version of Flyway and support has not been tested. The latest supported version of H2 is 2.2.220.
+2024.05.20 01:16:54 WARN  Using indexes to guess the definition of InitializeResult
+2024.05.20 01:17:19 INFO  compiling alpine-lsp (1 scala source)
+2024.05.20 01:17:19 INFO  time: compiled alpine-lsp in 0.12s
+2024.05.20 01:17:30 INFO  compiling alpine-lsp (1 scala source)
+2024.05.20 01:17:30 INFO  time: compiled alpine-lsp in 94ms
+2024.05.20 01:18:15 INFO  running '/Users/cassien/Library/Application Support/Coursier/bin/sbt -Dbloop.export-jar-classifiers=sources bloopInstall'
+2024.05.20 01:18:19 INFO  [info] welcome to sbt 1.9.9 (Eclipse Adoptium Java 11.0.23)
+2024.05.20 01:18:20 INFO  [info] loading settings for project alpine-lsp-build-build from metals.sbt ...
+2024.05.20 01:18:22 INFO  [info] loading project definition from /private/var/folders/sw/6sshlmnn0wd1qy8k73zfhr180000gn/T/alpine-lsp/project/project
+2024.05.20 01:18:23 INFO  [info] loading settings for project alpine-lsp-build from metals.sbt ...
+2024.05.20 01:18:23 INFO  [info] loading project definition from /private/var/folders/sw/6sshlmnn0wd1qy8k73zfhr180000gn/T/alpine-lsp/project
+2024.05.20 01:18:27 INFO  [success] Generated .bloop/alpine-lsp-build.json
+2024.05.20 01:18:27 INFO  [success] Total time: 4 s, completed 20 mai 2024 à 01:18:28
+2024.05.20 01:18:27 INFO  [info] loading settings for project alpine-lsp from build.sbt ...
+2024.05.20 01:18:27 INFO  [info] set current project to hello-world (in build file:/private/var/folders/sw/6sshlmnn0wd1qy8k73zfhr180000gn/T/alpine-lsp/)
+2024.05.20 01:18:29 INFO  [success] Generated .bloop/alpine-lsp.json
+2024.05.20 01:18:29 INFO  [success] Generated .bloop/alpine-lsp-test.json
+2024.05.20 01:18:29 INFO  [success] Total time: 0 s, completed 20 mai 2024 à 01:18:29
+2024.05.20 01:18:29 INFO  time: ran 'sbt bloopInstall' in 14s
+2024.05.20 01:18:29 INFO  Disconnecting from Bloop session...
+2024.05.20 01:18:29 INFO  Shut down connection with build server.
+2024.05.20 01:18:29 INFO  Shut down connection with build server.
+2024.05.20 01:18:29 INFO  Attempting to connect to the build server...
+2024.05.20 01:18:29 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /private/var/folders/sw/6sshlmnn0wd1qy8k73zfhr180000gn/T/alpine-lsp/.metals/bsp.trace.json or /Users/cassien/Library/Caches/org.scalameta.metals/bsp.trace.json
+2024.05.20 01:18:29 INFO  Attempting to connect to the build server...
+2024.05.20 01:18:29 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /private/var/folders/sw/6sshlmnn0wd1qy8k73zfhr180000gn/T/alpine-lsp/project/.metals/bsp.trace.json or /Users/cassien/Library/Caches/org.scalameta.metals/bsp.trace.json
+2024.05.20 01:18:29 INFO  time: Connected to build server in 42ms
+2024.05.20 01:18:29 INFO  Connected to Build server: Bloop v1.5.17
+2024.05.20 01:18:31 INFO  time: indexed workspace in 2.26s
+2024.05.20 01:18:31 INFO  compiling alpine-lsp (1 scala source)
+2024.05.20 01:18:31 INFO  time: compiled alpine-lsp in 0.1s
+2024.05.20 01:20:36 INFO  compiling alpine-lsp (1 scala source)
+2024.05.20 01:20:36 INFO  time: compiled alpine-lsp in 0.18s
+2024.05.20 01:20:50 INFO  compiling alpine-lsp (1 scala source)
+2024.05.20 01:20:50 INFO  time: compiled alpine-lsp in 0.12s
+2024.05.20 01:22:08 INFO  compiling alpine-lsp (1 scala source)
+2024.05.20 01:22:08 INFO  time: compiled alpine-lsp in 0.53s
+2024.05.20 01:23:02 INFO  compiling alpine-lsp (1 scala source)
+2024.05.20 01:23:02 INFO  time: compiled alpine-lsp in 0.12s
+2024.05.20 01:28:17 INFO  compiling alpine-lsp (1 scala source)
+2024.05.20 01:28:17 INFO  time: compiled alpine-lsp in 0.44s
+2024.05.20 01:28:18 INFO  compiling alpine-lsp (1 scala source)
+2024.05.20 01:28:18 INFO  time: compiled alpine-lsp in 0.16s
+2024.05.20 01:28:39 INFO  compiling alpine-lsp (1 scala source)
+2024.05.20 01:28:39 INFO  time: compiled alpine-lsp in 0.11s
+2024.05.20 01:29:10 INFO  compiling alpine-lsp (1 scala source)
+2024.05.20 01:29:10 INFO  time: compiled alpine-lsp in 0.52s
+2024.05.20 01:29:51 INFO  compiling alpine-lsp (1 scala source)
+2024.05.20 01:29:51 INFO  time: compiled alpine-lsp in 0.39s
+2024.05.20 01:30:13 INFO  compiling alpine-lsp (1 scala source)
+2024.05.20 01:30:13 INFO  time: compiled alpine-lsp in 0.39s
+2024.05.20 01:30:40 INFO  compiling alpine-lsp (1 scala source)
+2024.05.20 01:30:40 INFO  time: compiled alpine-lsp in 0.68s
+2024.05.20 01:32:50 INFO  compiling alpine-lsp (1 scala source)
+2024.05.20 01:32:50 INFO  time: compiled alpine-lsp in 0.17s
+2024.05.20 01:34:11 INFO  compiling alpine-lsp (1 scala source)
+2024.05.20 01:34:11 INFO  time: compiled alpine-lsp in 0.13s
+2024.05.20 01:35:40 INFO  compiling alpine-lsp (1 scala source)
+2024.05.20 01:35:40 INFO  time: compiled alpine-lsp in 0.13s
+2024.05.20 01:37:04 INFO  compiling alpine-lsp (1 scala source)
+2024.05.20 01:37:04 INFO  compiling alpine-lsp (1 scala source)
+2024.05.20 01:37:04 INFO  time: compiled alpine-lsp in 59ms
+2024.05.20 01:37:23 INFO  compiling alpine-lsp (1 scala source)
+2024.05.20 01:37:23 INFO  time: compiled alpine-lsp in 0.13s
+2024.05.20 01:39:18 INFO  compiling alpine-lsp (1 scala source)
+2024.05.20 01:39:18 INFO  time: compiled alpine-lsp in 0.14s
+2024.05.20 01:39:35 INFO  compiling alpine-lsp (1 scala source)
+2024.05.20 01:39:35 INFO  compiling alpine-lsp (1 scala source)
+2024.05.20 01:39:35 INFO  time: compiled alpine-lsp in 0.69s
+mai 20, 2024 1:39:53 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+AVERTISSEMENT: Unmatched cancel notification for request id 1659
+2024.05.20 01:40:15 INFO  compiling alpine-lsp (1 scala source)
+2024.05.20 01:40:15 INFO  time: compiled alpine-lsp in 0.12s
+2024.05.20 01:40:16 WARN  Could not load snapshot text for /private/var/folders/sw/6sshlmnn0wd1qy8k73zfhr180000gn/T/alpine-lsp/src/main/scala/Main.scala
+2024.05.20 01:40:19 WARN  Could not load snapshot text for /private/var/folders/sw/6sshlmnn0wd1qy8k73zfhr180000gn/T/alpine-lsp/src/main/scala/Main.scala
+2024.05.20 01:40:21 WARN  Could not load snapshot text for /private/var/folders/sw/6sshlmnn0wd1qy8k73zfhr180000gn/T/alpine-lsp/src/main/scala/Main.scala
+2024.05.20 01:40:22 WARN  Could not load snapshot text for /private/var/folders/sw/6sshlmnn0wd1qy8k73zfhr180000gn/T/alpine-lsp/src/main/scala/Main.scala
+2024.05.20 01:40:23 WARN  Could not load snapshot text for /private/var/folders/sw/6sshlmnn0wd1qy8k73zfhr180000gn/T/alpine-lsp/src/main/scala/Main.scala
+2024.05.20 01:40:24 WARN  Could not load snapshot text for /private/var/folders/sw/6sshlmnn0wd1qy8k73zfhr180000gn/T/alpine-lsp/src/main/scala/Main.scala
+2024.05.20 01:40:28 WARN  Could not load snapshot text for /private/var/folders/sw/6sshlmnn0wd1qy8k73zfhr180000gn/T/alpine-lsp/src/main/scala/Main.scala
+2024.05.20 01:40:29 WARN  Could not load snapshot text for /private/var/folders/sw/6sshlmnn0wd1qy8k73zfhr180000gn/T/alpine-lsp/src/main/scala/Main.scala
+2024.05.20 01:40:30 WARN  Could not load snapshot text for /private/var/folders/sw/6sshlmnn0wd1qy8k73zfhr180000gn/T/alpine-lsp/src/main/scala/Main.scala
+2024.05.20 01:40:31 WARN  Could not load snapshot text for /private/var/folders/sw/6sshlmnn0wd1qy8k73zfhr180000gn/T/alpine-lsp/src/main/scala/Main.scala
+2024.05.20 01:40:31 WARN  Could not load snapshot text for /private/var/folders/sw/6sshlmnn0wd1qy8k73zfhr180000gn/T/alpine-lsp/src/main/scala/Main.scala
+2024.05.20 01:40:33 WARN  Could not load snapshot text for /private/var/folders/sw/6sshlmnn0wd1qy8k73zfhr180000gn/T/alpine-lsp/src/main/scala/Main.scala
+2024.05.20 01:40:34 WARN  Could not load snapshot text for /private/var/folders/sw/6sshlmnn0wd1qy8k73zfhr180000gn/T/alpine-lsp/src/main/scala/Main.scala
+2024.05.20 01:40:35 INFO  compiling alpine-lsp (1 scala source)
+2024.05.20 01:40:35 INFO  time: compiled alpine-lsp in 98ms
+2024.05.20 01:40:35 WARN  Could not load snapshot text for /private/var/folders/sw/6sshlmnn0wd1qy8k73zfhr180000gn/T/alpine-lsp/src/main/scala/Main.scala
+2024.05.20 01:40:50 WARN  Could not load snapshot text for /private/var/folders/sw/6sshlmnn0wd1qy8k73zfhr180000gn/T/alpine-lsp/src/main/scala/Main.scala
+2024.05.20 01:40:54 WARN  Could not load snapshot text for /private/var/folders/sw/6sshlmnn0wd1qy8k73zfhr180000gn/T/alpine-lsp/src/main/scala/Main.scala
+2024.05.20 01:40:54 WARN  Could not load snapshot text for /private/var/folders/sw/6sshlmnn0wd1qy8k73zfhr180000gn/T/alpine-lsp/src/main/scala/Main.scala
+2024.05.20 01:40:55 WARN  Could not load snapshot text for /private/var/folders/sw/6sshlmnn0wd1qy8k73zfhr180000gn/T/alpine-lsp/src/main/scala/Main.scala
+2024.05.20 01:40:56 WARN  Could not load snapshot text for /private/var/folders/sw/6sshlmnn0wd1qy8k73zfhr180000gn/T/alpine-lsp/src/main/scala/Main.scala
+2024.05.20 01:40:56 WARN  Could not load snapshot text for /private/var/folders/sw/6sshlmnn0wd1qy8k73zfhr180000gn/T/alpine-lsp/src/main/scala/Main.scala
+2024.05.20 01:40:57 WARN  Could not load snapshot text for /private/var/folders/sw/6sshlmnn0wd1qy8k73zfhr180000gn/T/alpine-lsp/src/main/scala/Main.scala
+2024.05.20 01:40:58 WARN  Could not load snapshot text for /private/var/folders/sw/6sshlmnn0wd1qy8k73zfhr180000gn/T/alpine-lsp/src/main/scala/Main.scala
+2024.05.20 01:40:58 WARN  Could not load snapshot text for /private/var/folders/sw/6sshlmnn0wd1qy8k73zfhr180000gn/T/alpine-lsp/src/main/scala/Main.scala
+2024.05.20 01:41:00 WARN  Could not load snapshot text for /private/var/folders/sw/6sshlmnn0wd1qy8k73zfhr180000gn/T/alpine-lsp/src/main/scala/Main.scala
+2024.05.20 01:41:01 WARN  Could not load snapshot text for /private/var/folders/sw/6sshlmnn0wd1qy8k73zfhr180000gn/T/alpine-lsp/src/main/scala/Main.scala
+2024.05.20 01:41:01 WARN  Could not load snapshot text for /private/var/folders/sw/6sshlmnn0wd1qy8k73zfhr180000gn/T/alpine-lsp/src/main/scala/Main.scala
+2024.05.20 01:41:03 WARN  Could not load snapshot text for /private/var/folders/sw/6sshlmnn0wd1qy8k73zfhr180000gn/T/alpine-lsp/src/main/scala/Main.scala
+2024.05.20 01:41:03 WARN  Could not load snapshot text for /private/var/folders/sw/6sshlmnn0wd1qy8k73zfhr180000gn/T/alpine-lsp/src/main/scala/Main.scala
+2024.05.20 01:41:05 WARN  Could not load snapshot text for /private/var/folders/sw/6sshlmnn0wd1qy8k73zfhr180000gn/T/alpine-lsp/src/main/scala/Main.scala
+2024.05.20 01:41:06 WARN  Could not load snapshot text for /private/var/folders/sw/6sshlmnn0wd1qy8k73zfhr180000gn/T/alpine-lsp/src/main/scala/Main.scala
+2024.05.20 01:41:06 INFO  compiling alpine-lsp (1 scala source)
+2024.05.20 01:41:06 INFO  time: compiled alpine-lsp in 0.14s
+2024.05.20 01:41:06 WARN  Could not load snapshot text for /private/var/folders/sw/6sshlmnn0wd1qy8k73zfhr180000gn/T/alpine-lsp/src/main/scala/Main.scala
+2024.05.20 01:41:16 WARN  Could not load snapshot text for /private/var/folders/sw/6sshlmnn0wd1qy8k73zfhr180000gn/T/alpine-lsp/src/main/scala/Main.scala
+2024.05.20 01:41:22 WARN  Could not load snapshot text for /private/var/folders/sw/6sshlmnn0wd1qy8k73zfhr180000gn/T/alpine-lsp/src/main/scala/Main.scala
+2024.05.20 01:41:23 WARN  Could not load snapshot text for /private/var/folders/sw/6sshlmnn0wd1qy8k73zfhr180000gn/T/alpine-lsp/src/main/scala/Main.scala
+2024.05.20 01:41:23 WARN  Could not load snapshot text for /private/var/folders/sw/6sshlmnn0wd1qy8k73zfhr180000gn/T/alpine-lsp/src/main/scala/Main.scala
+2024.05.20 01:41:24 WARN  Could not load snapshot text for /private/var/folders/sw/6sshlmnn0wd1qy8k73zfhr180000gn/T/alpine-lsp/src/main/scala/Main.scala
+2024.05.20 01:41:24 WARN  Could not load snapshot text for /private/var/folders/sw/6sshlmnn0wd1qy8k73zfhr180000gn/T/alpine-lsp/src/main/scala/Main.scala
+2024.05.20 01:41:32 WARN  Could not load snapshot text for /private/var/folders/sw/6sshlmnn0wd1qy8k73zfhr180000gn/T/alpine-lsp/src/main/scala/Main.scala
+2024.05.20 01:41:33 WARN  Could not load snapshot text for /private/var/folders/sw/6sshlmnn0wd1qy8k73zfhr180000gn/T/alpine-lsp/src/main/scala/Main.scala
+2024.05.20 01:41:34 WARN  Could not load snapshot text for /private/var/folders/sw/6sshlmnn0wd1qy8k73zfhr180000gn/T/alpine-lsp/src/main/scala/Main.scala
+2024.05.20 01:41:34 WARN  Could not load snapshot text for /private/var/folders/sw/6sshlmnn0wd1qy8k73zfhr180000gn/T/alpine-lsp/src/main/scala/Main.scala
+2024.05.20 01:41:35 WARN  Could not load snapshot text for /private/var/folders/sw/6sshlmnn0wd1qy8k73zfhr180000gn/T/alpine-lsp/src/main/scala/Main.scala
+2024.05.20 01:41:35 WARN  Could not load snapshot text for /private/var/folders/sw/6sshlmnn0wd1qy8k73zfhr180000gn/T/alpine-lsp/src/main/scala/Main.scala
+2024.05.20 01:41:36 WARN  Could not load snapshot text for /private/var/folders/sw/6sshlmnn0wd1qy8k73zfhr180000gn/T/alpine-lsp/src/main/scala/Main.scala
+2024.05.20 01:41:36 WARN  Could not load snapshot text for /private/var/folders/sw/6sshlmnn0wd1qy8k73zfhr180000gn/T/alpine-lsp/src/main/scala/Main.scala
+2024.05.20 01:41:37 WARN  Could not load snapshot text for /private/var/folders/sw/6sshlmnn0wd1qy8k73zfhr180000gn/T/alpine-lsp/src/main/scala/Main.scala
+2024.05.20 01:41:41 WARN  Could not load snapshot text for /private/var/folders/sw/6sshlmnn0wd1qy8k73zfhr180000gn/T/alpine-lsp/src/main/scala/Main.scala
+2024.05.20 01:41:42 WARN  Could not load snapshot text for /private/var/folders/sw/6sshlmnn0wd1qy8k73zfhr180000gn/T/alpine-lsp/src/main/scala/Main.scala
+2024.05.20 01:41:43 WARN  Could not load snapshot text for /private/var/folders/sw/6sshlmnn0wd1qy8k73zfhr180000gn/T/alpine-lsp/src/main/scala/Main.scala
+2024.05.20 01:41:43 WARN  Could not load snapshot text for /private/var/folders/sw/6sshlmnn0wd1qy8k73zfhr180000gn/T/alpine-lsp/src/main/scala/Main.scala
+2024.05.20 01:41:44 INFO  compiling alpine-lsp (1 scala source)
+2024.05.20 01:41:44 INFO  time: compiled alpine-lsp in 0.27s
+2024.05.20 01:41:44 WARN  Could not load snapshot text for /private/var/folders/sw/6sshlmnn0wd1qy8k73zfhr180000gn/T/alpine-lsp/src/main/scala/Main.scala
+2024.05.20 01:41:54 WARN  Could not load snapshot text for /private/var/folders/sw/6sshlmnn0wd1qy8k73zfhr180000gn/T/alpine-lsp/src/main/scala/Main.scala
+2024.05.20 01:41:55 WARN  Could not load snapshot text for /private/var/folders/sw/6sshlmnn0wd1qy8k73zfhr180000gn/T/alpine-lsp/src/main/scala/Main.scala
+2024.05.20 01:41:56 WARN  Could not load snapshot text for /private/var/folders/sw/6sshlmnn0wd1qy8k73zfhr180000gn/T/alpine-lsp/src/main/scala/Main.scala
+2024.05.20 01:41:56 WARN  Could not load snapshot text for /private/var/folders/sw/6sshlmnn0wd1qy8k73zfhr180000gn/T/alpine-lsp/src/main/scala/Main.scala
+2024.05.20 01:41:56 WARN  Could not load snapshot text for /private/var/folders/sw/6sshlmnn0wd1qy8k73zfhr180000gn/T/alpine-lsp/src/main/scala/Main.scala
+2024.05.20 01:41:57 WARN  Could not load snapshot text for /private/var/folders/sw/6sshlmnn0wd1qy8k73zfhr180000gn/T/alpine-lsp/src/main/scala/Main.scala
+2024.05.20 01:41:58 WARN  Could not load snapshot text for /private/var/folders/sw/6sshlmnn0wd1qy8k73zfhr180000gn/T/alpine-lsp/src/main/scala/Main.scala
+2024.05.20 01:41:59 WARN  Could not load snapshot text for /private/var/folders/sw/6sshlmnn0wd1qy8k73zfhr180000gn/T/alpine-lsp/src/main/scala/Main.scala
+2024.05.20 01:41:59 WARN  Could not load snapshot text for /private/var/folders/sw/6sshlmnn0wd1qy8k73zfhr180000gn/T/alpine-lsp/src/main/scala/Main.scala
+2024.05.20 01:41:59 WARN  Could not load snapshot text for /private/var/folders/sw/6sshlmnn0wd1qy8k73zfhr180000gn/T/alpine-lsp/src/main/scala/Main.scala
+2024.05.20 01:42:00 WARN  Could not load snapshot text for /private/var/folders/sw/6sshlmnn0wd1qy8k73zfhr180000gn/T/alpine-lsp/src/main/scala/Main.scala
+2024.05.20 01:42:02 WARN  Could not load snapshot text for /private/var/folders/sw/6sshlmnn0wd1qy8k73zfhr180000gn/T/alpine-lsp/src/main/scala/Main.scala
+2024.05.20 01:42:03 WARN  Could not load snapshot text for /private/var/folders/sw/6sshlmnn0wd1qy8k73zfhr180000gn/T/alpine-lsp/src/main/scala/Main.scala
+2024.05.20 01:42:04 WARN  Could not load snapshot text for /private/var/folders/sw/6sshlmnn0wd1qy8k73zfhr180000gn/T/alpine-lsp/src/main/scala/Main.scala
+2024.05.20 01:42:05 WARN  Could not load snapshot text for /private/var/folders/sw/6sshlmnn0wd1qy8k73zfhr180000gn/T/alpine-lsp/src/main/scala/Main.scala
+2024.05.20 01:42:07 WARN  Could not load snapshot text for /private/var/folders/sw/6sshlmnn0wd1qy8k73zfhr180000gn/T/alpine-lsp/src/main/scala/Main.scala
+2024.05.20 01:42:07 WARN  Could not load snapshot text for /private/var/folders/sw/6sshlmnn0wd1qy8k73zfhr180000gn/T/alpine-lsp/src/main/scala/Main.scala
+mai 20, 2024 1:42:07 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+AVERTISSEMENT: Unmatched cancel notification for request id 2161
+2024.05.20 01:42:30 WARN  Could not load snapshot text for /private/var/folders/sw/6sshlmnn0wd1qy8k73zfhr180000gn/T/alpine-lsp/src/main/scala/Main.scala
+mai 20, 2024 1:42:34 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+AVERTISSEMENT: Unmatched cancel notification for request id 2188
+2024.05.20 01:42:51 WARN  Could not load snapshot text for /private/var/folders/sw/6sshlmnn0wd1qy8k73zfhr180000gn/T/alpine-lsp/src/main/scala/Main.scala
+2024.05.20 01:42:52 WARN  Could not load snapshot text for /private/var/folders/sw/6sshlmnn0wd1qy8k73zfhr180000gn/T/alpine-lsp/src/main/scala/Main.scala
+2024.05.20 01:42:51 WARN  Could not load snapshot text for /private/var/folders/sw/6sshlmnn0wd1qy8k73zfhr180000gn/T/alpine-lsp/src/main/scala/Main.scala
+2024.05.20 01:42:56 WARN  Could not load snapshot text for /private/var/folders/sw/6sshlmnn0wd1qy8k73zfhr180000gn/T/alpine-lsp/src/main/scala/Main.scala
+2024.05.20 01:42:56 WARN  Could not load snapshot text for /private/var/folders/sw/6sshlmnn0wd1qy8k73zfhr180000gn/T/alpine-lsp/src/main/scala/Main.scala
+2024.05.20 01:42:57 WARN  Could not load snapshot text for /private/var/folders/sw/6sshlmnn0wd1qy8k73zfhr180000gn/T/alpine-lsp/src/main/scala/Main.scala
+2024.05.20 01:42:57 WARN  Could not load snapshot text for /private/var/folders/sw/6sshlmnn0wd1qy8k73zfhr180000gn/T/alpine-lsp/src/main/scala/Main.scala
+2024.05.20 01:42:58 INFO  compiling alpine-lsp (1 scala source)
+2024.05.20 01:42:58 INFO  time: compiled alpine-lsp in 0.1s
+2024.05.20 01:42:58 WARN  Could not load snapshot text for /private/var/folders/sw/6sshlmnn0wd1qy8k73zfhr180000gn/T/alpine-lsp/src/main/scala/Main.scala
+2024.05.20 01:44:07 WARN  Could not load snapshot text for /private/var/folders/sw/6sshlmnn0wd1qy8k73zfhr180000gn/T/alpine-lsp/src/main/scala/Main.scala
+2024.05.20 01:44:12 WARN  Could not load snapshot text for /private/var/folders/sw/6sshlmnn0wd1qy8k73zfhr180000gn/T/alpine-lsp/src/main/scala/Main.scala
+2024.05.20 01:44:13 WARN  Could not load snapshot text for /private/var/folders/sw/6sshlmnn0wd1qy8k73zfhr180000gn/T/alpine-lsp/src/main/scala/Main.scala
+2024.05.20 01:44:14 WARN  Could not load snapshot text for /private/var/folders/sw/6sshlmnn0wd1qy8k73zfhr180000gn/T/alpine-lsp/src/main/scala/Main.scala
+2024.05.20 01:44:14 WARN  Could not load snapshot text for /private/var/folders/sw/6sshlmnn0wd1qy8k73zfhr180000gn/T/alpine-lsp/src/main/scala/Main.scala
+2024.05.20 01:44:16 WARN  Could not load snapshot text for /private/var/folders/sw/6sshlmnn0wd1qy8k73zfhr180000gn/T/alpine-lsp/src/main/scala/Main.scala
+2024.05.20 01:44:16 WARN  Could not load snapshot text for /private/var/folders/sw/6sshlmnn0wd1qy8k73zfhr180000gn/T/alpine-lsp/src/main/scala/Main.scala
+2024.05.20 01:44:16 WARN  Could not load snapshot text for /private/var/folders/sw/6sshlmnn0wd1qy8k73zfhr180000gn/T/alpine-lsp/src/main/scala/Main.scala
+2024.05.20 01:44:17 WARN  Could not load snapshot text for /private/var/folders/sw/6sshlmnn0wd1qy8k73zfhr180000gn/T/alpine-lsp/src/main/scala/Main.scala
+2024.05.20 01:44:18 INFO  compiling alpine-lsp (1 scala source)
+2024.05.20 01:44:18 INFO  time: compiled alpine-lsp in 0.5s
+2024.05.20 01:44:32 WARN  Could not load snapshot text for /private/var/folders/sw/6sshlmnn0wd1qy8k73zfhr180000gn/T/alpine-lsp/src/main/scala/Main.scala
+2024.05.20 01:44:37 WARN  Could not load snapshot text for /private/var/folders/sw/6sshlmnn0wd1qy8k73zfhr180000gn/T/alpine-lsp/src/main/scala/Main.scala
+2024.05.20 01:44:38 INFO  compiling alpine-lsp (1 scala source)
+2024.05.20 01:44:38 INFO  time: compiled alpine-lsp in 0.43s
+2024.05.20 01:44:39 WARN  Could not load snapshot text for /private/var/folders/sw/6sshlmnn0wd1qy8k73zfhr180000gn/T/alpine-lsp/src/main/scala/Main.scala
+2024.05.20 01:44:50 WARN  Could not load snapshot text for /private/var/folders/sw/6sshlmnn0wd1qy8k73zfhr180000gn/T/alpine-lsp/src/main/scala/Main.scala
+2024.05.20 01:44:50 WARN  Could not load snapshot text for /private/var/folders/sw/6sshlmnn0wd1qy8k73zfhr180000gn/T/alpine-lsp/src/main/scala/Main.scala
+2024.05.20 01:44:52 WARN  Could not load snapshot text for /private/var/folders/sw/6sshlmnn0wd1qy8k73zfhr180000gn/T/alpine-lsp/src/main/scala/Main.scala
+2024.05.20 01:44:53 WARN  Could not load snapshot text for /private/var/folders/sw/6sshlmnn0wd1qy8k73zfhr180000gn/T/alpine-lsp/src/main/scala/Main.scala
+2024.05.20 01:44:54 WARN  Could not load snapshot text for /private/var/folders/sw/6sshlmnn0wd1qy8k73zfhr180000gn/T/alpine-lsp/src/main/scala/Main.scala
+mai 20, 2024 11:32:48 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+AVERTISSEMENT: Unmatched cancel notification for request id 2410
+mai 20, 2024 11:33:08 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+AVERTISSEMENT: Unmatched cancel notification for request id 2444
+mai 20, 2024 11:33:23 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+AVERTISSEMENT: Unmatched cancel notification for request id 2477
+2024.05.20 11:33:41 INFO  compiling alpine-lsp (1 scala source)
+2024.05.20 11:33:41 INFO  time: compiled alpine-lsp in 0.12s
+mai 20, 2024 11:33:43 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+AVERTISSEMENT: Unmatched cancel notification for request id 2541
+2024.05.20 11:37:16 INFO  compiling alpine-lsp (1 scala source)
+2024.05.20 11:37:16 INFO  time: compiled alpine-lsp in 0.66s
+2024.05.20 11:37:28 INFO  compiling alpine-lsp (1 scala source)
+2024.05.20 11:37:28 INFO  time: compiled alpine-lsp in 0.48s
+2024.05.20 11:37:50 INFO  compiling alpine-lsp (1 scala source)
+2024.05.20 11:37:50 INFO  time: compiled alpine-lsp in 0.44s
+2024.05.20 11:39:04 INFO  compiling alpine-lsp (1 scala source)
+2024.05.20 11:39:04 INFO  time: compiled alpine-lsp in 0.59s
+2024.05.20 11:40:45 INFO  compiling alpine-lsp (1 scala source)
+2024.05.20 11:40:45 INFO  time: compiled alpine-lsp in 0.53s
+2024.05.20 11:41:46 INFO  compiling alpine-lsp (1 scala source)
+2024.05.20 11:41:46 INFO  time: compiled alpine-lsp in 0.5s
+2024.05.20 11:44:53 INFO  compiling alpine-lsp (1 scala source)
+2024.05.20 11:44:53 INFO  time: compiled alpine-lsp in 0.13s
+2024.05.20 11:49:38 INFO  compiling alpine-lsp (1 scala source)
+2024.05.20 11:49:38 INFO  time: compiled alpine-lsp in 0.79s
+2024.05.20 11:49:42 INFO  compiling alpine-lsp (1 scala source)
+2024.05.20 11:49:42 INFO  Deduplicating compilation of alpine-lsp from bsp client 'Metals 1.3.1' (since 10h 31m 13.148s)
+2024.05.20 11:49:42 INFO  compiling alpine-lsp (1 scala source)
+2024.05.20 11:49:42 INFO  time: compiled alpine-lsp in 0.38s
+2024.05.20 11:49:57 INFO  compiling alpine-lsp (1 scala source)
+2024.05.20 11:49:57 INFO  time: compiled alpine-lsp in 0.55s
+2024.05.20 11:50:18 INFO  compiling alpine-lsp (1 scala source)
+2024.05.20 11:50:18 INFO  time: compiled alpine-lsp in 0.11s
+2024.05.20 11:50:22 INFO  compiling alpine-lsp (1 scala source)
+2024.05.20 11:50:22 INFO  time: compiled alpine-lsp in 0.11s
+2024.05.20 11:50:23 INFO  compiling alpine-lsp (1 scala source)
+2024.05.20 11:50:23 INFO  Deduplicating compilation of alpine-lsp from bsp client 'Metals 1.3.1' (since 10h 31m 54.514s)
+2024.05.20 11:50:23 INFO  compiling alpine-lsp (1 scala source)
+2024.05.20 11:50:23 INFO  time: compiled alpine-lsp in 67ms
+2024.05.20 11:50:30 INFO  compiling alpine-lsp (1 scala source)
+2024.05.20 11:50:30 INFO  time: compiled alpine-lsp in 0.11s
+mai 20, 2024 11:50:33 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+AVERTISSEMENT: Unmatched cancel notification for request id 3599
+mai 20, 2024 11:50:34 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+AVERTISSEMENT: Unmatched cancel notification for request id 3609
+2024.05.20 11:50:39 INFO  compiling alpine-lsp (1 scala source)
+2024.05.20 11:50:39 INFO  time: compiled alpine-lsp in 0.1s
+2024.05.20 11:50:46 INFO  compiling alpine-lsp (1 scala source)
+2024.05.20 11:50:46 INFO  time: compiled alpine-lsp in 98ms
+mai 20, 2024 11:50:48 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+AVERTISSEMENT: Unmatched cancel notification for request id 3686
+2024.05.20 11:51:02 INFO  compiling alpine-lsp (1 scala source)
+2024.05.20 11:51:02 INFO  time: compiled alpine-lsp in 0.1s
+2024.05.20 11:51:11 INFO  compiling alpine-lsp (1 scala source)
+2024.05.20 11:51:11 INFO  time: compiled alpine-lsp in 0.12s
+2024.05.20 11:51:15 INFO  compiling alpine-lsp (1 scala source)
+2024.05.20 11:51:15 INFO  time: compiled alpine-lsp in 0.1s
+mai 20, 2024 11:51:38 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+AVERTISSEMENT: Unmatched cancel notification for request id 3864
+mai 20, 2024 11:51:39 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+AVERTISSEMENT: Unmatched cancel notification for request id 3868
+2024.05.20 11:51:41 INFO  compiling alpine-lsp (1 scala source)
+2024.05.20 11:51:41 INFO  time: compiled alpine-lsp in 0.13s
+mai 20, 2024 11:51:55 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+AVERTISSEMENT: Unmatched cancel notification for request id 3897
+2024.05.20 11:51:55 INFO  compiling alpine-lsp (1 scala source)
+2024.05.20 11:51:55 INFO  time: compiled alpine-lsp in 0.52s
+2024.05.20 11:54:56 INFO  compiling alpine-lsp (1 scala source)
+2024.05.20 11:54:56 INFO  time: compiled alpine-lsp in 0.55s
+2024.05.20 11:55:18 INFO  compiling alpine-lsp (1 scala source)
+2024.05.20 11:55:18 INFO  time: compiled alpine-lsp in 0.48s
+2024.05.20 11:56:44 INFO  compiling alpine-lsp (1 scala source)
+2024.05.20 11:56:44 INFO  time: compiled alpine-lsp in 0.12s
+2024.05.20 11:56:47 INFO  compiling alpine-lsp (1 scala source)
+2024.05.20 11:56:47 INFO  time: compiled alpine-lsp in 92ms
+2024.05.20 11:56:47 INFO  compiling alpine-lsp (1 scala source)
+2024.05.20 11:56:47 INFO  time: compiled alpine-lsp in 76ms
+mai 20, 2024 11:57:13 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+AVERTISSEMENT: Unmatched cancel notification for request id 4205
+mai 20, 2024 11:57:13 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+AVERTISSEMENT: Unmatched cancel notification for request id 4212
+mai 20, 2024 11:57:32 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+AVERTISSEMENT: Unmatched cancel notification for request id 4267
+2024.05.20 11:57:37 INFO  compiling alpine-lsp (1 scala source)
+2024.05.20 11:57:37 INFO  time: compiled alpine-lsp in 0.14s
+2024.05.20 12:00:28 INFO  compiling alpine-lsp (1 scala source)
+2024.05.20 12:00:28 INFO  time: compiled alpine-lsp in 0.53s
+mai 20, 2024 12:01:02 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+AVERTISSEMENT: Unmatched cancel notification for request id 4485
+2024.05.20 12:04:35 INFO  Deduplicating compilation of alpine-lsp from bsp client 'Metals 1.3.1' (since 10h 46m 6.354s)
+2024.05.20 12:04:35 INFO  compiling alpine-lsp (1 scala source)
+2024.05.20 12:04:35 INFO  compiling alpine-lsp (1 scala source)
+2024.05.20 12:04:35 INFO  time: compiled alpine-lsp in 0.52s
+2024.05.20 12:04:51 INFO  compiling alpine-lsp (1 scala source)
+2024.05.20 12:04:51 INFO  time: compiled alpine-lsp in 0.7s
+2024.05.20 12:05:28 INFO  compiling alpine-lsp (1 scala source)
+2024.05.20 12:05:28 INFO  time: compiled alpine-lsp in 0.13s
+2024.05.20 12:05:34 INFO  compiling alpine-lsp (1 scala source)
+2024.05.20 12:05:34 INFO  time: compiled alpine-lsp in 0.52s
+mai 20, 2024 12:06:45 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+AVERTISSEMENT: Unmatched cancel notification for request id 4769
+2024.05.20 12:07:02 INFO  compiling alpine-lsp (1 scala source)
+2024.05.20 12:07:02 INFO  time: compiled alpine-lsp in 0.57s
+mai 20, 2024 12:09:18 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+AVERTISSEMENT: Unmatched cancel notification for request id 4958
+2024.05.20 12:09:25 INFO  running '/Users/cassien/Library/Application Support/Coursier/bin/sbt -Dbloop.export-jar-classifiers=sources bloopInstall'
+2024.05.20 12:09:29 INFO  [info] welcome to sbt 1.9.9 (Eclipse Adoptium Java 11.0.23)
+2024.05.20 12:09:29 INFO  [info] loading settings for project alpine-lsp-build-build from metals.sbt ...
+mai 20, 2024 12:09:30 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+AVERTISSEMENT: Unmatched cancel notification for request id 5010
+2024.05.20 12:09:32 INFO  [info] loading project definition from /private/var/folders/sw/6sshlmnn0wd1qy8k73zfhr180000gn/T/alpine-lsp/project/project
+2024.05.20 12:09:33 INFO  [info] loading settings for project alpine-lsp-build from metals.sbt ...
+2024.05.20 12:09:33 INFO  [info] loading project definition from /private/var/folders/sw/6sshlmnn0wd1qy8k73zfhr180000gn/T/alpine-lsp/project
+2024.05.20 12:09:37 INFO  [success] Generated .bloop/alpine-lsp-build.json
+2024.05.20 12:09:37 INFO  [success] Total time: 3 s, completed 20 mai 2024 à 12:09:37
+2024.05.20 12:09:40 INFO  [info] loading settings for project alpine-lsp from build.sbt ...
+2024.05.20 12:09:40 INFO  [info] set current project to hello-world (in build file:/private/var/folders/sw/6sshlmnn0wd1qy8k73zfhr180000gn/T/alpine-lsp/)
+2024.05.20 12:09:40 INFO  [success] Generated .bloop/alpine-lsp.json
+2024.05.20 12:09:40 INFO  [success] Generated .bloop/alpine-lsp-test.json
+2024.05.20 12:09:40 INFO  [success] Total time: 0 s, completed 20 mai 2024 à 12:09:41
+2024.05.20 12:09:41 INFO  time: ran 'sbt bloopInstall' in 16s
+2024.05.20 12:09:41 INFO  Disconnecting from Bloop session...
+2024.05.20 12:09:41 INFO  Shut down connection with build server.
+2024.05.20 12:09:41 INFO  Shut down connection with build server.
+2024.05.20 12:09:41 INFO  Attempting to connect to the build server...
+2024.05.20 12:09:41 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /private/var/folders/sw/6sshlmnn0wd1qy8k73zfhr180000gn/T/alpine-lsp/.metals/bsp.trace.json or /Users/cassien/Library/Caches/org.scalameta.metals/bsp.trace.json
+2024.05.20 12:09:41 INFO  Attempting to connect to the build server...
+2024.05.20 12:09:41 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /private/var/folders/sw/6sshlmnn0wd1qy8k73zfhr180000gn/T/alpine-lsp/project/.metals/bsp.trace.json or /Users/cassien/Library/Caches/org.scalameta.metals/bsp.trace.json
+2024.05.20 12:09:41 INFO  time: Connected to build server in 59ms
+2024.05.20 12:09:41 INFO  Connected to Build server: Bloop v1.5.17
+2024.05.20 12:09:44 INFO  time: indexed workspace in 2.26s
+2024.05.20 12:09:44 INFO  compiling alpine-lsp (1 scala source)
+2024.05.20 12:09:44 INFO  time: compiled alpine-lsp in 0.48s
+2024.05.20 12:10:30 INFO  compiling alpine-lsp (1 scala source)
+2024.05.20 12:10:30 WARN  Could not load snapshot text for /private/var/folders/sw/6sshlmnn0wd1qy8k73zfhr180000gn/T/alpine-lsp/src/main/scala/Main.scala
+2024.05.20 12:10:30 WARN  Could not load snapshot text for /private/var/folders/sw/6sshlmnn0wd1qy8k73zfhr180000gn/T/alpine-lsp/src/main/scala/Main.scala
+2024.05.20 12:10:30 INFO  time: compiled alpine-lsp in 0.51s
+2024.05.20 12:10:45 INFO  Deduplicating compilation of alpine-lsp from bsp client 'Metals 1.3.1' (since 1m 3.631s)
+2024.05.20 12:10:45 INFO  compiling alpine-lsp (1 scala source)
+2024.05.20 12:10:45 INFO  compiling alpine-lsp (1 scala source)
+2024.05.20 12:10:45 INFO  time: compiled alpine-lsp in 0.49s
+mai 20, 2024 12:10:48 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+AVERTISSEMENT: Unmatched cancel notification for request id 5106
+2024.05.20 12:10:57 INFO  compiling alpine-lsp (1 scala source)
+2024.05.20 12:10:57 WARN  Could not load snapshot text for /private/var/folders/sw/6sshlmnn0wd1qy8k73zfhr180000gn/T/alpine-lsp/src/main/scala/Main.scala
+2024.05.20 12:10:57 WARN  Could not load snapshot text for /private/var/folders/sw/6sshlmnn0wd1qy8k73zfhr180000gn/T/alpine-lsp/src/main/scala/Main.scala
+2024.05.20 12:10:57 INFO  time: compiled alpine-lsp in 0.52s
+2024.05.20 12:11:18 INFO  compiling alpine-lsp (1 scala source)
+2024.05.20 12:11:18 INFO  time: compiled alpine-lsp in 0.46s
+2024.05.20 12:11:29 INFO  compiling alpine-lsp (1 scala source)
+2024.05.20 12:11:29 INFO  time: compiled alpine-lsp in 0.43s
+2024.05.20 12:11:41 INFO  compiling alpine-lsp (1 scala source)
+2024.05.20 12:11:41 INFO  Deduplicating compilation of alpine-lsp from bsp client 'Metals 1.3.1' (since 1m 59.977s)
+2024.05.20 12:11:41 INFO  compiling alpine-lsp (1 scala source)
+2024.05.20 12:11:41 INFO  time: compiled alpine-lsp in 0.41s
+2024.05.20 12:12:06 INFO  compiling alpine-lsp (1 scala source)
+2024.05.20 12:12:06 INFO  time: compiled alpine-lsp in 0.62s
+2024.05.20 12:12:09 INFO  compiling alpine-lsp (1 scala source)
+2024.05.20 12:12:09 INFO  time: compiled alpine-lsp in 0.41s
+2024.05.20 12:12:20 INFO  compiling alpine-lsp (1 scala source)
+2024.05.20 12:12:20 INFO  time: compiled alpine-lsp in 0.41s
+2024.05.20 12:14:50 INFO  skipping build import with status 'Installed'
+2024.05.20 12:14:50 INFO  Disconnecting from Bloop session...
+2024.05.20 12:14:50 INFO  Shut down connection with build server.
+2024.05.20 12:14:50 INFO  Shut down connection with build server.
+2024.05.20 12:14:50 INFO  Attempting to connect to the build server...
+2024.05.20 12:14:50 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /private/var/folders/sw/6sshlmnn0wd1qy8k73zfhr180000gn/T/alpine-lsp/.metals/bsp.trace.json or /Users/cassien/Library/Caches/org.scalameta.metals/bsp.trace.json
+2024.05.20 12:14:50 INFO  Attempting to connect to the build server...
+2024.05.20 12:14:50 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /private/var/folders/sw/6sshlmnn0wd1qy8k73zfhr180000gn/T/alpine-lsp/project/.metals/bsp.trace.json or /Users/cassien/Library/Caches/org.scalameta.metals/bsp.trace.json
+2024.05.20 12:14:50 INFO  time: Connected to build server in 60ms
+2024.05.20 12:14:50 INFO  Connected to Build server: Bloop v1.5.17
+2024.05.20 12:14:50 WARN  Target root /private/var/folders/sw/6sshlmnn0wd1qy8k73zfhr180000gn/T/alpine-lsp/.bloop/alpine-lsp/bloop-bsp-clients-classes/classes-Metals-uHVcCJv7RomNdwWKwO4CQQ== does not exist
+2024.05.20 12:14:53 INFO  time: indexed workspace in 2.33s
+2024.05.20 12:18:42 INFO  Started: Metals version 1.3.1 in folders '/Users/cassien/Nextcloud/Documents/etudes/EPFL/BA6/CS-320/project/alpine-lsp' for client Visual Studio Code 1.89.1.
+SLF4J(W): Class path contains multiple SLF4J providers.
+SLF4J(W): Found provider [scribe.slf4j.ScribeServiceProvider@27a35694]
+SLF4J(W): Found provider [ch.qos.logback.classic.spi.LogbackServiceProvider@ca90958]
+SLF4J(W): See https://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J(I): Actual provider is of type [scribe.slf4j.ScribeServiceProvider@27a35694]
+2024.05.20 12:18:45 WARN  Flyway upgrade recommended: H2 2.2.224 is newer than this version of Flyway and support has not been tested. The latest supported version of H2 is 2.2.220.
+2024.05.20 12:18:45 INFO  Attempting to connect to the build server...
+2024.05.20 12:18:45 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/cassien/Nextcloud/Documents/etudes/EPFL/BA6/CS-320/project/alpine-lsp/.metals/bsp.trace.json or /Users/cassien/Library/Caches/org.scalameta.metals/bsp.trace.json
+2024.05.20 12:18:45 INFO  Attempting to connect to the build server...
+2024.05.20 12:18:45 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/cassien/Nextcloud/Documents/etudes/EPFL/BA6/CS-320/project/alpine-lsp/project/.metals/bsp.trace.json or /Users/cassien/Library/Caches/org.scalameta.metals/bsp.trace.json
+2024.05.20 12:18:45 INFO  time: Connected to build server in 0.34s
+2024.05.20 12:18:45 INFO  Connected to Build server: Bloop v1.5.17
+2024.05.20 12:18:50 INFO  time: indexed workspace in 3.76s
+mai 20, 2024 12:24:09 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+2024.05.20 14:12:46 INFO  Shutting down server
+2024.05.20 14:12:46 INFO  shutting down Metals
+2024.05.20 14:12:46 INFO  Shut down connection with build server.
+2024.05.20 14:12:46 INFO  Shut down connection with build server.
+2024.05.20 14:12:46 INFO  Exiting server
+2024.05.25 11:43:24 INFO  Started: Metals version 1.3.1 in folders '/Users/cassien/Nextcloud/Documents/etudes/EPFL/BA6/CS-320/project/alpine-lsp' for client Visual Studio Code 1.89.1.
+SLF4J(W): Class path contains multiple SLF4J providers.
+SLF4J(W): Found provider [scribe.slf4j.ScribeServiceProvider@3be79433]
+SLF4J(W): Found provider [ch.qos.logback.classic.spi.LogbackServiceProvider@1ab06151]
+SLF4J(W): See https://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J(I): Actual provider is of type [scribe.slf4j.ScribeServiceProvider@3be79433]
+2024.05.25 11:43:25 WARN  Flyway upgrade recommended: H2 2.2.224 is newer than this version of Flyway and support has not been tested. The latest supported version of H2 is 2.2.220.
+2024.05.25 11:43:25 INFO  Attempting to connect to the build server...
+2024.05.25 11:43:27 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/cassien/Nextcloud/Documents/etudes/EPFL/BA6/CS-320/project/alpine-lsp/.metals/bsp.trace.json or /Users/cassien/Library/Caches/org.scalameta.metals/bsp.trace.json
+2024.05.25 11:43:27 INFO  Attempting to connect to the build server...
+2024.05.25 11:43:27 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/cassien/Nextcloud/Documents/etudes/EPFL/BA6/CS-320/project/alpine-lsp/project/.metals/bsp.trace.json or /Users/cassien/Library/Caches/org.scalameta.metals/bsp.trace.json
+2024.05.25 11:43:27 INFO  time: Connected to build server in 1.93s
+2024.05.25 11:43:27 INFO  Connected to Build server: Bloop v1.5.17
+2024.05.25 11:43:30 INFO  time: indexed workspace in 3.58s
+2024.05.25 11:43:34 INFO  no build target found for /Users/cassien/Nextcloud/Documents/etudes/EPFL/BA6/CS-320/project/alpine-lsp/src/main/scala/Main.scala. Using presentation compiler with project's scala-library version: 2.13.12
+2024.05.25 11:43:35 INFO  no build target found for /Users/cassien/Nextcloud/Documents/etudes/EPFL/BA6/CS-320/project/alpine-lsp/src/main/scala/Main.scala. Using presentation compiler with project's scala-library version: 2.13.12
+2024.05.25 11:43:35 INFO  no build target found for /Users/cassien/Nextcloud/Documents/etudes/EPFL/BA6/CS-320/project/alpine-lsp/src/main/scala/Main.scala. Using presentation compiler with project's scala-library version: 2.13.12
+2024.05.25 11:44:03 INFO  no build target found for /Users/cassien/Nextcloud/Documents/etudes/EPFL/BA6/CS-320/project/alpine-lsp/src/main/scala/Main.scala. Using presentation compiler with project's scala-library version: 2.13.12
+2024.05.25 11:54:16 INFO  time: code lens generation in 1.54s
+2024.05.25 11:54:52 INFO  running '/Users/cassien/Library/Application Support/Coursier/bin/sbt -Dbloop.export-jar-classifiers=sources bloopInstall'
+2024.05.25 11:54:57 INFO  [info] welcome to sbt 1.9.9 (Eclipse Adoptium Java 11.0.23)
+2024.05.25 11:54:57 INFO  [info] loading settings for project alpine-lsp-build-build from metals.sbt ...
+2024.05.25 11:55:00 INFO  [info] loading project definition from /Users/cassien/Nextcloud/Documents/etudes/EPFL/BA6/CS-320/project/alpine-lsp/project/project
+2024.05.25 11:55:02 INFO  [info] loading settings for project alpine-lsp-build from metals.sbt ...
+2024.05.25 11:55:02 INFO  [info] loading project definition from /Users/cassien/Nextcloud/Documents/etudes/EPFL/BA6/CS-320/project/alpine-lsp/project
+2024.05.25 11:55:06 INFO  [success] Generated .bloop/alpine-lsp-build.json
+2024.05.25 11:55:06 INFO  [success] Total time: 4 s, completed 25 mai 2024 à 11:55:06
+2024.05.25 11:55:09 INFO  [info] loading settings for project alpine-lsp from build.sbt ...
+2024.05.25 11:55:09 INFO  [info] set current project to alpine-lsp (in build file:/Users/cassien/Nextcloud/Documents/etudes/EPFL/BA6/CS-320/project/alpine-lsp/)
+2024.05.25 11:55:11 INFO  [success] Generated .bloop/alpine-lsp-test.json
+2024.05.25 11:55:11 INFO  [success] Generated .bloop/alpine-lsp.json
+2024.05.25 11:55:11 INFO  [success] Total time: 1 s, completed 25 mai 2024 à 11:55:11
+2024.05.25 11:55:11 INFO  time: ran 'sbt bloopInstall' in 19s
+2024.05.25 11:55:11 INFO  Disconnecting from Bloop session...
+2024.05.25 11:55:11 INFO  Shut down connection with build server.
+2024.05.25 11:55:11 INFO  Shut down connection with build server.
+2024.05.25 11:55:11 INFO  Attempting to connect to the build server...
+2024.05.25 11:55:11 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/cassien/Nextcloud/Documents/etudes/EPFL/BA6/CS-320/project/alpine-lsp/.metals/bsp.trace.json or /Users/cassien/Library/Caches/org.scalameta.metals/bsp.trace.json
+2024.05.25 11:55:11 INFO  Attempting to connect to the build server...
+2024.05.25 11:55:11 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/cassien/Nextcloud/Documents/etudes/EPFL/BA6/CS-320/project/alpine-lsp/project/.metals/bsp.trace.json or /Users/cassien/Library/Caches/org.scalameta.metals/bsp.trace.json
+2024.05.25 11:55:11 INFO  time: Connected to build server in 67ms
+2024.05.25 11:55:11 INFO  Connected to Build server: Bloop v1.5.17
+2024.05.25 11:55:14 INFO  time: indexed workspace in 2.54s
+2024.05.25 11:55:14 INFO  compiling alpine-lsp (1 scala source)
+2024.05.25 11:55:17 INFO  time: compiled alpine-lsp in 2.53s
+2024.05.25 11:55:28 INFO  skipping build import with status 'Installed'
+2024.05.25 11:55:28 INFO  Disconnecting from Bloop session...
+2024.05.25 11:55:28 INFO  Cancelling compilation on Bloop server
+2024.05.25 11:55:28 INFO  Shut down connection with build server.
+2024.05.25 11:55:28 INFO  Shut down connection with build server.
+2024.05.25 11:55:28 INFO  Attempting to connect to the build server...
+2024.05.25 11:55:28 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/cassien/Nextcloud/Documents/etudes/EPFL/BA6/CS-320/project/alpine-lsp/.metals/bsp.trace.json or /Users/cassien/Library/Caches/org.scalameta.metals/bsp.trace.json
+2024.05.25 11:55:28 INFO  Attempting to connect to the build server...
+2024.05.25 11:55:28 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/cassien/Nextcloud/Documents/etudes/EPFL/BA6/CS-320/project/alpine-lsp/project/.metals/bsp.trace.json or /Users/cassien/Library/Caches/org.scalameta.metals/bsp.trace.json
+2024.05.25 11:55:28 INFO  time: Connected to build server in 42ms
+2024.05.25 11:55:28 INFO  Connected to Build server: Bloop v1.5.17
+2024.05.25 11:55:31 INFO  time: indexed workspace in 2.58s
+2024.05.25 11:55:43 INFO  skipping build import with status 'Installed'
+2024.05.25 11:55:43 INFO  Disconnecting from Bloop session...
+2024.05.25 11:55:43 INFO  Cancelling compilation on Bloop server
+2024.05.25 11:55:43 INFO  Cancelling compilation on Bloop server
+2024.05.25 11:55:43 INFO  Shut down connection with build server.
+2024.05.25 11:55:43 INFO  Shut down connection with build server.
+2024.05.25 11:55:43 INFO  Attempting to connect to the build server...
+2024.05.25 11:55:43 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/cassien/Nextcloud/Documents/etudes/EPFL/BA6/CS-320/project/alpine-lsp/.metals/bsp.trace.json or /Users/cassien/Library/Caches/org.scalameta.metals/bsp.trace.json
+2024.05.25 11:55:43 INFO  Attempting to connect to the build server...
+2024.05.25 11:55:43 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/cassien/Nextcloud/Documents/etudes/EPFL/BA6/CS-320/project/alpine-lsp/project/.metals/bsp.trace.json or /Users/cassien/Library/Caches/org.scalameta.metals/bsp.trace.json
+2024.05.25 11:55:43 INFO  time: Connected to build server in 55ms
+2024.05.25 11:55:43 INFO  Connected to Build server: Bloop v1.5.17
+2024.05.25 11:55:45 INFO  time: indexed workspace in 2.55s
+mai 25, 2024 11:55:59 AM scala.meta.internal.pc.CompilerAccess handleError
+GRAVE: A severe compiler error occurred, full details of the error can be found in the error report /Users/cassien/Nextcloud/Documents/etudes/EPFL/BA6/CS-320/project/alpine-lsp/.metals/.reports/metals-full/2024-05-25/r_compiler-error_(alpine-lsp-build)_11-55-59-208.md
+mai 25, 2024 11:56:00 AM scala.meta.internal.pc.CompilerAccess handleError
+GRAVE: A severe compiler error occurred, full details of the error can be found in the error report /Users/cassien/Nextcloud/Documents/etudes/EPFL/BA6/CS-320/project/alpine-lsp/.metals/.reports/metals-full/2024-05-25/r_compiler-error_(alpine-lsp-build)_11-56-00-191.md
+mai 25, 2024 11:56:01 AM scala.meta.internal.pc.CompilerAccess handleError
+GRAVE: A severe compiler error occurred, full details of the error can be found in the error report /Users/cassien/Nextcloud/Documents/etudes/EPFL/BA6/CS-320/project/alpine-lsp/.metals/.reports/metals-full/2024-05-25/r_compiler-error_(alpine-lsp-build)_11-56-01-187.md
+2024.05.25 11:56:47 INFO  running '/Users/cassien/Library/Application Support/Coursier/bin/sbt -Dbloop.export-jar-classifiers=sources bloopInstall'
+2024.05.25 11:56:50 INFO  [info] welcome to sbt 1.9.9 (Eclipse Adoptium Java 11.0.23)
+2024.05.25 11:56:51 INFO  [info] loading settings for project alpine-lsp-build-build from metals.sbt ...
+2024.05.25 11:56:53 INFO  [info] loading project definition from /Users/cassien/Nextcloud/Documents/etudes/EPFL/BA6/CS-320/project/alpine-lsp/project/project
+2024.05.25 11:56:54 INFO  [info] loading settings for project alpine-lsp-build from metals.sbt ...
+2024.05.25 11:56:54 INFO  [info] loading project definition from /Users/cassien/Nextcloud/Documents/etudes/EPFL/BA6/CS-320/project/alpine-lsp/project
+2024.05.25 11:56:58 INFO  [success] Generated .bloop/alpine-lsp-build.json
+2024.05.25 11:56:58 INFO  [success] Total time: 4 s, completed 25 mai 2024 à 11:56:59
+2024.05.25 11:56:58 INFO  [info] loading settings for project alpine-lsp from build.sbt ...
+2024.05.25 11:56:58 INFO  [info] set current project to alpine-lsp (in build file:/Users/cassien/Nextcloud/Documents/etudes/EPFL/BA6/CS-320/project/alpine-lsp/)
+2024.05.25 11:57:00 INFO  [success] Generated .bloop/alpine-lsp.json
+2024.05.25 11:57:00 INFO  [success] Generated .bloop/alpine-lsp-test.json
+2024.05.25 11:57:00 INFO  [success] Total time: 0 s, completed 25 mai 2024 à 11:57:00
+2024.05.25 11:57:00 INFO  time: ran 'sbt bloopInstall' in 13s
+2024.05.25 11:57:00 INFO  Disconnecting from Bloop session...
+2024.05.25 11:57:00 INFO  Shut down connection with build server.
+2024.05.25 11:57:00 INFO  Shut down connection with build server.
+2024.05.25 11:57:00 INFO  Attempting to connect to the build server...
+2024.05.25 11:57:00 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/cassien/Nextcloud/Documents/etudes/EPFL/BA6/CS-320/project/alpine-lsp/.metals/bsp.trace.json or /Users/cassien/Library/Caches/org.scalameta.metals/bsp.trace.json
+2024.05.25 11:57:00 INFO  Attempting to connect to the build server...
+2024.05.25 11:57:00 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/cassien/Nextcloud/Documents/etudes/EPFL/BA6/CS-320/project/alpine-lsp/project/.metals/bsp.trace.json or /Users/cassien/Library/Caches/org.scalameta.metals/bsp.trace.json
+2024.05.25 11:57:00 INFO  time: Connected to build server in 44ms
+2024.05.25 11:57:00 INFO  Connected to Build server: Bloop v1.5.17
+2024.05.25 11:57:02 INFO  time: indexed workspace in 2.23s
+mai 25, 2024 11:58:28 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+AVERTISSEMENT: Unmatched cancel notification for request id 438
+2024.05.25 11:58:30 INFO  skipping build import with status 'Dismissed'
+2024.05.25 12:00:21 INFO  skipping build import with status 'Installed'
+2024.05.25 12:00:21 INFO  Disconnecting from Bloop session...
+2024.05.25 12:00:21 INFO  Cancelling compilation on Bloop server
+2024.05.25 12:00:21 INFO  Shut down connection with build server.
+2024.05.25 12:00:21 INFO  Shut down connection with build server.
+mai 25, 2024 12:00:21 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint notify
+INFOS: Failed to send notification message.
+org.eclipse.lsp4j.jsonrpc.JsonRpcException: java.nio.channels.AsynchronousCloseException
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageConsumer.consume(StreamMessageConsumer.java:72)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.notify(RemoteEndpoint.java:126)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.sendCancelNotification(RemoteEndpoint.java:180)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint$1.cancel(RemoteEndpoint.java:150)
+	at scala.meta.internal.metals.utils.FutureWithTimeout$$anon$1.$anonfun$cancel$1(FutureWithTimeout.scala:37)
+	at scala.runtime.java8.JFunction0$mcZ$sp.apply(JFunction0$mcZ$sp.scala:17)
+	at scala.util.Try$.apply(Try.scala:217)
+	at scala.meta.internal.metals.utils.FutureWithTimeout$$anon$1.cancel(FutureWithTimeout.scala:37)
+	at scala.meta.internal.metals.Cancelable$.$anonfun$cancelAll$1(Cancelable.scala:29)
+	at scala.collection.immutable.List.foreach(List.scala:334)
+	at scala.meta.internal.metals.Cancelable$.cancelAll(Cancelable.scala:28)
+	at scala.meta.internal.metals.MutableCancelable.cancel(MutableCancelable.scala:25)
+	at scala.meta.internal.metals.utils.RequestRegistry.cancel(RequestRegistry.scala:94)
+	at scala.meta.internal.metals.BuildServerConnection.cancel(BuildServerConnection.scala:447)
+	at scala.meta.internal.metals.BuildServerConnection.$anonfun$shutdown$1(BuildServerConnection.scala:179)
+	at scala.meta.internal.metals.BuildServerConnection.$anonfun$shutdown$1$adapted(BuildServerConnection.scala:171)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: java.nio.channels.AsynchronousCloseException
+	at java.base/java.nio.channels.spi.AbstractInterruptibleChannel.end(AbstractInterruptibleChannel.java:203)
+	at java.base/sun.nio.ch.SinkChannelImpl.endWrite(SinkChannelImpl.java:268)
+	at java.base/sun.nio.ch.SinkChannelImpl.write(SinkChannelImpl.java:290)
+	at java.base/sun.nio.ch.ChannelOutputStream.writeFully(ChannelOutputStream.java:68)
+	at java.base/sun.nio.ch.ChannelOutputStream.write(ChannelOutputStream.java:102)
+	at java.base/java.io.OutputStream.write(OutputStream.java:124)
+	at java.base/sun.nio.ch.ChannelOutputStream.write(ChannelOutputStream.java:79)
+	at scala.meta.internal.metals.ClosableOutputStream.write(ClosableOutputStream.scala:26)
+	at java.base/java.io.FilterOutputStream.write(FilterOutputStream.java:139)
+	at java.base/java.io.FilterOutputStream.write(FilterOutputStream.java:110)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageConsumer.consume(StreamMessageConsumer.java:67)
+	... 19 more
+
+2024.05.25 12:00:21 INFO  Scala main classes not supported by server
+2024.05.25 12:00:21 INFO  Attempting to connect to the build server...
+2024.05.25 12:00:21 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/cassien/Nextcloud/Documents/etudes/EPFL/BA6/CS-320/project/alpine-lsp/.metals/bsp.trace.json or /Users/cassien/Library/Caches/org.scalameta.metals/bsp.trace.json
+2024.05.25 12:00:21 INFO  Attempting to connect to the build server...
+2024.05.25 12:00:21 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/cassien/Nextcloud/Documents/etudes/EPFL/BA6/CS-320/project/alpine-lsp/project/.metals/bsp.trace.json or /Users/cassien/Library/Caches/org.scalameta.metals/bsp.trace.json
+2024.05.25 12:00:21 INFO  time: Connected to build server in 44ms
+2024.05.25 12:00:21 INFO  Connected to Build server: Bloop v1.5.17
+2024.05.25 12:00:24 INFO  time: indexed workspace in 2.32s
+2024.05.25 12:01:57 INFO  skipping build import with status 'Installed'
+2024.05.25 12:01:57 INFO  Disconnecting from Bloop session...
+2024.05.25 12:01:57 INFO  Shut down connection with build server.
+2024.05.25 12:01:57 INFO  Shut down connection with build server.
+2024.05.25 12:01:57 INFO  Attempting to connect to the build server...
+2024.05.25 12:01:57 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/cassien/Nextcloud/Documents/etudes/EPFL/BA6/CS-320/project/alpine-lsp/.metals/bsp.trace.json or /Users/cassien/Library/Caches/org.scalameta.metals/bsp.trace.json
+2024.05.25 12:01:57 INFO  Attempting to connect to the build server...
+2024.05.25 12:01:57 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/cassien/Nextcloud/Documents/etudes/EPFL/BA6/CS-320/project/alpine-lsp/project/.metals/bsp.trace.json or /Users/cassien/Library/Caches/org.scalameta.metals/bsp.trace.json
+2024.05.25 12:01:57 INFO  time: Connected to build server in 44ms
+2024.05.25 12:01:57 INFO  Connected to Build server: Bloop v1.5.17
+2024.05.25 12:02:00 INFO  time: indexed workspace in 2.33s
+2024.05.25 12:02:06 INFO  running '/Users/cassien/Library/Application Support/Coursier/bin/sbt -Dbloop.export-jar-classifiers=sources bloopInstall'
+2024.05.25 12:02:10 INFO  [info] welcome to sbt 1.9.9 (Eclipse Adoptium Java 11.0.23)
+2024.05.25 12:02:10 INFO  [info] loading settings for project alpine-lsp-build-build from metals.sbt ...
+2024.05.25 12:02:13 INFO  [info] loading project definition from /Users/cassien/Nextcloud/Documents/etudes/EPFL/BA6/CS-320/project/alpine-lsp/project/project
+2024.05.25 12:02:15 INFO  [info] loading settings for project alpine-lsp-build from metals.sbt ...
+2024.05.25 12:02:15 INFO  [info] loading project definition from /Users/cassien/Nextcloud/Documents/etudes/EPFL/BA6/CS-320/project/alpine-lsp/project
+2024.05.25 12:02:19 INFO  [success] Generated .bloop/alpine-lsp-build.json
+2024.05.25 12:02:19 INFO  [success] Total time: 4 s, completed 25 mai 2024 à 12:02:19
+2024.05.25 12:02:22 INFO  [info] loading settings for project alpine-lsp from build.sbt,plugins.sbt ...
+2024.05.25 12:02:22 INFO  [info] set current project to alpine-lsp (in build file:/Users/cassien/Nextcloud/Documents/etudes/EPFL/BA6/CS-320/project/alpine-lsp/)
+mai 25, 2024 12:02:24 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+AVERTISSEMENT: Unmatched cancel notification for request id 540
+2024.05.25 12:02:25 INFO  [warn] 
+2024.05.25 12:02:25 INFO  [warn] 	Note: Some unresolved dependencies have extra attributes.  Check that these dependencies exist with the requested attributes.
+2024.05.25 12:02:25 INFO  [warn] 		com.eed3si9n:sbt-assembly:1.1.0 (sbtVersion=1.0, scalaVersion=2.13)
+2024.05.25 12:02:25 INFO  [warn] 
+2024.05.25 12:02:25 INFO  [warn] 	Note: Unresolved dependencies path:
+2024.05.25 12:02:25 INFO  [error] Couldn't run bloopGenerate. The issue could be caused by failing to compile the project.
+2024.05.25 12:02:25 INFO  [warn] Removed stale /Users/cassien/Nextcloud/Documents/etudes/EPFL/BA6/CS-320/project/alpine-lsp/.bloop/alpine-lsp-test.json
+2024.05.25 12:02:25 INFO  [warn] Removed stale /Users/cassien/Nextcloud/Documents/etudes/EPFL/BA6/CS-320/project/alpine-lsp/.bloop/alpine-lsp.json
+2024.05.25 12:02:25 INFO  [error] sbt.librarymanagement.ResolveException: Error downloading com.eed3si9n:sbt-assembly;sbtVersion=1.0;scalaVersion=2.13:1.1.0
+2024.05.25 12:02:25 INFO  [error]   Not found
+2024.05.25 12:02:25 INFO  [error]   Not found
+2024.05.25 12:02:25 INFO  [error]   not found: /Users/cassien/.ivy2/localcom.eed3si9n/sbt-assembly/scala_2.13/sbt_1.0/1.1.0/ivys/ivy.xml
+2024.05.25 12:02:25 INFO  [error]   not found: https://repo1.maven.org/maven2/com/eed3si9n/sbt-assembly_2.13_1.0/1.1.0/sbt-assembly-1.1.0.pom
+2024.05.25 12:02:25 INFO  [error] 	at lmcoursier.CoursierDependencyResolution.unresolvedWarningOrThrow(CoursierDependencyResolution.scala:344)
+2024.05.25 12:02:25 INFO  [error] 	at lmcoursier.CoursierDependencyResolution.$anonfun$update$38(CoursierDependencyResolution.scala:313)
+2024.05.25 12:02:25 INFO  [error] 	at scala.util.Either$LeftProjection.map(Either.scala:573)
+2024.05.25 12:02:25 INFO  [error] 	at lmcoursier.CoursierDependencyResolution.update(CoursierDependencyResolution.scala:313)
+2024.05.25 12:02:25 INFO  [error] 	at sbt.librarymanagement.DependencyResolution.update(DependencyResolution.scala:60)
+2024.05.25 12:02:25 INFO  [error] 	at sbt.internal.LibraryManagement$.resolve$1(LibraryManagement.scala:60)
+2024.05.25 12:02:25 INFO  [error] 	at sbt.internal.LibraryManagement$.$anonfun$cachedUpdate$12(LibraryManagement.scala:134)
+2024.05.25 12:02:25 INFO  [error] 	at sbt.util.Tracked$.$anonfun$lastOutput$1(Tracked.scala:74)
+2024.05.25 12:02:25 INFO  [error] 	at sbt.internal.LibraryManagement$.$anonfun$cachedUpdate$20(LibraryManagement.scala:147)
+2024.05.25 12:02:25 INFO  [error] 	at scala.util.control.Exception$Catch.apply(Exception.scala:228)
+2024.05.25 12:02:25 INFO  [error] 	at sbt.internal.LibraryManagement$.$anonfun$cachedUpdate$11(LibraryManagement.scala:147)
+2024.05.25 12:02:25 INFO  [error] 	at sbt.internal.LibraryManagement$.$anonfun$cachedUpdate$11$adapted(LibraryManagement.scala:128)
+2024.05.25 12:02:25 INFO  [error] 	at sbt.util.Tracked$.$anonfun$inputChangedW$1(Tracked.scala:220)
+2024.05.25 12:02:25 INFO  [error] 	at sbt.internal.LibraryManagement$.cachedUpdate(LibraryManagement.scala:161)
+2024.05.25 12:02:25 INFO  [error] 	at sbt.Classpaths$.$anonfun$updateTask0$1(Defaults.scala:3801)
+2024.05.25 12:02:25 INFO  [error] 	at scala.Function1.$anonfun$compose$1(Function1.scala:49)
+2024.05.25 12:02:25 INFO  [error] 	at sbt.internal.util.$tilde$greater.$anonfun$$u2219$1(TypeFunctions.scala:63)
+2024.05.25 12:02:25 INFO  [error] 	at sbt.std.Transform$$anon$4.work(Transform.scala:69)
+2024.05.25 12:02:25 INFO  [error] 	at sbt.Execute.$anonfun$submit$2(Execute.scala:283)
+2024.05.25 12:02:25 INFO  [error] 	at sbt.internal.util.ErrorHandling$.wideConvert(ErrorHandling.scala:24)
+2024.05.25 12:02:25 INFO  [error] 	at sbt.Execute.work(Execute.scala:292)
+2024.05.25 12:02:25 INFO  [error] 	at sbt.Execute.$anonfun$submit$1(Execute.scala:283)
+2024.05.25 12:02:25 INFO  [error] 	at sbt.ConcurrentRestrictions$$anon$4.$anonfun$submitValid$1(ConcurrentRestrictions.scala:265)
+2024.05.25 12:02:25 INFO  [error] 	at sbt.CompletionService$$anon$2.call(CompletionService.scala:65)
+2024.05.25 12:02:25 INFO  [error] 	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+2024.05.25 12:02:25 INFO  [error] 	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+2024.05.25 12:02:25 INFO  [error] 	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+2024.05.25 12:02:25 INFO  [error] 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+2024.05.25 12:02:25 INFO  [error] 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+2024.05.25 12:02:25 INFO  [error] 	at java.base/java.lang.Thread.run(Thread.java:829)
+2024.05.25 12:02:25 INFO  [error] (update) sbt.librarymanagement.ResolveException: Error downloading com.eed3si9n:sbt-assembly;sbtVersion=1.0;scalaVersion=2.13:1.1.0
+2024.05.25 12:02:25 INFO  [error]   Not found
+2024.05.25 12:02:25 INFO  [error]   Not found
+2024.05.25 12:02:25 INFO  [error]   not found: /Users/cassien/.ivy2/localcom.eed3si9n/sbt-assembly/scala_2.13/sbt_1.0/1.1.0/ivys/ivy.xml
+2024.05.25 12:02:25 INFO  [error]   not found: https://repo1.maven.org/maven2/com/eed3si9n/sbt-assembly_2.13_1.0/1.1.0/sbt-assembly-1.1.0.pom
+2024.05.25 12:02:25 INFO  [error] Total time: 2 s, completed 25 mai 2024 à 12:02:25
+2024.05.25 12:02:25 INFO  time: ran 'sbt bloopInstall' in 19s
+2024.05.25 12:02:25 ERROR sbt command failed: /Users/cassien/Library/Application Support/Coursier/bin/sbt -Dbloop.export-jar-classifiers=sources bloopInstall
+2024.05.25 12:02:25 INFO  Disconnecting from Bloop session...
+2024.05.25 12:02:25 INFO  Shut down connection with build server.
+2024.05.25 12:02:25 INFO  Shut down connection with build server.
+2024.05.25 12:02:25 INFO  Attempting to connect to the build server...
+2024.05.25 12:02:25 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/cassien/Nextcloud/Documents/etudes/EPFL/BA6/CS-320/project/alpine-lsp/.metals/bsp.trace.json or /Users/cassien/Library/Caches/org.scalameta.metals/bsp.trace.json
+2024.05.25 12:02:25 INFO  Attempting to connect to the build server...
+2024.05.25 12:02:25 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/cassien/Nextcloud/Documents/etudes/EPFL/BA6/CS-320/project/alpine-lsp/project/.metals/bsp.trace.json or /Users/cassien/Library/Caches/org.scalameta.metals/bsp.trace.json
+2024.05.25 12:02:25 INFO  time: Connected to build server in 42ms
+2024.05.25 12:02:25 INFO  Connected to Build server: Bloop v1.5.17
+2024.05.25 12:02:27 INFO  time: indexed workspace in 1.89s
+2024.05.25 12:02:27 WARN  no build target for: /Users/cassien/Nextcloud/Documents/etudes/EPFL/BA6/CS-320/project/alpine-lsp/src/main/scala/Main.scala
+2024.05.25 12:02:47 INFO  skipping build import with status 'Installed'
+2024.05.25 12:02:47 INFO  Disconnecting from Bloop session...
+2024.05.25 12:02:47 INFO  Cancelling compilation on Bloop server
+2024.05.25 12:02:47 INFO  Shut down connection with build server.
+2024.05.25 12:02:47 INFO  Shut down connection with build server.
+mai 25, 2024 12:02:47 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint notify
+INFOS: Failed to send notification message.
+org.eclipse.lsp4j.jsonrpc.JsonRpcException: java.nio.channels.AsynchronousCloseException
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageConsumer.consume(StreamMessageConsumer.java:72)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.notify(RemoteEndpoint.java:126)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.sendCancelNotification(RemoteEndpoint.java:180)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint$1.cancel(RemoteEndpoint.java:150)
+	at scala.meta.internal.metals.utils.FutureWithTimeout$$anon$1.$anonfun$cancel$1(FutureWithTimeout.scala:37)
+	at scala.runtime.java8.JFunction0$mcZ$sp.apply(JFunction0$mcZ$sp.scala:17)
+	at scala.util.Try$.apply(Try.scala:217)
+	at scala.meta.internal.metals.utils.FutureWithTimeout$$anon$1.cancel(FutureWithTimeout.scala:37)
+	at scala.meta.internal.metals.Cancelable$.$anonfun$cancelAll$1(Cancelable.scala:29)
+	at scala.collection.immutable.List.foreach(List.scala:334)
+	at scala.meta.internal.metals.Cancelable$.cancelAll(Cancelable.scala:28)
+	at scala.meta.internal.metals.MutableCancelable.cancel(MutableCancelable.scala:25)
+	at scala.meta.internal.metals.utils.RequestRegistry.cancel(RequestRegistry.scala:94)
+	at scala.meta.internal.metals.BuildServerConnection.cancel(BuildServerConnection.scala:447)
+	at scala.meta.internal.metals.BuildServerConnection.$anonfun$shutdown$1(BuildServerConnection.scala:179)
+	at scala.meta.internal.metals.BuildServerConnection.$anonfun$shutdown$1$adapted(BuildServerConnection.scala:171)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: java.nio.channels.AsynchronousCloseException
+	at java.base/java.nio.channels.spi.AbstractInterruptibleChannel.end(AbstractInterruptibleChannel.java:203)
+	at java.base/sun.nio.ch.SinkChannelImpl.endWrite(SinkChannelImpl.java:268)
+	at java.base/sun.nio.ch.SinkChannelImpl.write(SinkChannelImpl.java:290)
+	at java.base/sun.nio.ch.ChannelOutputStream.writeFully(ChannelOutputStream.java:68)
+	at java.base/sun.nio.ch.ChannelOutputStream.write(ChannelOutputStream.java:102)
+	at java.base/java.io.OutputStream.write(OutputStream.java:124)
+	at java.base/sun.nio.ch.ChannelOutputStream.write(ChannelOutputStream.java:79)
+	at scala.meta.internal.metals.ClosableOutputStream.write(ClosableOutputStream.scala:26)
+	at java.base/java.io.FilterOutputStream.write(FilterOutputStream.java:139)
+	at java.base/java.io.FilterOutputStream.write(FilterOutputStream.java:110)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageConsumer.consume(StreamMessageConsumer.java:67)
+	... 19 more
+
+2024.05.25 12:02:47 INFO  Scala test classes not supported by server
+2024.05.25 12:02:47 INFO  Attempting to connect to the build server...
+2024.05.25 12:02:47 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/cassien/Nextcloud/Documents/etudes/EPFL/BA6/CS-320/project/alpine-lsp/.metals/bsp.trace.json or /Users/cassien/Library/Caches/org.scalameta.metals/bsp.trace.json
+2024.05.25 12:02:47 INFO  Attempting to connect to the build server...
+2024.05.25 12:02:47 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/cassien/Nextcloud/Documents/etudes/EPFL/BA6/CS-320/project/alpine-lsp/project/.metals/bsp.trace.json or /Users/cassien/Library/Caches/org.scalameta.metals/bsp.trace.json
+2024.05.25 12:02:47 INFO  time: Connected to build server in 38ms
+2024.05.25 12:02:47 INFO  Connected to Build server: Bloop v1.5.17
+2024.05.25 12:02:49 INFO  time: indexed workspace in 1.88s
+2024.05.25 12:02:49 WARN  no build target for: /Users/cassien/Nextcloud/Documents/etudes/EPFL/BA6/CS-320/project/alpine-lsp/src/main/scala/Main.scala
+2024.05.25 12:03:14 INFO  running '/Users/cassien/Library/Application Support/Coursier/bin/sbt -Dbloop.export-jar-classifiers=sources bloopInstall'
+2024.05.25 12:03:17 INFO  [info] welcome to sbt 1.9.9 (Eclipse Adoptium Java 11.0.23)
+2024.05.25 12:03:17 INFO  [info] loading settings for project alpine-lsp-build-build from metals.sbt ...
+2024.05.25 12:03:20 INFO  [info] loading project definition from /Users/cassien/Nextcloud/Documents/etudes/EPFL/BA6/CS-320/project/alpine-lsp/project/project
+2024.05.25 12:03:21 INFO  [info] loading settings for project alpine-lsp-build from metals.sbt ...
+2024.05.25 12:03:21 INFO  [info] loading project definition from /Users/cassien/Nextcloud/Documents/etudes/EPFL/BA6/CS-320/project/alpine-lsp/project
+2024.05.25 12:03:25 INFO  [success] Generated .bloop/alpine-lsp-build.json
+2024.05.25 12:03:25 INFO  [success] Total time: 3 s, completed 25 mai 2024 à 12:03:25
+2024.05.25 12:03:26 ERROR /Users/cassien/Nextcloud/Documents/etudes/EPFL/BA6/CS-320/project/alpine-lsp/build.sbt:20: error: not found: value assemblyMergeStrategy
+2024.05.25 12:03:26 ERROR assemblyMergeStrategy in assembly := {
+2024.05.25 12:03:26 ERROR ^
+2024.05.25 12:03:26 ERROR /Users/cassien/Nextcloud/Documents/etudes/EPFL/BA6/CS-320/project/alpine-lsp/build.sbt:20: error: not found: value assembly
+2024.05.25 12:03:26 ERROR assemblyMergeStrategy in assembly := {
+2024.05.25 12:03:26 ERROR                          ^
+2024.05.25 12:03:26 ERROR /Users/cassien/Nextcloud/Documents/etudes/EPFL/BA6/CS-320/project/alpine-lsp/build.sbt:21: error: not found: value MergeStrategy
+2024.05.25 12:03:26 ERROR   case "reference.conf" => MergeStrategy.concat
+2024.05.25 12:03:26 ERROR                            ^
+2024.05.25 12:03:26 ERROR /Users/cassien/Nextcloud/Documents/etudes/EPFL/BA6/CS-320/project/alpine-lsp/build.sbt:22: error: not found: value MergeStrategy
+2024.05.25 12:03:26 ERROR   case x => MergeStrategy.first
+2024.05.25 12:03:26 ERROR             ^
+2024.05.25 12:03:26 INFO  [error] Type error in expression
+2024.05.25 12:03:26 INFO  [warn] Project loading failed: (r)etry, (q)uit, (l)ast, or (i)gnore? (default: r)
+2024.05.25 12:03:26 INFO  time: ran 'sbt bloopInstall' in 12s
+2024.05.25 12:03:26 ERROR sbt command failed: /Users/cassien/Library/Application Support/Coursier/bin/sbt -Dbloop.export-jar-classifiers=sources bloopInstall
+2024.05.25 12:03:26 INFO  Disconnecting from Bloop session...
+2024.05.25 12:03:26 INFO  Shut down connection with build server.
+2024.05.25 12:03:26 INFO  Shut down connection with build server.
+2024.05.25 12:03:26 INFO  Attempting to connect to the build server...
+2024.05.25 12:03:26 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/cassien/Nextcloud/Documents/etudes/EPFL/BA6/CS-320/project/alpine-lsp/.metals/bsp.trace.json or /Users/cassien/Library/Caches/org.scalameta.metals/bsp.trace.json
+2024.05.25 12:03:26 INFO  Attempting to connect to the build server...
+2024.05.25 12:03:26 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/cassien/Nextcloud/Documents/etudes/EPFL/BA6/CS-320/project/alpine-lsp/project/.metals/bsp.trace.json or /Users/cassien/Library/Caches/org.scalameta.metals/bsp.trace.json
+2024.05.25 12:03:26 INFO  time: Connected to build server in 41ms
+2024.05.25 12:03:26 INFO  Connected to Build server: Bloop v1.5.17
+2024.05.25 12:03:28 INFO  time: indexed workspace in 1.92s
+2024.05.25 12:03:28 WARN  no build target for: /Users/cassien/Nextcloud/Documents/etudes/EPFL/BA6/CS-320/project/alpine-lsp/src/main/scala/Main.scala
+2024.05.25 12:03:37 INFO  skipping build import with status 'Installed'
+2024.05.25 12:03:37 INFO  Disconnecting from Bloop session...
+2024.05.25 12:03:37 INFO  Cancelling compilation on Bloop server
+2024.05.25 12:03:37 INFO  Shut down connection with build server.
+2024.05.25 12:03:37 INFO  Shut down connection with build server.
+mai 25, 2024 12:03:37 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint notify
+INFOS: Failed to send notification message.
+org.eclipse.lsp4j.jsonrpc.JsonRpcException: java.nio.channels.AsynchronousCloseException
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageConsumer.consume(StreamMessageConsumer.java:72)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.notify(RemoteEndpoint.java:126)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.sendCancelNotification(RemoteEndpoint.java:180)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint$1.cancel(RemoteEndpoint.java:150)
+	at scala.meta.internal.metals.utils.FutureWithTimeout$$anon$1.$anonfun$cancel$1(FutureWithTimeout.scala:37)
+	at scala.runtime.java8.JFunction0$mcZ$sp.apply(JFunction0$mcZ$sp.scala:17)
+	at scala.util.Try$.apply(Try.scala:217)
+	at scala.meta.internal.metals.utils.FutureWithTimeout$$anon$1.cancel(FutureWithTimeout.scala:37)
+	at scala.meta.internal.metals.Cancelable$.$anonfun$cancelAll$1(Cancelable.scala:29)
+	at scala.collection.immutable.List.foreach(List.scala:334)
+	at scala.meta.internal.metals.Cancelable$.cancelAll(Cancelable.scala:28)
+	at scala.meta.internal.metals.MutableCancelable.cancel(MutableCancelable.scala:25)
+	at scala.meta.internal.metals.utils.RequestRegistry.cancel(RequestRegistry.scala:94)
+	at scala.meta.internal.metals.BuildServerConnection.cancel(BuildServerConnection.scala:447)
+	at scala.meta.internal.metals.BuildServerConnection.$anonfun$shutdown$1(BuildServerConnection.scala:179)
+	at scala.meta.internal.metals.BuildServerConnection.$anonfun$shutdown$1$adapted(BuildServerConnection.scala:171)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: java.nio.channels.AsynchronousCloseException
+	at java.base/java.nio.channels.spi.AbstractInterruptibleChannel.end(AbstractInterruptibleChannel.java:203)
+	at java.base/sun.nio.ch.SinkChannelImpl.endWrite(SinkChannelImpl.java:268)
+	at java.base/sun.nio.ch.SinkChannelImpl.write(SinkChannelImpl.java:290)
+	at java.base/sun.nio.ch.ChannelOutputStream.writeFully(ChannelOutputStream.java:68)
+	at java.base/sun.nio.ch.ChannelOutputStream.write(ChannelOutputStream.java:102)
+	at java.base/java.io.OutputStream.write(OutputStream.java:124)
+	at java.base/sun.nio.ch.ChannelOutputStream.write(ChannelOutputStream.java:79)
+	at scala.meta.internal.metals.ClosableOutputStream.write(ClosableOutputStream.scala:26)
+	at java.base/java.io.FilterOutputStream.write(FilterOutputStream.java:139)
+	at java.base/java.io.FilterOutputStream.write(FilterOutputStream.java:110)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageConsumer.consume(StreamMessageConsumer.java:67)
+	... 19 more
+
+2024.05.25 12:03:37 INFO  Scala main classes not supported by server
+2024.05.25 12:03:37 INFO  Attempting to connect to the build server...
+2024.05.25 12:03:37 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/cassien/Nextcloud/Documents/etudes/EPFL/BA6/CS-320/project/alpine-lsp/.metals/bsp.trace.json or /Users/cassien/Library/Caches/org.scalameta.metals/bsp.trace.json
+2024.05.25 12:03:37 INFO  Attempting to connect to the build server...
+2024.05.25 12:03:37 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/cassien/Nextcloud/Documents/etudes/EPFL/BA6/CS-320/project/alpine-lsp/project/.metals/bsp.trace.json or /Users/cassien/Library/Caches/org.scalameta.metals/bsp.trace.json
+2024.05.25 12:03:37 INFO  time: Connected to build server in 41ms
+2024.05.25 12:03:37 INFO  Connected to Build server: Bloop v1.5.17
+2024.05.25 12:03:39 INFO  time: indexed workspace in 1.84s
+2024.05.25 12:03:39 WARN  no build target for: /Users/cassien/Nextcloud/Documents/etudes/EPFL/BA6/CS-320/project/alpine-lsp/src/main/scala/Main.scala
+2024.05.25 12:04:57 INFO  skipping build import with status 'Installed'
+2024.05.25 12:04:57 INFO  Disconnecting from Bloop session...
+2024.05.25 12:04:57 INFO  Cancelling compilation on Bloop server
+2024.05.25 12:04:57 INFO  Shut down connection with build server.
+mai 25, 2024 12:04:57 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint notify
+INFOS: Failed to send notification message.
+org.eclipse.lsp4j.jsonrpc.JsonRpcException: java.nio.channels.AsynchronousCloseException
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageConsumer.consume(StreamMessageConsumer.java:72)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.notify(RemoteEndpoint.java:126)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.sendCancelNotification(RemoteEndpoint.java:180)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint$1.cancel(RemoteEndpoint.java:150)
+	at scala.meta.internal.metals.utils.FutureWithTimeout$$anon$1.$anonfun$cancel$1(FutureWithTimeout.scala:37)
+	at scala.runtime.java8.JFunction0$mcZ$sp.apply(JFunction0$mcZ$sp.scala:17)
+	at scala.util.Try$.apply(Try.scala:217)
+	at scala.meta.internal.metals.utils.FutureWithTimeout$$anon$1.cancel(FutureWithTimeout.scala:37)
+	at scala.meta.internal.metals.Cancelable$.$anonfun$cancelAll$1(Cancelable.scala:29)
+	at scala.collection.immutable.List.foreach(List.scala:334)
+	at scala.meta.internal.metals.Cancelable$.cancelAll(Cancelable.scala:28)
+	at scala.meta.internal.metals.MutableCancelable.cancel(MutableCancelable.scala:25)
+	at scala.meta.internal.metals.utils.RequestRegistry.cancel(RequestRegistry.scala:94)
+	at scala.meta.internal.metals.BuildServerConnection.cancel(BuildServerConnection.scala:447)
+	at scala.meta.internal.metals.BuildServerConnection.$anonfun$shutdown$1(BuildServerConnection.scala:179)
+	at scala.meta.internal.metals.BuildServerConnection.$anonfun$shutdown$1$adapted(BuildServerConnection.scala:171)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: java.nio.channels.AsynchronousCloseException
+	at java.base/java.nio.channels.spi.AbstractInterruptibleChannel.end(AbstractInterruptibleChannel.java:203)
+	at java.base/sun.nio.ch.SinkChannelImpl.endWrite(SinkChannelImpl.java:268)
+	at java.base/sun.nio.ch.SinkChannelImpl.write(SinkChannelImpl.java:290)
+	at java.base/sun.nio.ch.ChannelOutputStream.writeFully(ChannelOutputStream.java:68)
+	at java.base/sun.nio.ch.ChannelOutputStream.write(ChannelOutputStream.java:102)
+	at java.base/java.io.OutputStream.write(OutputStream.java:124)
+	at java.base/sun.nio.ch.ChannelOutputStream.write(ChannelOutputStream.java:79)
+	at scala.meta.internal.metals.ClosableOutputStream.write(ClosableOutputStream.scala:26)
+	at java.base/java.io.FilterOutputStream.write(FilterOutputStream.java:139)
+	at java.base/java.io.FilterOutputStream.write(FilterOutputStream.java:110)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageConsumer.consume(StreamMessageConsumer.java:67)
+	... 19 more
+
+2024.05.25 12:04:57 INFO  Scala main classes not supported by server
+2024.05.25 12:04:57 INFO  Scala test classes not supported by server
+2024.05.25 12:04:57 INFO  Shut down connection with build server.
+2024.05.25 12:04:57 INFO  Attempting to connect to the build server...
+2024.05.25 12:04:57 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/cassien/Nextcloud/Documents/etudes/EPFL/BA6/CS-320/project/alpine-lsp/.metals/bsp.trace.json or /Users/cassien/Library/Caches/org.scalameta.metals/bsp.trace.json
+2024.05.25 12:04:57 INFO  Attempting to connect to the build server...
+2024.05.25 12:04:57 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/cassien/Nextcloud/Documents/etudes/EPFL/BA6/CS-320/project/alpine-lsp/project/.metals/bsp.trace.json or /Users/cassien/Library/Caches/org.scalameta.metals/bsp.trace.json
+2024.05.25 12:04:57 INFO  time: Connected to build server in 45ms
+2024.05.25 12:04:57 INFO  Connected to Build server: Bloop v1.5.17
+2024.05.25 12:04:59 INFO  time: indexed workspace in 1.93s
+2024.05.25 12:04:59 WARN  no build target for: /Users/cassien/Nextcloud/Documents/etudes/EPFL/BA6/CS-320/project/alpine-lsp/src/main/scala/Main.scala
+2024.05.25 12:05:11 INFO  running '/Users/cassien/Library/Application Support/Coursier/bin/sbt -Dbloop.export-jar-classifiers=sources bloopInstall'
+2024.05.25 12:05:16 INFO  [info] welcome to sbt 1.9.9 (Eclipse Adoptium Java 11.0.23)
+2024.05.25 12:05:17 INFO  [info] loading settings for project alpine-lsp-build-build from metals.sbt ...
+2024.05.25 12:05:19 INFO  [info] loading project definition from /Users/cassien/Nextcloud/Documents/etudes/EPFL/BA6/CS-320/project/alpine-lsp/project/project
+2024.05.25 12:05:21 INFO  [info] loading settings for project alpine-lsp-build from metals.sbt ...
+2024.05.25 12:05:21 INFO  [info] loading project definition from /Users/cassien/Nextcloud/Documents/etudes/EPFL/BA6/CS-320/project/alpine-lsp/project
+2024.05.25 12:05:25 INFO  [success] Generated .bloop/alpine-lsp-build.json
+2024.05.25 12:05:25 INFO  [success] Total time: 4 s, completed 25 mai 2024 à 12:05:25
+2024.05.25 12:05:26 ERROR /Users/cassien/Nextcloud/Documents/etudes/EPFL/BA6/CS-320/project/alpine-lsp/build.sbt:20: error: not found: value assemblyOption
+2024.05.25 12:05:26 ERROR assemblyOption in assembly := (assemblyOption in assembly).value.copy(includeScala = false)
+2024.05.25 12:05:26 ERROR ^
+2024.05.25 12:05:26 ERROR /Users/cassien/Nextcloud/Documents/etudes/EPFL/BA6/CS-320/project/alpine-lsp/build.sbt:20: error: not found: value assembly
+2024.05.25 12:05:26 ERROR assemblyOption in assembly := (assemblyOption in assembly).value.copy(includeScala = false)
+2024.05.25 12:05:26 ERROR                   ^
+2024.05.25 12:05:26 ERROR /Users/cassien/Nextcloud/Documents/etudes/EPFL/BA6/CS-320/project/alpine-lsp/build.sbt:20: error: not found: value assemblyOption
+2024.05.25 12:05:26 ERROR assemblyOption in assembly := (assemblyOption in assembly).value.copy(includeScala = false)
+2024.05.25 12:05:26 ERROR                                ^
+2024.05.25 12:05:26 ERROR /Users/cassien/Nextcloud/Documents/etudes/EPFL/BA6/CS-320/project/alpine-lsp/build.sbt:20: error: not found: value assembly
+2024.05.25 12:05:26 ERROR assemblyOption in assembly := (assemblyOption in assembly).value.copy(includeScala = false)
+2024.05.25 12:05:26 ERROR                                                  ^
+2024.05.25 12:05:26 ERROR /Users/cassien/Nextcloud/Documents/etudes/EPFL/BA6/CS-320/project/alpine-lsp/build.sbt:20: error: not found: value includeScala
+2024.05.25 12:05:26 ERROR assemblyOption in assembly := (assemblyOption in assembly).value.copy(includeScala = false)
+2024.05.25 12:05:26 ERROR                                                                       ^
+2024.05.25 12:05:26 INFO  [error] Type error in expression
+2024.05.25 12:05:26 INFO  [warn] Project loading failed: (r)etry, (q)uit, (l)ast, or (i)gnore? (default: r)
+2024.05.25 12:05:26 INFO  time: ran 'sbt bloopInstall' in 14s
+2024.05.25 12:05:26 ERROR sbt command failed: /Users/cassien/Library/Application Support/Coursier/bin/sbt -Dbloop.export-jar-classifiers=sources bloopInstall
+2024.05.25 12:05:26 INFO  Disconnecting from Bloop session...
+2024.05.25 12:05:26 INFO  Shut down connection with build server.
+2024.05.25 12:05:26 INFO  Shut down connection with build server.
+2024.05.25 12:05:26 INFO  Attempting to connect to the build server...
+2024.05.25 12:05:26 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/cassien/Nextcloud/Documents/etudes/EPFL/BA6/CS-320/project/alpine-lsp/.metals/bsp.trace.json or /Users/cassien/Library/Caches/org.scalameta.metals/bsp.trace.json
+2024.05.25 12:05:26 INFO  Attempting to connect to the build server...
+2024.05.25 12:05:26 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/cassien/Nextcloud/Documents/etudes/EPFL/BA6/CS-320/project/alpine-lsp/project/.metals/bsp.trace.json or /Users/cassien/Library/Caches/org.scalameta.metals/bsp.trace.json
+2024.05.25 12:05:26 INFO  time: Connected to build server in 44ms
+2024.05.25 12:05:26 INFO  Connected to Build server: Bloop v1.5.17
+2024.05.25 12:05:28 INFO  time: indexed workspace in 1.83s
+2024.05.25 12:05:28 WARN  no build target for: /Users/cassien/Nextcloud/Documents/etudes/EPFL/BA6/CS-320/project/alpine-lsp/src/main/scala/Main.scala
+2024.05.25 12:07:30 INFO  skipping build import with status 'Dismissed'
+2024.05.25 12:07:42 INFO  skipping build import with status 'Dismissed'
+2024.05.25 12:07:52 INFO  skipping build import with status 'Dismissed'
+mai 25, 2024 12:08:43 PM scala.meta.internal.pc.CompilerAccess handleError
+GRAVE: A severe compiler error occurred, full details of the error can be found in the error report /Users/cassien/Nextcloud/Documents/etudes/EPFL/BA6/CS-320/project/alpine-lsp/.metals/.reports/metals-full/2024-05-25/r_compiler-error_(alpine-lsp-build)_12-08-43-759.md
+mai 25, 2024 12:08:44 PM scala.meta.internal.pc.CompilerAccess handleError
+GRAVE: A severe compiler error occurred, full details of the error can be found in the error report /Users/cassien/Nextcloud/Documents/etudes/EPFL/BA6/CS-320/project/alpine-lsp/.metals/.reports/metals-full/2024-05-25/r_compiler-error_(alpine-lsp-build)_12-08-44-093.md
+mai 25, 2024 12:08:44 PM scala.meta.internal.pc.CompilerAccess handleError
+GRAVE: A severe compiler error occurred, full details of the error can be found in the error report /Users/cassien/Nextcloud/Documents/etudes/EPFL/BA6/CS-320/project/alpine-lsp/.metals/.reports/metals-full/2024-05-25/r_compiler-error_(alpine-lsp-build)_12-08-44-800.md
+mai 25, 2024 12:08:46 PM scala.meta.internal.pc.CompilerAccess handleError
+GRAVE: A severe compiler error occurred, full details of the error can be found in the error report /Users/cassien/Nextcloud/Documents/etudes/EPFL/BA6/CS-320/project/alpine-lsp/.metals/.reports/metals-full/2024-05-25/r_compiler-error_(alpine-lsp-build)_12-08-46-815.md
+2024.05.25 12:08:54 INFO  running '/Users/cassien/Library/Application Support/Coursier/bin/sbt -Dbloop.export-jar-classifiers=sources bloopInstall'
+2024.05.25 12:08:58 INFO  [info] welcome to sbt 1.9.9 (Eclipse Adoptium Java 11.0.23)
+2024.05.25 12:08:58 INFO  [info] loading settings for project alpine-lsp-build-build from metals.sbt ...
+2024.05.25 12:09:00 INFO  [info] loading project definition from /Users/cassien/Nextcloud/Documents/etudes/EPFL/BA6/CS-320/project/alpine-lsp/project/project
+2024.05.25 12:09:02 INFO  [info] loading settings for project alpine-lsp-build from metals.sbt ...
+2024.05.25 12:09:02 INFO  [info] loading project definition from /Users/cassien/Nextcloud/Documents/etudes/EPFL/BA6/CS-320/project/alpine-lsp/project
+2024.05.25 12:09:06 INFO  [success] Generated .bloop/alpine-lsp-build.json
+2024.05.25 12:09:06 INFO  [success] Total time: 4 s, completed 25 mai 2024 à 12:09:06
+2024.05.25 12:09:09 INFO  [info] loading settings for project alpine-lsp from build.sbt,plugins.sbt ...
+2024.05.25 12:09:09 INFO  [info] set current project to alpine-lsp (in build file:/Users/cassien/Nextcloud/Documents/etudes/EPFL/BA6/CS-320/project/alpine-lsp/)
+2024.05.25 12:09:12 INFO  [warn] 
+2024.05.25 12:09:12 INFO  [warn] 	Note: Some unresolved dependencies have extra attributes.  Check that these dependencies exist with the requested attributes.
+2024.05.25 12:09:12 INFO  [warn] 		com.eed3si9n:sbt-assembly:1.2.0 (sbtVersion=1.0, scalaVersion=2.13)
+2024.05.25 12:09:12 INFO  [warn] 
+2024.05.25 12:09:12 INFO  [warn] 	Note: Unresolved dependencies path:
+2024.05.25 12:09:12 INFO  [error] Couldn't run bloopGenerate. The issue could be caused by failing to compile the project.
+2024.05.25 12:09:12 INFO  [error] sbt.librarymanagement.ResolveException: Error downloading com.eed3si9n:sbt-assembly;sbtVersion=1.0;scalaVersion=2.13:1.2.0
+2024.05.25 12:09:12 INFO  [error]   Not found
+2024.05.25 12:09:12 INFO  [error]   Not found
+2024.05.25 12:09:12 INFO  [error]   not found: /Users/cassien/.ivy2/localcom.eed3si9n/sbt-assembly/scala_2.13/sbt_1.0/1.2.0/ivys/ivy.xml
+2024.05.25 12:09:12 INFO  [error]   not found: https://repo1.maven.org/maven2/com/eed3si9n/sbt-assembly_2.13_1.0/1.2.0/sbt-assembly-1.2.0.pom
+2024.05.25 12:09:12 INFO  [error] 	at lmcoursier.CoursierDependencyResolution.unresolvedWarningOrThrow(CoursierDependencyResolution.scala:344)
+2024.05.25 12:09:12 INFO  [error] 	at lmcoursier.CoursierDependencyResolution.$anonfun$update$38(CoursierDependencyResolution.scala:313)
+2024.05.25 12:09:12 INFO  [error] 	at scala.util.Either$LeftProjection.map(Either.scala:573)
+2024.05.25 12:09:12 INFO  [error] 	at lmcoursier.CoursierDependencyResolution.update(CoursierDependencyResolution.scala:313)
+2024.05.25 12:09:12 INFO  [error] 	at sbt.librarymanagement.DependencyResolution.update(DependencyResolution.scala:60)
+2024.05.25 12:09:12 INFO  [error] 	at sbt.internal.LibraryManagement$.resolve$1(LibraryManagement.scala:60)
+2024.05.25 12:09:12 INFO  [error] 	at sbt.internal.LibraryManagement$.$anonfun$cachedUpdate$12(LibraryManagement.scala:134)
+2024.05.25 12:09:12 INFO  [error] 	at sbt.util.Tracked$.$anonfun$lastOutput$1(Tracked.scala:74)
+2024.05.25 12:09:12 INFO  [error] 	at sbt.internal.LibraryManagement$.$anonfun$cachedUpdate$20(LibraryManagement.scala:147)
+2024.05.25 12:09:12 INFO  [error] 	at scala.util.control.Exception$Catch.apply(Exception.scala:228)
+2024.05.25 12:09:12 INFO  [error] 	at sbt.internal.LibraryManagement$.$anonfun$cachedUpdate$11(LibraryManagement.scala:147)
+2024.05.25 12:09:12 INFO  [error] 	at sbt.internal.LibraryManagement$.$anonfun$cachedUpdate$11$adapted(LibraryManagement.scala:128)
+2024.05.25 12:09:12 INFO  [error] 	at sbt.util.Tracked$.$anonfun$inputChangedW$1(Tracked.scala:220)
+2024.05.25 12:09:12 INFO  [error] 	at sbt.internal.LibraryManagement$.cachedUpdate(LibraryManagement.scala:161)
+2024.05.25 12:09:12 INFO  [error] 	at sbt.Classpaths$.$anonfun$updateTask0$1(Defaults.scala:3801)
+2024.05.25 12:09:12 INFO  [error] 	at scala.Function1.$anonfun$compose$1(Function1.scala:49)
+2024.05.25 12:09:12 INFO  [error] 	at sbt.internal.util.$tilde$greater.$anonfun$$u2219$1(TypeFunctions.scala:63)
+2024.05.25 12:09:12 INFO  [error] 	at sbt.std.Transform$$anon$4.work(Transform.scala:69)
+2024.05.25 12:09:12 INFO  [error] 	at sbt.Execute.$anonfun$submit$2(Execute.scala:283)
+2024.05.25 12:09:12 INFO  [error] 	at sbt.internal.util.ErrorHandling$.wideConvert(ErrorHandling.scala:24)
+2024.05.25 12:09:12 INFO  [error] 	at sbt.Execute.work(Execute.scala:292)
+2024.05.25 12:09:12 INFO  [error] 	at sbt.Execute.$anonfun$submit$1(Execute.scala:283)
+2024.05.25 12:09:12 INFO  [error] 	at sbt.ConcurrentRestrictions$$anon$4.$anonfun$submitValid$1(ConcurrentRestrictions.scala:265)
+2024.05.25 12:09:12 INFO  [error] 	at sbt.CompletionService$$anon$2.call(CompletionService.scala:65)
+2024.05.25 12:09:12 INFO  [error] 	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+2024.05.25 12:09:12 INFO  [error] 	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+2024.05.25 12:09:12 INFO  [error] 	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+2024.05.25 12:09:12 INFO  [error] 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+2024.05.25 12:09:12 INFO  [error] 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+2024.05.25 12:09:12 INFO  [error] 	at java.base/java.lang.Thread.run(Thread.java:829)
+2024.05.25 12:09:12 INFO  [error] (update) sbt.librarymanagement.ResolveException: Error downloading com.eed3si9n:sbt-assembly;sbtVersion=1.0;scalaVersion=2.13:1.2.0
+2024.05.25 12:09:12 INFO  [error]   Not found
+2024.05.25 12:09:12 INFO  [error]   Not found
+2024.05.25 12:09:12 INFO  [error]   not found: /Users/cassien/.ivy2/localcom.eed3si9n/sbt-assembly/scala_2.13/sbt_1.0/1.2.0/ivys/ivy.xml
+2024.05.25 12:09:12 INFO  [error]   not found: https://repo1.maven.org/maven2/com/eed3si9n/sbt-assembly_2.13_1.0/1.2.0/sbt-assembly-1.2.0.pom
+2024.05.25 12:09:12 INFO  [error] Total time: 2 s, completed 25 mai 2024 à 12:09:12
+2024.05.25 12:09:12 INFO  time: ran 'sbt bloopInstall' in 17s
+2024.05.25 12:09:12 ERROR sbt command failed: /Users/cassien/Library/Application Support/Coursier/bin/sbt -Dbloop.export-jar-classifiers=sources bloopInstall
+2024.05.25 12:09:12 INFO  Disconnecting from Bloop session...
+2024.05.25 12:09:12 INFO  Shut down connection with build server.
+2024.05.25 12:09:12 INFO  Shut down connection with build server.
+2024.05.25 12:09:12 INFO  Attempting to connect to the build server...
+2024.05.25 12:09:12 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/cassien/Nextcloud/Documents/etudes/EPFL/BA6/CS-320/project/alpine-lsp/.metals/bsp.trace.json or /Users/cassien/Library/Caches/org.scalameta.metals/bsp.trace.json
+2024.05.25 12:09:12 INFO  Attempting to connect to the build server...
+2024.05.25 12:09:12 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/cassien/Nextcloud/Documents/etudes/EPFL/BA6/CS-320/project/alpine-lsp/project/.metals/bsp.trace.json or /Users/cassien/Library/Caches/org.scalameta.metals/bsp.trace.json
+2024.05.25 12:09:12 INFO  time: Connected to build server in 77ms
+2024.05.25 12:09:12 INFO  Connected to Build server: Bloop v1.5.17
+2024.05.25 12:09:14 INFO  time: indexed workspace in 1.83s
+2024.05.25 12:09:14 WARN  no build target for: /Users/cassien/Nextcloud/Documents/etudes/EPFL/BA6/CS-320/project/alpine-lsp/src/main/scala/Main.scala
+2024.05.25 12:09:17 INFO  skipping build import with status 'Installed'
+2024.05.25 12:09:17 INFO  Disconnecting from Bloop session...
+2024.05.25 12:09:17 INFO  Cancelling compilation on Bloop server
+2024.05.25 12:09:17 INFO  Shut down connection with build server.
+2024.05.25 12:09:17 INFO  Shut down connection with build server.
+2024.05.25 12:09:17 INFO  Attempting to connect to the build server...
+2024.05.25 12:09:17 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/cassien/Nextcloud/Documents/etudes/EPFL/BA6/CS-320/project/alpine-lsp/.metals/bsp.trace.json or /Users/cassien/Library/Caches/org.scalameta.metals/bsp.trace.json
+2024.05.25 12:09:17 INFO  Attempting to connect to the build server...
+2024.05.25 12:09:17 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/cassien/Nextcloud/Documents/etudes/EPFL/BA6/CS-320/project/alpine-lsp/project/.metals/bsp.trace.json or /Users/cassien/Library/Caches/org.scalameta.metals/bsp.trace.json
+2024.05.25 12:09:17 INFO  time: Connected to build server in 36ms
+2024.05.25 12:09:17 INFO  Connected to Build server: Bloop v1.5.17
+2024.05.25 12:09:19 INFO  time: indexed workspace in 1.82s
+2024.05.25 12:09:19 WARN  no build target for: /Users/cassien/Nextcloud/Documents/etudes/EPFL/BA6/CS-320/project/alpine-lsp/src/main/scala/Main.scala
+2024.05.25 12:11:08 INFO  Shutting down server
+2024.05.25 12:11:08 INFO  shutting down Metals
+2024.05.25 12:11:08 INFO  Shut down connection with build server.
+2024.05.25 12:11:08 INFO  Shut down connection with build server.
+2024.05.25 12:11:08 INFO  Exiting server
+2024.05.25 12:11:28 INFO  Started: Metals version 1.3.1 in folders '/Users/cassien/Nextcloud/Documents/etudes/EPFL/BA6/CS-320/project/alpine-lsp' for client Visual Studio Code 1.89.1.
+SLF4J(W): Class path contains multiple SLF4J providers.
+SLF4J(W): Found provider [scribe.slf4j.ScribeServiceProvider@35826d40]
+SLF4J(W): Found provider [ch.qos.logback.classic.spi.LogbackServiceProvider@47a05efe]
+SLF4J(W): See https://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J(I): Actual provider is of type [scribe.slf4j.ScribeServiceProvider@35826d40]
+2024.05.25 12:11:28 WARN  Flyway upgrade recommended: H2 2.2.224 is newer than this version of Flyway and support has not been tested. The latest supported version of H2 is 2.2.220.
+mai 25, 2024 12:11:28 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+AVERTISSEMENT: Unmatched cancel notification for request id 7
+mai 25, 2024 12:11:28 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+AVERTISSEMENT: Unmatched cancel notification for request id 8
+2024.05.25 12:11:28 INFO  Attempting to connect to the build server...
+2024.05.25 12:11:28 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/cassien/Nextcloud/Documents/etudes/EPFL/BA6/CS-320/project/alpine-lsp/.metals/bsp.trace.json or /Users/cassien/Library/Caches/org.scalameta.metals/bsp.trace.json
+2024.05.25 12:11:28 INFO  Attempting to connect to the build server...
+2024.05.25 12:11:28 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/cassien/Nextcloud/Documents/etudes/EPFL/BA6/CS-320/project/alpine-lsp/project/.metals/bsp.trace.json or /Users/cassien/Library/Caches/org.scalameta.metals/bsp.trace.json
+2024.05.25 12:11:28 INFO  time: Connected to build server in 0.39s
+2024.05.25 12:11:28 INFO  Connected to Build server: Bloop v1.5.17
+2024.05.25 12:11:32 INFO  time: indexed workspace in 2.75s
+2024.05.25 12:11:34 INFO  time: code lens generation in 1.13s
+2024.05.25 12:11:34 INFO  time: code lens generation in 1.71s
+2024.05.25 12:19:59 INFO  running '/Users/cassien/Library/Application Support/Coursier/bin/sbt -Dbloop.export-jar-classifiers=sources bloopInstall'
+2024.05.25 12:20:03 INFO  [info] welcome to sbt 1.9.9 (Eclipse Adoptium Java 11.0.23)
+2024.05.25 12:20:03 INFO  [info] loading settings for project alpine-lsp-build-build from metals.sbt ...
+2024.05.25 12:20:06 INFO  [info] loading project definition from /Users/cassien/Nextcloud/Documents/etudes/EPFL/BA6/CS-320/project/alpine-lsp/project/project
+2024.05.25 12:20:07 INFO  [info] loading settings for project alpine-lsp-build from metals.sbt ...
+2024.05.25 12:20:07 INFO  [info] loading project definition from /Users/cassien/Nextcloud/Documents/etudes/EPFL/BA6/CS-320/project/alpine-lsp/project
+2024.05.25 12:20:11 INFO  [success] Generated .bloop/alpine-lsp-build.json
+2024.05.25 12:20:11 INFO  [success] Total time: 3 s, completed 25 mai 2024 à 12:20:11
+2024.05.25 12:20:14 INFO  [info] loading settings for project alpine-lsp from build.sbt,plugins.sbt ...
+2024.05.25 12:20:14 INFO  [info] set current project to alpine-lsp (in build file:/Users/cassien/Nextcloud/Documents/etudes/EPFL/BA6/CS-320/project/alpine-lsp/)
+2024.05.25 12:20:17 INFO  [warn] 
+2024.05.25 12:20:17 INFO  [warn] 	Note: Some unresolved dependencies have extra attributes.  Check that these dependencies exist with the requested attributes.
+2024.05.25 12:20:17 INFO  [warn] 		com.eed3si9n:sbt-assembly:1.1.0 (sbtVersion=1.0, scalaVersion=2.13)
+2024.05.25 12:20:17 INFO  [warn] 
+2024.05.25 12:20:17 INFO  [warn] 	Note: Unresolved dependencies path:
+2024.05.25 12:20:17 INFO  [error] Couldn't run bloopGenerate. The issue could be caused by failing to compile the project.
+2024.05.25 12:20:17 INFO  [error] sbt.librarymanagement.ResolveException: Error downloading com.eed3si9n:sbt-assembly;sbtVersion=1.0;scalaVersion=2.13:1.1.0
+2024.05.25 12:20:17 INFO  [error]   Not found
+2024.05.25 12:20:17 INFO  [error]   Not found
+2024.05.25 12:20:17 INFO  [error]   not found: /Users/cassien/.ivy2/localcom.eed3si9n/sbt-assembly/scala_2.13/sbt_1.0/1.1.0/ivys/ivy.xml
+2024.05.25 12:20:17 INFO  [error]   not found: https://repo1.maven.org/maven2/com/eed3si9n/sbt-assembly_2.13_1.0/1.1.0/sbt-assembly-1.1.0.pom
+2024.05.25 12:20:17 INFO  [error] 	at lmcoursier.CoursierDependencyResolution.unresolvedWarningOrThrow(CoursierDependencyResolution.scala:344)
+2024.05.25 12:20:17 INFO  [error] 	at lmcoursier.CoursierDependencyResolution.$anonfun$update$38(CoursierDependencyResolution.scala:313)
+2024.05.25 12:20:17 INFO  [error] 	at scala.util.Either$LeftProjection.map(Either.scala:573)
+2024.05.25 12:20:17 INFO  [error] 	at lmcoursier.CoursierDependencyResolution.update(CoursierDependencyResolution.scala:313)
+2024.05.25 12:20:17 INFO  [error] 	at sbt.librarymanagement.DependencyResolution.update(DependencyResolution.scala:60)
+2024.05.25 12:20:17 INFO  [error] 	at sbt.internal.LibraryManagement$.resolve$1(LibraryManagement.scala:60)
+2024.05.25 12:20:17 INFO  [error] 	at sbt.internal.LibraryManagement$.$anonfun$cachedUpdate$12(LibraryManagement.scala:134)
+2024.05.25 12:20:17 INFO  [error] 	at sbt.util.Tracked$.$anonfun$lastOutput$1(Tracked.scala:74)
+2024.05.25 12:20:17 INFO  [error] 	at sbt.internal.LibraryManagement$.$anonfun$cachedUpdate$20(LibraryManagement.scala:147)
+2024.05.25 12:20:17 INFO  [error] 	at scala.util.control.Exception$Catch.apply(Exception.scala:228)
+2024.05.25 12:20:17 INFO  [error] 	at sbt.internal.LibraryManagement$.$anonfun$cachedUpdate$11(LibraryManagement.scala:147)
+2024.05.25 12:20:17 INFO  [error] 	at sbt.internal.LibraryManagement$.$anonfun$cachedUpdate$11$adapted(LibraryManagement.scala:128)
+2024.05.25 12:20:17 INFO  [error] 	at sbt.util.Tracked$.$anonfun$inputChangedW$1(Tracked.scala:220)
+2024.05.25 12:20:17 INFO  [error] 	at sbt.internal.LibraryManagement$.cachedUpdate(LibraryManagement.scala:161)
+2024.05.25 12:20:17 INFO  [error] 	at sbt.Classpaths$.$anonfun$updateTask0$1(Defaults.scala:3801)
+2024.05.25 12:20:17 INFO  [error] 	at scala.Function1.$anonfun$compose$1(Function1.scala:49)
+2024.05.25 12:20:17 INFO  [error] 	at sbt.internal.util.$tilde$greater.$anonfun$$u2219$1(TypeFunctions.scala:63)
+2024.05.25 12:20:17 INFO  [error] 	at sbt.std.Transform$$anon$4.work(Transform.scala:69)
+2024.05.25 12:20:17 INFO  [error] 	at sbt.Execute.$anonfun$submit$2(Execute.scala:283)
+2024.05.25 12:20:17 INFO  [error] 	at sbt.internal.util.ErrorHandling$.wideConvert(ErrorHandling.scala:24)
+2024.05.25 12:20:17 INFO  [error] 	at sbt.Execute.work(Execute.scala:292)
+2024.05.25 12:20:17 INFO  [error] 	at sbt.Execute.$anonfun$submit$1(Execute.scala:283)
+2024.05.25 12:20:17 INFO  [error] 	at sbt.ConcurrentRestrictions$$anon$4.$anonfun$submitValid$1(ConcurrentRestrictions.scala:265)
+2024.05.25 12:20:17 INFO  [error] 	at sbt.CompletionService$$anon$2.call(CompletionService.scala:65)
+2024.05.25 12:20:17 INFO  [error] 	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+2024.05.25 12:20:17 INFO  [error] 	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+2024.05.25 12:20:17 INFO  [error] 	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+2024.05.25 12:20:17 INFO  [error] 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+2024.05.25 12:20:17 INFO  [error] 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+2024.05.25 12:20:17 INFO  [error] 	at java.base/java.lang.Thread.run(Thread.java:829)
+2024.05.25 12:20:17 INFO  [error] (update) sbt.librarymanagement.ResolveException: Error downloading com.eed3si9n:sbt-assembly;sbtVersion=1.0;scalaVersion=2.13:1.1.0
+2024.05.25 12:20:17 INFO  [error]   Not found
+2024.05.25 12:20:17 INFO  [error]   Not found
+2024.05.25 12:20:17 INFO  [error]   not found: /Users/cassien/.ivy2/localcom.eed3si9n/sbt-assembly/scala_2.13/sbt_1.0/1.1.0/ivys/ivy.xml
+2024.05.25 12:20:17 INFO  [error]   not found: https://repo1.maven.org/maven2/com/eed3si9n/sbt-assembly_2.13_1.0/1.1.0/sbt-assembly-1.1.0.pom
+2024.05.25 12:20:17 INFO  [error] Total time: 2 s, completed 25 mai 2024 à 12:20:17
+2024.05.25 12:20:17 INFO  time: ran 'sbt bloopInstall' in 18s
+2024.05.25 12:20:17 ERROR sbt command failed: /Users/cassien/Library/Application Support/Coursier/bin/sbt -Dbloop.export-jar-classifiers=sources bloopInstall
+2024.05.25 12:20:17 INFO  Disconnecting from Bloop session...
+2024.05.25 12:20:17 INFO  Shut down connection with build server.
+2024.05.25 12:20:17 INFO  Shut down connection with build server.
+2024.05.25 12:20:17 INFO  Attempting to connect to the build server...
+2024.05.25 12:20:17 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/cassien/Nextcloud/Documents/etudes/EPFL/BA6/CS-320/project/alpine-lsp/.metals/bsp.trace.json or /Users/cassien/Library/Caches/org.scalameta.metals/bsp.trace.json
+2024.05.25 12:20:17 INFO  Attempting to connect to the build server...
+2024.05.25 12:20:17 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/cassien/Nextcloud/Documents/etudes/EPFL/BA6/CS-320/project/alpine-lsp/project/.metals/bsp.trace.json or /Users/cassien/Library/Caches/org.scalameta.metals/bsp.trace.json
+2024.05.25 12:20:17 INFO  time: Connected to build server in 82ms
+2024.05.25 12:20:17 INFO  Connected to Build server: Bloop v1.5.17
+2024.05.25 12:20:19 INFO  time: indexed workspace in 2.09s
+2024.05.25 12:20:35 INFO  Shutting down server
+2024.05.25 12:20:35 INFO  shutting down Metals
+2024.05.25 12:20:35 INFO  Shut down connection with build server.
+2024.05.25 12:20:35 INFO  Shut down connection with build server.
+2024.05.25 12:20:35 INFO  Exiting server
+2024.05.25 12:20:54 INFO  Started: Metals version 1.3.1 in folders '/Users/cassien/Nextcloud/Documents/etudes/EPFL/BA6/CS-320/project/alpine-lsp' for client Visual Studio Code 1.89.1.
+SLF4J(W): Class path contains multiple SLF4J providers.
+SLF4J(W): Found provider [scribe.slf4j.ScribeServiceProvider@174ad201]
+SLF4J(W): Found provider [ch.qos.logback.classic.spi.LogbackServiceProvider@207e7b78]
+SLF4J(W): See https://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J(I): Actual provider is of type [scribe.slf4j.ScribeServiceProvider@174ad201]
+2024.05.25 12:20:54 WARN  Flyway upgrade recommended: H2 2.2.224 is newer than this version of Flyway and support has not been tested. The latest supported version of H2 is 2.2.220.
+2024.05.25 12:20:55 INFO  Attempting to connect to the build server...
+mai 25, 2024 12:20:55 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+AVERTISSEMENT: Unmatched cancel notification for request id 4
+mai 25, 2024 12:20:55 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+AVERTISSEMENT: Unmatched cancel notification for request id 5
+2024.05.25 12:20:55 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/cassien/Nextcloud/Documents/etudes/EPFL/BA6/CS-320/project/alpine-lsp/.metals/bsp.trace.json or /Users/cassien/Library/Caches/org.scalameta.metals/bsp.trace.json
+2024.05.25 12:20:55 INFO  Attempting to connect to the build server...
+2024.05.25 12:20:55 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/cassien/Nextcloud/Documents/etudes/EPFL/BA6/CS-320/project/alpine-lsp/project/.metals/bsp.trace.json or /Users/cassien/Library/Caches/org.scalameta.metals/bsp.trace.json
+2024.05.25 12:20:55 INFO  time: Connected to build server in 0.3s
+2024.05.25 12:20:55 INFO  Connected to Build server: Bloop v1.5.17
+2024.05.25 12:20:58 INFO  time: indexed workspace in 2.63s
+2024.05.25 12:20:59 INFO  time: code lens generation in 1.29s
+2024.05.25 12:20:59 INFO  time: code lens generation in 1.56s
+2024.05.25 12:24:02 INFO  skipping build import with status 'Installed'
+2024.05.25 12:24:02 INFO  Disconnecting from Bloop session...
+2024.05.25 12:24:02 INFO  Cancelling compilation on Bloop server
+2024.05.25 12:24:02 INFO  Shut down connection with build server.
+2024.05.25 12:24:02 INFO  Shut down connection with build server.
+2024.05.25 12:24:02 INFO  Attempting to connect to the build server...
+2024.05.25 12:24:02 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/cassien/Nextcloud/Documents/etudes/EPFL/BA6/CS-320/project/alpine-lsp/.metals/bsp.trace.json or /Users/cassien/Library/Caches/org.scalameta.metals/bsp.trace.json
+2024.05.25 12:24:02 INFO  Attempting to connect to the build server...
+2024.05.25 12:24:02 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/cassien/Nextcloud/Documents/etudes/EPFL/BA6/CS-320/project/alpine-lsp/project/.metals/bsp.trace.json or /Users/cassien/Library/Caches/org.scalameta.metals/bsp.trace.json
+2024.05.25 12:24:02 INFO  time: Connected to build server in 57ms
+2024.05.25 12:24:02 INFO  Connected to Build server: Bloop v1.5.17
+2024.05.25 12:24:04 INFO  time: indexed workspace in 2.26s
+mai 25, 2024 12:24:08 PM scala.meta.internal.pc.CompilerAccess handleError
+GRAVE: A severe compiler error occurred, full details of the error can be found in the error report /Users/cassien/Nextcloud/Documents/etudes/EPFL/BA6/CS-320/project/alpine-lsp/.metals/.reports/metals-full/2024-05-25/r_compiler-error_(alpine-lsp-build)_12-24-08-739.md
+mai 25, 2024 12:24:10 PM scala.meta.internal.pc.CompilerAccess handleError
+GRAVE: A severe compiler error occurred, full details of the error can be found in the error report /Users/cassien/Nextcloud/Documents/etudes/EPFL/BA6/CS-320/project/alpine-lsp/.metals/.reports/metals-full/2024-05-25/r_compiler-error_(alpine-lsp-build)_12-24-10-503.md
+2024.05.25 12:24:16 INFO  running '/Users/cassien/Library/Application Support/Coursier/bin/sbt -Dbloop.export-jar-classifiers=sources bloopInstall'
+2024.05.25 12:24:21 INFO  [info] welcome to sbt 1.9.9 (Eclipse Adoptium Java 11.0.23)
+2024.05.25 12:24:23 INFO  [info] loading settings for project alpine-lsp-build-build from metals.sbt ...
+2024.05.25 12:24:25 INFO  [info] loading project definition from /Users/cassien/Nextcloud/Documents/etudes/EPFL/BA6/CS-320/project/alpine-lsp/project/project
+2024.05.25 12:24:27 INFO  [info] loading settings for project alpine-lsp-build from metals.sbt ...
+2024.05.25 12:24:27 INFO  [info] loading project definition from /Users/cassien/Nextcloud/Documents/etudes/EPFL/BA6/CS-320/project/alpine-lsp/project
+2024.05.25 12:24:31 INFO  [success] Generated .bloop/alpine-lsp-build.json
+2024.05.25 12:24:31 INFO  [success] Total time: 4 s, completed 25 mai 2024 à 12:24:31
+2024.05.25 12:24:34 INFO  [info] loading settings for project alpine-lsp from build.sbt,plugins.sbt ...
+2024.05.25 12:24:34 INFO  [info] set current project to alpine-lsp (in build file:/Users/cassien/Nextcloud/Documents/etudes/EPFL/BA6/CS-320/project/alpine-lsp/)
+2024.05.25 12:24:36 INFO  [warn] 
+2024.05.25 12:24:36 INFO  [warn] 	Note: Some unresolved dependencies have extra attributes.  Check that these dependencies exist with the requested attributes.
+2024.05.25 12:24:36 INFO  [warn] 		com.eed3si9n:sbt-assembly:1.2.0 (sbtVersion=1.0, scalaVersion=2.13)
+2024.05.25 12:24:36 INFO  [warn] 
+2024.05.25 12:24:36 INFO  [warn] 	Note: Unresolved dependencies path:
+2024.05.25 12:24:36 INFO  [error] Couldn't run bloopGenerate. The issue could be caused by failing to compile the project.
+2024.05.25 12:24:36 INFO  [error] sbt.librarymanagement.ResolveException: Error downloading com.eed3si9n:sbt-assembly;sbtVersion=1.0;scalaVersion=2.13:1.2.0
+2024.05.25 12:24:36 INFO  [error]   Not found
+2024.05.25 12:24:36 INFO  [error]   Not found
+2024.05.25 12:24:36 INFO  [error]   not found: /Users/cassien/.ivy2/localcom.eed3si9n/sbt-assembly/scala_2.13/sbt_1.0/1.2.0/ivys/ivy.xml
+2024.05.25 12:24:36 INFO  [error]   not found: https://repo1.maven.org/maven2/com/eed3si9n/sbt-assembly_2.13_1.0/1.2.0/sbt-assembly-1.2.0.pom
+2024.05.25 12:24:36 INFO  [error] 	at lmcoursier.CoursierDependencyResolution.unresolvedWarningOrThrow(CoursierDependencyResolution.scala:344)
+2024.05.25 12:24:36 INFO  [error] 	at lmcoursier.CoursierDependencyResolution.$anonfun$update$38(CoursierDependencyResolution.scala:313)
+2024.05.25 12:24:36 INFO  [error] 	at scala.util.Either$LeftProjection.map(Either.scala:573)
+2024.05.25 12:24:36 INFO  [error] 	at lmcoursier.CoursierDependencyResolution.update(CoursierDependencyResolution.scala:313)
+2024.05.25 12:24:36 INFO  [error] 	at sbt.librarymanagement.DependencyResolution.update(DependencyResolution.scala:60)
+2024.05.25 12:24:36 INFO  [error] 	at sbt.internal.LibraryManagement$.resolve$1(LibraryManagement.scala:60)
+2024.05.25 12:24:36 INFO  [error] 	at sbt.internal.LibraryManagement$.$anonfun$cachedUpdate$12(LibraryManagement.scala:134)
+2024.05.25 12:24:36 INFO  [error] 	at sbt.util.Tracked$.$anonfun$lastOutput$1(Tracked.scala:74)
+2024.05.25 12:24:36 INFO  [error] 	at sbt.internal.LibraryManagement$.$anonfun$cachedUpdate$20(LibraryManagement.scala:147)
+2024.05.25 12:24:36 INFO  [error] 	at scala.util.control.Exception$Catch.apply(Exception.scala:228)
+2024.05.25 12:24:36 INFO  [error] 	at sbt.internal.LibraryManagement$.$anonfun$cachedUpdate$11(LibraryManagement.scala:147)
+2024.05.25 12:24:36 INFO  [error] 	at sbt.internal.LibraryManagement$.$anonfun$cachedUpdate$11$adapted(LibraryManagement.scala:128)
+2024.05.25 12:24:36 INFO  [error] 	at sbt.util.Tracked$.$anonfun$inputChangedW$1(Tracked.scala:220)
+2024.05.25 12:24:36 INFO  [error] 	at sbt.internal.LibraryManagement$.cachedUpdate(LibraryManagement.scala:161)
+2024.05.25 12:24:36 INFO  [error] 	at sbt.Classpaths$.$anonfun$updateTask0$1(Defaults.scala:3801)
+2024.05.25 12:24:36 INFO  [error] 	at scala.Function1.$anonfun$compose$1(Function1.scala:49)
+2024.05.25 12:24:36 INFO  [error] 	at sbt.internal.util.$tilde$greater.$anonfun$$u2219$1(TypeFunctions.scala:63)
+2024.05.25 12:24:36 INFO  [error] 	at sbt.std.Transform$$anon$4.work(Transform.scala:69)
+2024.05.25 12:24:36 INFO  [error] 	at sbt.Execute.$anonfun$submit$2(Execute.scala:283)
+2024.05.25 12:24:36 INFO  [error] 	at sbt.internal.util.ErrorHandling$.wideConvert(ErrorHandling.scala:24)
+2024.05.25 12:24:36 INFO  [error] 	at sbt.Execute.work(Execute.scala:292)
+2024.05.25 12:24:36 INFO  [error] 	at sbt.Execute.$anonfun$submit$1(Execute.scala:283)
+2024.05.25 12:24:36 INFO  [error] 	at sbt.ConcurrentRestrictions$$anon$4.$anonfun$submitValid$1(ConcurrentRestrictions.scala:265)
+2024.05.25 12:24:36 INFO  [error] 	at sbt.CompletionService$$anon$2.call(CompletionService.scala:65)
+2024.05.25 12:24:36 INFO  [error] 	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+2024.05.25 12:24:36 INFO  [error] 	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+2024.05.25 12:24:36 INFO  [error] 	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+2024.05.25 12:24:36 INFO  [error] 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+2024.05.25 12:24:36 INFO  [error] 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+2024.05.25 12:24:36 INFO  [error] 	at java.base/java.lang.Thread.run(Thread.java:829)
+2024.05.25 12:24:36 INFO  [error] (update) sbt.librarymanagement.ResolveException: Error downloading com.eed3si9n:sbt-assembly;sbtVersion=1.0;scalaVersion=2.13:1.2.0
+2024.05.25 12:24:36 INFO  [error]   Not found
+2024.05.25 12:24:36 INFO  [error]   Not found
+2024.05.25 12:24:36 INFO  [error]   not found: /Users/cassien/.ivy2/localcom.eed3si9n/sbt-assembly/scala_2.13/sbt_1.0/1.2.0/ivys/ivy.xml
+2024.05.25 12:24:36 INFO  [error]   not found: https://repo1.maven.org/maven2/com/eed3si9n/sbt-assembly_2.13_1.0/1.2.0/sbt-assembly-1.2.0.pom
+2024.05.25 12:24:36 INFO  [error] Total time: 2 s, completed 25 mai 2024 à 12:24:37
+2024.05.25 12:24:37 INFO  time: ran 'sbt bloopInstall' in 21s
+2024.05.25 12:24:37 ERROR sbt command failed: /Users/cassien/Library/Application Support/Coursier/bin/sbt -Dbloop.export-jar-classifiers=sources bloopInstall
+2024.05.25 12:24:37 INFO  Disconnecting from Bloop session...
+2024.05.25 12:24:37 INFO  Shut down connection with build server.
+2024.05.25 12:24:37 INFO  Shut down connection with build server.
+2024.05.25 12:24:37 INFO  Attempting to connect to the build server...
+2024.05.25 12:24:37 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/cassien/Nextcloud/Documents/etudes/EPFL/BA6/CS-320/project/alpine-lsp/.metals/bsp.trace.json or /Users/cassien/Library/Caches/org.scalameta.metals/bsp.trace.json
+2024.05.25 12:24:37 INFO  Attempting to connect to the build server...
+2024.05.25 12:24:37 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/cassien/Nextcloud/Documents/etudes/EPFL/BA6/CS-320/project/alpine-lsp/project/.metals/bsp.trace.json or /Users/cassien/Library/Caches/org.scalameta.metals/bsp.trace.json
+2024.05.25 12:24:37 INFO  time: Connected to build server in 60ms
+2024.05.25 12:24:37 INFO  Connected to Build server: Bloop v1.5.17
+2024.05.25 12:24:39 INFO  time: indexed workspace in 1.92s
+2024.05.25 12:25:05 INFO  skipping build import with status 'Installed'
+2024.05.25 12:25:05 INFO  Disconnecting from Bloop session...
+2024.05.25 12:25:05 INFO  Cancelling compilation on Bloop server
+2024.05.25 12:25:05 INFO  Shut down connection with build server.
+2024.05.25 12:25:05 INFO  Shut down connection with build server.
+mai 25, 2024 12:25:05 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint notify
+INFOS: Failed to send notification message.
+org.eclipse.lsp4j.jsonrpc.JsonRpcException: java.nio.channels.AsynchronousCloseException
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageConsumer.consume(StreamMessageConsumer.java:72)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.notify(RemoteEndpoint.java:126)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.sendCancelNotification(RemoteEndpoint.java:180)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint$1.cancel(RemoteEndpoint.java:150)
+	at scala.meta.internal.metals.utils.FutureWithTimeout$$anon$1.$anonfun$cancel$1(FutureWithTimeout.scala:37)
+	at scala.runtime.java8.JFunction0$mcZ$sp.apply(JFunction0$mcZ$sp.scala:17)
+	at scala.util.Try$.apply(Try.scala:217)
+	at scala.meta.internal.metals.utils.FutureWithTimeout$$anon$1.cancel(FutureWithTimeout.scala:37)
+	at scala.meta.internal.metals.Cancelable$.$anonfun$cancelAll$1(Cancelable.scala:29)
+	at scala.collection.immutable.List.foreach(List.scala:334)
+	at scala.meta.internal.metals.Cancelable$.cancelAll(Cancelable.scala:28)
+	at scala.meta.internal.metals.MutableCancelable.cancel(MutableCancelable.scala:25)
+	at scala.meta.internal.metals.utils.RequestRegistry.cancel(RequestRegistry.scala:94)
+	at scala.meta.internal.metals.BuildServerConnection.cancel(BuildServerConnection.scala:447)
+	at scala.meta.internal.metals.BuildServerConnection.$anonfun$shutdown$1(BuildServerConnection.scala:179)
+	at scala.meta.internal.metals.BuildServerConnection.$anonfun$shutdown$1$adapted(BuildServerConnection.scala:171)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: java.nio.channels.AsynchronousCloseException
+	at java.base/java.nio.channels.spi.AbstractInterruptibleChannel.end(AbstractInterruptibleChannel.java:203)
+	at java.base/sun.nio.ch.SinkChannelImpl.endWrite(SinkChannelImpl.java:268)
+	at java.base/sun.nio.ch.SinkChannelImpl.write(SinkChannelImpl.java:290)
+	at java.base/sun.nio.ch.ChannelOutputStream.writeFully(ChannelOutputStream.java:68)
+	at java.base/sun.nio.ch.ChannelOutputStream.write(ChannelOutputStream.java:102)
+	at java.base/java.io.OutputStream.write(OutputStream.java:124)
+	at java.base/sun.nio.ch.ChannelOutputStream.write(ChannelOutputStream.java:79)
+	at scala.meta.internal.metals.ClosableOutputStream.write(ClosableOutputStream.scala:26)
+	at java.base/java.io.FilterOutputStream.write(FilterOutputStream.java:139)
+	at java.base/java.io.FilterOutputStream.write(FilterOutputStream.java:110)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageConsumer.consume(StreamMessageConsumer.java:67)
+	... 19 more
+
+2024.05.25 12:25:05 INFO  Attempting to connect to the build server...
+2024.05.25 12:25:05 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/cassien/Nextcloud/Documents/etudes/EPFL/BA6/CS-320/project/alpine-lsp/.metals/bsp.trace.json or /Users/cassien/Library/Caches/org.scalameta.metals/bsp.trace.json
+2024.05.25 12:25:05 INFO  Attempting to connect to the build server...
+2024.05.25 12:25:05 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/cassien/Nextcloud/Documents/etudes/EPFL/BA6/CS-320/project/alpine-lsp/project/.metals/bsp.trace.json or /Users/cassien/Library/Caches/org.scalameta.metals/bsp.trace.json
+2024.05.25 12:25:05 INFO  time: Connected to build server in 62ms
+2024.05.25 12:25:05 INFO  Connected to Build server: Bloop v1.5.17
+2024.05.25 12:25:07 INFO  time: indexed workspace in 2.08s
+mai 25, 2024 12:25:14 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+AVERTISSEMENT: Unmatched cancel notification for request id 96
+2024.05.25 12:25:15 INFO  skipping build import with status 'Installed'
+2024.05.25 12:25:15 INFO  Disconnecting from Bloop session...
+2024.05.25 12:25:15 INFO  Cancelling compilation on Bloop server
+2024.05.25 12:25:15 INFO  Shut down connection with build server.
+2024.05.25 12:25:15 INFO  Shut down connection with build server.
+2024.05.25 12:25:15 INFO  Attempting to connect to the build server...
+2024.05.25 12:25:15 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/cassien/Nextcloud/Documents/etudes/EPFL/BA6/CS-320/project/alpine-lsp/.metals/bsp.trace.json or /Users/cassien/Library/Caches/org.scalameta.metals/bsp.trace.json
+2024.05.25 12:25:15 INFO  Attempting to connect to the build server...
+2024.05.25 12:25:15 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/cassien/Nextcloud/Documents/etudes/EPFL/BA6/CS-320/project/alpine-lsp/project/.metals/bsp.trace.json or /Users/cassien/Library/Caches/org.scalameta.metals/bsp.trace.json
+2024.05.25 12:25:15 INFO  time: Connected to build server in 82ms
+2024.05.25 12:25:15 INFO  Connected to Build server: Bloop v1.5.17
+2024.05.25 12:25:17 INFO  time: indexed workspace in 1.96s
+2024.05.25 12:26:35 INFO  no build target found for /Users/cassien/Nextcloud/Documents/etudes/EPFL/BA6/CS-320/project/alpine-lsp/project/plugins.sbt. Using presentation compiler with project's scala-library version: 2.12.18
+2024.05.25 12:26:35 WARN  no build target for: /Users/cassien/Nextcloud/Documents/etudes/EPFL/BA6/CS-320/project/alpine-lsp/project/plugins.sbt
+2024.05.25 12:26:37 INFO  running '/Users/cassien/Library/Application Support/Coursier/bin/sbt -Dbloop.export-jar-classifiers=sources bloopInstall'
+2024.05.25 12:26:41 INFO  [info] welcome to sbt 1.9.9 (Eclipse Adoptium Java 11.0.23)
+2024.05.25 12:26:45 INFO  [info] loading settings for project alpine-lsp-build-build-build from metals.sbt ...
+2024.05.25 12:26:47 INFO  [info] loading project definition from /Users/cassien/Nextcloud/Documents/etudes/EPFL/BA6/CS-320/project/alpine-lsp/project/project/project
+2024.05.25 12:26:51 INFO  [info] loading settings for project alpine-lsp-build-build from metals.sbt ...
+2024.05.25 12:26:51 INFO  [info] loading project definition from /Users/cassien/Nextcloud/Documents/etudes/EPFL/BA6/CS-320/project/alpine-lsp/project/project
+2024.05.25 12:26:56 INFO  [success] Generated .bloop/alpine-lsp-build-build.json
+2024.05.25 12:26:56 INFO  [success] Total time: 5 s, completed 25 mai 2024 à 12:26:56
+2024.05.25 12:26:58 INFO  [info] loading settings for project alpine-lsp-build from metals.sbt,plugins.sbt ...
+2024.05.25 12:26:58 INFO  [info] loading project definition from /Users/cassien/Nextcloud/Documents/etudes/EPFL/BA6/CS-320/project/alpine-lsp/project
+2024.05.25 12:27:04 INFO  [success] Generated .bloop/alpine-lsp-build.json
+2024.05.25 12:27:04 INFO  [success] Total time: 6 s, completed 25 mai 2024 à 12:27:05
+2024.05.25 12:27:09 ERROR /Users/cassien/Nextcloud/Documents/etudes/EPFL/BA6/CS-320/project/alpine-lsp/build.sbt:16: warning: method in in trait ScopingSetting is deprecated (since 1.5.0): `in` is deprecated; migrate to slash syntax - https://www.scala-sbt.org/1.x/docs/Migrating-from-sbt-013x.html#slash
+2024.05.25 12:27:09 ERROR mainClass in Compile := Some("Main")
+2024.05.25 12:27:09 ERROR           ^
+2024.05.25 12:27:09 INFO  [info] loading settings for project alpine-lsp from build.sbt ...
+2024.05.25 12:27:09 INFO  [info] set current project to alpine-lsp (in build file:/Users/cassien/Nextcloud/Documents/etudes/EPFL/BA6/CS-320/project/alpine-lsp/)
+2024.05.25 12:27:09 INFO  [success] Generated .bloop/alpine-lsp.json
+2024.05.25 12:27:09 INFO  [success] Generated .bloop/alpine-lsp-test.json
+2024.05.25 12:27:09 INFO  [success] Total time: 0 s, completed 25 mai 2024 à 12:27:10
+2024.05.25 12:27:10 INFO  time: ran 'sbt bloopInstall' in 32s
+2024.05.25 12:27:10 INFO  Disconnecting from Bloop session...
+2024.05.25 12:27:10 INFO  Shut down connection with build server.
+2024.05.25 12:27:10 INFO  Shut down connection with build server.
+2024.05.25 12:27:10 INFO  Attempting to connect to the build server...
+2024.05.25 12:27:10 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/cassien/Nextcloud/Documents/etudes/EPFL/BA6/CS-320/project/alpine-lsp/.metals/bsp.trace.json or /Users/cassien/Library/Caches/org.scalameta.metals/bsp.trace.json
+2024.05.25 12:27:10 INFO  Attempting to connect to the build server...
+2024.05.25 12:27:10 INFO  Attempting to connect to the build server...
+2024.05.25 12:27:10 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/cassien/Nextcloud/Documents/etudes/EPFL/BA6/CS-320/project/alpine-lsp/project/.metals/bsp.trace.json or /Users/cassien/Library/Caches/org.scalameta.metals/bsp.trace.json
+2024.05.25 12:27:10 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/cassien/Nextcloud/Documents/etudes/EPFL/BA6/CS-320/project/alpine-lsp/project/project/.metals/bsp.trace.json or /Users/cassien/Library/Caches/org.scalameta.metals/bsp.trace.json
+2024.05.25 12:27:10 INFO  time: Connected to build server in 85ms
+2024.05.25 12:27:10 INFO  Connected to Build server: Bloop v1.5.17
+2024.05.25 12:27:14 INFO  time: indexed workspace in 3.79s
+2024.05.25 12:28:29 INFO  compiling alpine-lsp (1 scala source)
+2024.05.25 12:28:31 INFO  time: compiled alpine-lsp in 1.33s
+2024.05.25 12:28:51 INFO  compiling alpine-lsp (1 scala source)
+2024.05.25 12:28:51 INFO  time: compiled alpine-lsp in 0.84s
+2024.05.25 12:30:52 WARN  Target root /Users/cassien/Nextcloud/Documents/etudes/EPFL/BA6/CS-320/project/alpine-lsp/.bloop/alpine-lsp/bloop-bsp-clients-classes/classes-Metals-BOJzEqFMT2GCsdnYpoi8bA== does not exist
+2024.05.25 12:30:52 INFO  Shutting down server
+2024.05.25 12:30:52 INFO  shutting down Metals
+2024.05.25 12:30:52 INFO  Shut down connection with build server.
+2024.05.25 12:30:52 INFO  Shut down connection with build server.
+2024.05.25 12:30:52 INFO  Shut down connection with build server.
+2024.05.25 12:30:52 INFO  Exiting server
+2024.05.25 12:31:31 INFO  Started: Metals version 1.3.1 in folders '/Users/cassien/Nextcloud/Documents/etudes/EPFL/BA6/CS-320/project/Alpine-Extension/alpine-lsp' for client Visual Studio Code 1.89.1.
+SLF4J(W): Class path contains multiple SLF4J providers.
+SLF4J(W): Found provider [scribe.slf4j.ScribeServiceProvider@386f3852]
+SLF4J(W): Found provider [ch.qos.logback.classic.spi.LogbackServiceProvider@c944732]
+SLF4J(W): See https://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J(I): Actual provider is of type [scribe.slf4j.ScribeServiceProvider@386f3852]
+2024.05.25 12:31:36 WARN  Flyway upgrade recommended: H2 2.2.224 is newer than this version of Flyway and support has not been tested. The latest supported version of H2 is 2.2.220.
+2024.05.25 12:31:36 INFO  Attempting to connect to the build server...
+2024.05.25 12:31:36 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/cassien/Nextcloud/Documents/etudes/EPFL/BA6/CS-320/project/Alpine-Extension/alpine-lsp/.metals/bsp.trace.json or /Users/cassien/Library/Caches/org.scalameta.metals/bsp.trace.json
+2024.05.25 12:31:36 INFO  Attempting to connect to the build server...
+2024.05.25 12:31:36 INFO  Attempting to connect to the build server...
+2024.05.25 12:31:36 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/cassien/Nextcloud/Documents/etudes/EPFL/BA6/CS-320/project/Alpine-Extension/alpine-lsp/project/project/.metals/bsp.trace.json or /Users/cassien/Library/Caches/org.scalameta.metals/bsp.trace.json
+2024.05.25 12:31:36 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/cassien/Nextcloud/Documents/etudes/EPFL/BA6/CS-320/project/Alpine-Extension/alpine-lsp/project/.metals/bsp.trace.json or /Users/cassien/Library/Caches/org.scalameta.metals/bsp.trace.json
+2024.05.25 12:31:36 INFO  time: Connected to build server in 0.49s
+2024.05.25 12:31:36 INFO  Connected to Build server: Bloop v1.5.17
+2024.05.25 12:31:41 INFO  time: indexed workspace in 4.95s

@@ -1,0 +1,477 @@
+{
+    "version": "1.4.0",
+    "project": {
+        "name": "alpine-lsp",
+        "directory": "/Users/cassien/Nextcloud/Documents/etudes/EPFL/BA6/CS-320/project/alpine-lsp",
+        "workspaceDir": "/Users/cassien/Nextcloud/Documents/etudes/EPFL/BA6/CS-320/project/alpine-lsp",
+        "sources": [
+            "/Users/cassien/Nextcloud/Documents/etudes/EPFL/BA6/CS-320/project/alpine-lsp/src/main/scala",
+            "/Users/cassien/Nextcloud/Documents/etudes/EPFL/BA6/CS-320/project/alpine-lsp/src/main/scala-2.13",
+            "/Users/cassien/Nextcloud/Documents/etudes/EPFL/BA6/CS-320/project/alpine-lsp/src/main/scala-2",
+            "/Users/cassien/Nextcloud/Documents/etudes/EPFL/BA6/CS-320/project/alpine-lsp/src/main/java",
+            "/Users/cassien/Nextcloud/Documents/etudes/EPFL/BA6/CS-320/project/alpine-lsp/target/scala-2.13/src_managed/main"
+        ],
+        "dependencies": [
+            
+        ],
+        "classpath": [
+            "/Users/cassien/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-library/2.13.12/scala-library-2.13.12.jar",
+            "/Users/cassien/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/modules/scala-parser-combinators_2.13/2.3.0/scala-parser-combinators_2.13-2.3.0.jar",
+            "/Users/cassien/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/eclipse/lsp4j/org.eclipse.lsp4j/0.10.0/org.eclipse.lsp4j-0.10.0.jar",
+            "/Users/cassien/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/eclipse/lsp4j/org.eclipse.lsp4j.generator/0.10.0/org.eclipse.lsp4j.generator-0.10.0.jar",
+            "/Users/cassien/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/eclipse/lsp4j/org.eclipse.lsp4j.jsonrpc/0.10.0/org.eclipse.lsp4j.jsonrpc-0.10.0.jar",
+            "/Users/cassien/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/eclipse/xtend/org.eclipse.xtend.lib/2.19.0/org.eclipse.xtend.lib-2.19.0.jar",
+            "/Users/cassien/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/google/code/gson/gson/2.8.2/gson-2.8.2.jar",
+            "/Users/cassien/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/eclipse/xtext/org.eclipse.xtext.xbase.lib/2.19.0/org.eclipse.xtext.xbase.lib-2.19.0.jar",
+            "/Users/cassien/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/eclipse/xtend/org.eclipse.xtend.lib.macro/2.19.0/org.eclipse.xtend.lib.macro-2.19.0.jar",
+            "/Users/cassien/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/google/guava/guava/27.1-jre/guava-27.1-jre.jar",
+            "/Users/cassien/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/google/guava/failureaccess/1.0.1/failureaccess-1.0.1.jar",
+            "/Users/cassien/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/google/guava/listenablefuture/9999.0-empty-to-avoid-conflict-with-guava/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar",
+            "/Users/cassien/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/google/code/findbugs/jsr305/3.0.2/jsr305-3.0.2.jar",
+            "/Users/cassien/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/checkerframework/checker-qual/2.5.2/checker-qual-2.5.2.jar",
+            "/Users/cassien/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/google/errorprone/error_prone_annotations/2.2.0/error_prone_annotations-2.2.0.jar",
+            "/Users/cassien/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/google/j2objc/j2objc-annotations/1.1/j2objc-annotations-1.1.jar",
+            "/Users/cassien/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/codehaus/mojo/animal-sniffer-annotations/1.17/animal-sniffer-annotations-1.17.jar"
+        ],
+        "out": "/Users/cassien/Nextcloud/Documents/etudes/EPFL/BA6/CS-320/project/alpine-lsp/.bloop/alpine-lsp",
+        "classesDir": "/Users/cassien/Nextcloud/Documents/etudes/EPFL/BA6/CS-320/project/alpine-lsp/.bloop/alpine-lsp/scala-2.13/classes",
+        "resources": [
+            "/Users/cassien/Nextcloud/Documents/etudes/EPFL/BA6/CS-320/project/alpine-lsp/src/main/resources",
+            "/Users/cassien/Nextcloud/Documents/etudes/EPFL/BA6/CS-320/project/alpine-lsp/target/scala-2.13/resource_managed/main"
+        ],
+        "scala": {
+            "organization": "org.scala-lang",
+            "name": "scala-compiler",
+            "version": "2.13.12",
+            "options": [
+                "-Xmixin-force-forwarders:false"
+            ],
+            "jars": [
+                "/Users/cassien/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-library/2.13.12/scala-library-2.13.12.jar",
+                "/Users/cassien/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-compiler/2.13.12/scala-compiler-2.13.12.jar",
+                "/Users/cassien/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-reflect/2.13.12/scala-reflect-2.13.12.jar",
+                "/Users/cassien/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/io/github/java-diff-utils/java-diff-utils/4.12/java-diff-utils-4.12.jar",
+                "/Users/cassien/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/jline/jline/3.22.0/jline-3.22.0.jar",
+                "/Users/cassien/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/net/java/dev/jna/jna/5.13.0/jna-5.13.0.jar"
+            ],
+            "setup": {
+                "order": "mixed",
+                "addLibraryToBootClasspath": true,
+                "addCompilerToClasspath": false,
+                "addExtraJarsToClasspath": false,
+                "manageBootClasspath": true,
+                "filterLibraryFromClasspath": true
+            }
+        },
+        "java": {
+            "options": [
+                
+            ]
+        },
+        "test": {
+            "frameworks": [
+                {
+                    "names": [
+                        "org.scalacheck.ScalaCheckFramework"
+                    ]
+                },
+                {
+                    "names": [
+                        "org.specs2.runner.Specs2Framework",
+                        "org.specs2.runner.SpecsFramework"
+                    ]
+                },
+                {
+                    "names": [
+                        "org.specs.runner.SpecsFramework"
+                    ]
+                },
+                {
+                    "names": [
+                        "org.scalatest.tools.Framework",
+                        "org.scalatest.tools.ScalaTestFramework"
+                    ]
+                },
+                {
+                    "names": [
+                        "com.novocode.junit.JUnitFramework"
+                    ]
+                },
+                {
+                    "names": [
+                        "munit.Framework"
+                    ]
+                },
+                {
+                    "names": [
+                        "zio.test.sbt.ZTestFramework"
+                    ]
+                },
+                {
+                    "names": [
+                        "weaver.framework.CatsEffect"
+                    ]
+                },
+                {
+                    "names": [
+                        "hedgehog.sbt.Framework"
+                    ]
+                }
+            ],
+            "options": {
+                "excludes": [
+                    
+                ],
+                "arguments": [
+                    
+                ]
+            }
+        },
+        "platform": {
+            "name": "jvm",
+            "config": {
+                "home": "/Users/cassien/Library/Caches/Coursier/arc/https/github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.23%252B9/OpenJDK11U-jdk_x64_mac_hotspot_11.0.23_9.tar.gz/jdk-11.0.23+9/Contents/Home",
+                "options": [
+                    "-Duser.dir=/Users/cassien/Nextcloud/Documents/etudes/EPFL/BA6/CS-320/project/alpine-lsp"
+                ]
+            },
+            "mainClass": [
+                
+            ],
+            "runtimeConfig": {
+                "home": "/Users/cassien/Library/Caches/Coursier/arc/https/github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.23%252B9/OpenJDK11U-jdk_x64_mac_hotspot_11.0.23_9.tar.gz/jdk-11.0.23+9/Contents/Home",
+                "options": [
+                    "-Duser.dir=/Users/cassien/Nextcloud/Documents/etudes/EPFL/BA6/CS-320/project/alpine-lsp"
+                ]
+            },
+            "classpath": [
+                "/Users/cassien/Nextcloud/Documents/etudes/EPFL/BA6/CS-320/project/alpine-lsp/.bloop/alpine-lsp/scala-2.13/classes",
+                "/Users/cassien/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-library/2.13.12/scala-library-2.13.12.jar",
+                "/Users/cassien/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/modules/scala-parser-combinators_2.13/2.3.0/scala-parser-combinators_2.13-2.3.0.jar",
+                "/Users/cassien/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/eclipse/lsp4j/org.eclipse.lsp4j/0.10.0/org.eclipse.lsp4j-0.10.0.jar",
+                "/Users/cassien/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/eclipse/lsp4j/org.eclipse.lsp4j.generator/0.10.0/org.eclipse.lsp4j.generator-0.10.0.jar",
+                "/Users/cassien/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/eclipse/lsp4j/org.eclipse.lsp4j.jsonrpc/0.10.0/org.eclipse.lsp4j.jsonrpc-0.10.0.jar",
+                "/Users/cassien/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/eclipse/xtend/org.eclipse.xtend.lib/2.19.0/org.eclipse.xtend.lib-2.19.0.jar",
+                "/Users/cassien/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/google/code/gson/gson/2.8.2/gson-2.8.2.jar",
+                "/Users/cassien/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/eclipse/xtext/org.eclipse.xtext.xbase.lib/2.19.0/org.eclipse.xtext.xbase.lib-2.19.0.jar",
+                "/Users/cassien/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/eclipse/xtend/org.eclipse.xtend.lib.macro/2.19.0/org.eclipse.xtend.lib.macro-2.19.0.jar",
+                "/Users/cassien/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/google/guava/guava/27.1-jre/guava-27.1-jre.jar",
+                "/Users/cassien/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/google/guava/failureaccess/1.0.1/failureaccess-1.0.1.jar",
+                "/Users/cassien/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/google/guava/listenablefuture/9999.0-empty-to-avoid-conflict-with-guava/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar",
+                "/Users/cassien/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/google/code/findbugs/jsr305/3.0.2/jsr305-3.0.2.jar",
+                "/Users/cassien/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/checkerframework/checker-qual/2.5.2/checker-qual-2.5.2.jar",
+                "/Users/cassien/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/google/errorprone/error_prone_annotations/2.2.0/error_prone_annotations-2.2.0.jar",
+                "/Users/cassien/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/google/j2objc/j2objc-annotations/1.1/j2objc-annotations-1.1.jar",
+                "/Users/cassien/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/codehaus/mojo/animal-sniffer-annotations/1.17/animal-sniffer-annotations-1.17.jar"
+            ]
+        },
+        "resolution": {
+            "modules": [
+                {
+                    "organization": "org.scala-lang",
+                    "name": "scala-library",
+                    "version": "2.13.12",
+                    "configurations": "default",
+                    "artifacts": [
+                        {
+                            "name": "scala-library",
+                            "path": "/Users/cassien/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-library/2.13.12/scala-library-2.13.12.jar"
+                        },
+                        {
+                            "name": "scala-library",
+                            "classifier": "sources",
+                            "path": "/Users/cassien/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-library/2.13.12/scala-library-2.13.12-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.scala-lang.modules",
+                    "name": "scala-parser-combinators_2.13",
+                    "version": "2.3.0",
+                    "configurations": "default",
+                    "artifacts": [
+                        {
+                            "name": "scala-parser-combinators_2.13",
+                            "path": "/Users/cassien/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/modules/scala-parser-combinators_2.13/2.3.0/scala-parser-combinators_2.13-2.3.0.jar"
+                        },
+                        {
+                            "name": "scala-parser-combinators_2.13",
+                            "classifier": "sources",
+                            "path": "/Users/cassien/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/modules/scala-parser-combinators_2.13/2.3.0/scala-parser-combinators_2.13-2.3.0-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.eclipse.lsp4j",
+                    "name": "org.eclipse.lsp4j",
+                    "version": "0.10.0",
+                    "configurations": "default",
+                    "artifacts": [
+                        {
+                            "name": "org.eclipse.lsp4j",
+                            "path": "/Users/cassien/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/eclipse/lsp4j/org.eclipse.lsp4j/0.10.0/org.eclipse.lsp4j-0.10.0.jar"
+                        },
+                        {
+                            "name": "org.eclipse.lsp4j",
+                            "classifier": "sources",
+                            "path": "/Users/cassien/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/eclipse/lsp4j/org.eclipse.lsp4j/0.10.0/org.eclipse.lsp4j-0.10.0-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.eclipse.lsp4j",
+                    "name": "org.eclipse.lsp4j.generator",
+                    "version": "0.10.0",
+                    "configurations": "default",
+                    "artifacts": [
+                        {
+                            "name": "org.eclipse.lsp4j.generator",
+                            "path": "/Users/cassien/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/eclipse/lsp4j/org.eclipse.lsp4j.generator/0.10.0/org.eclipse.lsp4j.generator-0.10.0.jar"
+                        },
+                        {
+                            "name": "org.eclipse.lsp4j.generator",
+                            "classifier": "sources",
+                            "path": "/Users/cassien/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/eclipse/lsp4j/org.eclipse.lsp4j.generator/0.10.0/org.eclipse.lsp4j.generator-0.10.0-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.eclipse.lsp4j",
+                    "name": "org.eclipse.lsp4j.jsonrpc",
+                    "version": "0.10.0",
+                    "configurations": "default",
+                    "artifacts": [
+                        {
+                            "name": "org.eclipse.lsp4j.jsonrpc",
+                            "path": "/Users/cassien/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/eclipse/lsp4j/org.eclipse.lsp4j.jsonrpc/0.10.0/org.eclipse.lsp4j.jsonrpc-0.10.0.jar"
+                        },
+                        {
+                            "name": "org.eclipse.lsp4j.jsonrpc",
+                            "classifier": "sources",
+                            "path": "/Users/cassien/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/eclipse/lsp4j/org.eclipse.lsp4j.jsonrpc/0.10.0/org.eclipse.lsp4j.jsonrpc-0.10.0-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.eclipse.xtend",
+                    "name": "org.eclipse.xtend.lib",
+                    "version": "2.19.0",
+                    "configurations": "default",
+                    "artifacts": [
+                        {
+                            "name": "org.eclipse.xtend.lib",
+                            "path": "/Users/cassien/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/eclipse/xtend/org.eclipse.xtend.lib/2.19.0/org.eclipse.xtend.lib-2.19.0.jar"
+                        },
+                        {
+                            "name": "org.eclipse.xtend.lib",
+                            "classifier": "sources",
+                            "path": "/Users/cassien/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/eclipse/xtend/org.eclipse.xtend.lib/2.19.0/org.eclipse.xtend.lib-2.19.0-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "com.google.code.gson",
+                    "name": "gson",
+                    "version": "2.8.2",
+                    "configurations": "default",
+                    "artifacts": [
+                        {
+                            "name": "gson",
+                            "path": "/Users/cassien/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/google/code/gson/gson/2.8.2/gson-2.8.2.jar"
+                        },
+                        {
+                            "name": "gson",
+                            "classifier": "sources",
+                            "path": "/Users/cassien/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/google/code/gson/gson/2.8.2/gson-2.8.2-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.eclipse.xtext",
+                    "name": "org.eclipse.xtext.xbase.lib",
+                    "version": "2.19.0",
+                    "configurations": "default",
+                    "artifacts": [
+                        {
+                            "name": "org.eclipse.xtext.xbase.lib",
+                            "path": "/Users/cassien/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/eclipse/xtext/org.eclipse.xtext.xbase.lib/2.19.0/org.eclipse.xtext.xbase.lib-2.19.0.jar"
+                        },
+                        {
+                            "name": "org.eclipse.xtext.xbase.lib",
+                            "classifier": "sources",
+                            "path": "/Users/cassien/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/eclipse/xtext/org.eclipse.xtext.xbase.lib/2.19.0/org.eclipse.xtext.xbase.lib-2.19.0-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.eclipse.xtend",
+                    "name": "org.eclipse.xtend.lib.macro",
+                    "version": "2.19.0",
+                    "configurations": "default",
+                    "artifacts": [
+                        {
+                            "name": "org.eclipse.xtend.lib.macro",
+                            "path": "/Users/cassien/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/eclipse/xtend/org.eclipse.xtend.lib.macro/2.19.0/org.eclipse.xtend.lib.macro-2.19.0.jar"
+                        },
+                        {
+                            "name": "org.eclipse.xtend.lib.macro",
+                            "classifier": "sources",
+                            "path": "/Users/cassien/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/eclipse/xtend/org.eclipse.xtend.lib.macro/2.19.0/org.eclipse.xtend.lib.macro-2.19.0-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "com.google.guava",
+                    "name": "guava",
+                    "version": "27.1-jre",
+                    "configurations": "default",
+                    "artifacts": [
+                        {
+                            "name": "guava",
+                            "path": "/Users/cassien/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/google/guava/guava/27.1-jre/guava-27.1-jre.jar"
+                        },
+                        {
+                            "name": "guava",
+                            "classifier": "sources",
+                            "path": "/Users/cassien/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/google/guava/guava/27.1-jre/guava-27.1-jre-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "com.google.guava",
+                    "name": "failureaccess",
+                    "version": "1.0.1",
+                    "configurations": "default",
+                    "artifacts": [
+                        {
+                            "name": "failureaccess",
+                            "path": "/Users/cassien/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/google/guava/failureaccess/1.0.1/failureaccess-1.0.1.jar"
+                        },
+                        {
+                            "name": "failureaccess",
+                            "classifier": "sources",
+                            "path": "/Users/cassien/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/google/guava/failureaccess/1.0.1/failureaccess-1.0.1-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "com.google.guava",
+                    "name": "listenablefuture",
+                    "version": "9999.0-empty-to-avoid-conflict-with-guava",
+                    "configurations": "default",
+                    "artifacts": [
+                        {
+                            "name": "listenablefuture",
+                            "path": "/Users/cassien/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/google/guava/listenablefuture/9999.0-empty-to-avoid-conflict-with-guava/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "com.google.code.findbugs",
+                    "name": "jsr305",
+                    "version": "3.0.2",
+                    "configurations": "default",
+                    "artifacts": [
+                        {
+                            "name": "jsr305",
+                            "path": "/Users/cassien/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/google/code/findbugs/jsr305/3.0.2/jsr305-3.0.2.jar"
+                        },
+                        {
+                            "name": "jsr305",
+                            "classifier": "sources",
+                            "path": "/Users/cassien/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/google/code/findbugs/jsr305/3.0.2/jsr305-3.0.2-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.checkerframework",
+                    "name": "checker-qual",
+                    "version": "2.5.2",
+                    "configurations": "default",
+                    "artifacts": [
+                        {
+                            "name": "checker-qual",
+                            "path": "/Users/cassien/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/checkerframework/checker-qual/2.5.2/checker-qual-2.5.2.jar"
+                        },
+                        {
+                            "name": "checker-qual",
+                            "classifier": "sources",
+                            "path": "/Users/cassien/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/checkerframework/checker-qual/2.5.2/checker-qual-2.5.2-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "com.google.errorprone",
+                    "name": "error_prone_annotations",
+                    "version": "2.2.0",
+                    "configurations": "default",
+                    "artifacts": [
+                        {
+                            "name": "error_prone_annotations",
+                            "path": "/Users/cassien/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/google/errorprone/error_prone_annotations/2.2.0/error_prone_annotations-2.2.0.jar"
+                        },
+                        {
+                            "name": "error_prone_annotations",
+                            "classifier": "sources",
+                            "path": "/Users/cassien/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/google/errorprone/error_prone_annotations/2.2.0/error_prone_annotations-2.2.0-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "com.google.j2objc",
+                    "name": "j2objc-annotations",
+                    "version": "1.1",
+                    "configurations": "default",
+                    "artifacts": [
+                        {
+                            "name": "j2objc-annotations",
+                            "path": "/Users/cassien/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/google/j2objc/j2objc-annotations/1.1/j2objc-annotations-1.1.jar"
+                        },
+                        {
+                            "name": "j2objc-annotations",
+                            "classifier": "sources",
+                            "path": "/Users/cassien/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/google/j2objc/j2objc-annotations/1.1/j2objc-annotations-1.1-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.codehaus.mojo",
+                    "name": "animal-sniffer-annotations",
+                    "version": "1.17",
+                    "configurations": "default",
+                    "artifacts": [
+                        {
+                            "name": "animal-sniffer-annotations",
+                            "path": "/Users/cassien/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/codehaus/mojo/animal-sniffer-annotations/1.17/animal-sniffer-annotations-1.17.jar"
+                        },
+                        {
+                            "name": "animal-sniffer-annotations",
+                            "classifier": "sources",
+                            "path": "/Users/cassien/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/codehaus/mojo/animal-sniffer-annotations/1.17/animal-sniffer-annotations-1.17-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.scala-lang",
+                    "name": "scala-library",
+                    "version": "2.13.12",
+                    "configurations": "optional",
+                    "artifacts": [
+                        {
+                            "name": "scala-library",
+                            "path": "/Users/cassien/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-library/2.13.12/scala-library-2.13.12.jar"
+                        },
+                        {
+                            "name": "scala-library",
+                            "classifier": "sources",
+                            "path": "/Users/cassien/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-library/2.13.12/scala-library-2.13.12-sources.jar"
+                        }
+                    ]
+                }
+            ]
+        },
+        "tags": [
+            "library"
+        ]
+    }
+}
