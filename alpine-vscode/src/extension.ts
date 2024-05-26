@@ -51,7 +51,7 @@ export function activate(context: vscode.ExtensionContext) {
 	};
 
 	const clientOptions: LanguageClientOptions = {
-		documentSelector: [{ scheme: 'file', language: 'alpine' }],
+		documentSelector: [{ scheme: 'file', language: 'alpine' }, 'plaintext'],
 		synchronize: {
 			fileEvents: vscode.workspace.createFileSystemWatcher('**/.clientrc')
 		},
