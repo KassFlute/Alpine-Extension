@@ -53,6 +53,7 @@ export function activate(context: vscode.ExtensionContext) {
 	const clientOptions: LanguageClientOptions = {
 		documentSelector: [{ scheme: 'file', language: 'alpine' }, 'plaintext'],
 		synchronize: {
+			configurationSection: 'alpine',
 			fileEvents: vscode.workspace.createFileSystemWatcher('**/.clientrc')
 		},
 		outputChannel: vscode.window.createOutputChannel('Alpine LSP')
