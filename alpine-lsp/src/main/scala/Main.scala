@@ -2,10 +2,13 @@ import org.eclipse.lsp4j.launch.LSPLauncher
 import org.eclipse.lsp4j.services._
 import org.eclipse.lsp4j._ // I don't want to spend my life figuring out what to import
 import org.eclipse.lsp4j.jsonrpc.services._
+import org.eclipse.lsp4j.jsonrpc.Launcher
 import java.util.concurrent.CompletableFuture
-import java.io.{File, PrintWriter}
+import java.util.concurrent.Future
+import java.io.{File, PrintWriter, IOException, InputStream, OutputStream, PrintStream, ByteArrayOutputStream}
 import java.time.LocalDateTime
-import java.io.{PrintStream, ByteArrayOutputStream}
+import java.net.ServerSocket
+import java.net.Socket
 
 object Logger {
   private val logFile = new PrintWriter(new File("/Users/cassien/Desktop/server.log"))
@@ -44,17 +47,17 @@ class LoggerOutputStream(out: PrintStream) extends java.io.OutputStream {
   }
 
   private def flushBuffer(): Unit = {
-    Logger.log(buffer.toString())
+    Logger.log("from stdout: " + buffer.toString())
     buffer.setLength(0)
   }
 }
-
 
 object MyLanguageServer extends LanguageServer with LanguageClientAware {
 
   private var client: LanguageClient = _
 
   override def initialize(params: InitializeParams): CompletableFuture[InitializeResult] = {
+    println("initialize called")
     Logger.log("initialize called with params = " + params.toString())
     
     val capabilities = new ServerCapabilities()
@@ -119,11 +122,72 @@ object MyLanguageServer extends LanguageServer with LanguageClientAware {
 }
 
 object Main extends App {
-  val loggerPrintStream = new PrintStream(new LoggerOutputStream(System.out))
-  System.setOut(loggerPrintStream)
+  if (args.length == 0) {
+    println("No ports specified, using default port 5007")
+  } else if (args.length > 1) {
+    println("Too many arguments. Usage: \"run <port>\"")
+  }
 
-  Logger.log("Starting server...")
-  val launcher = LSPLauncher.createServerLauncher(MyLanguageServer, System.in, System.out)
-  val future = launcher.startListening()
-  future.get()
+  val port = if (args.length == 0) 5007 else args(0).toInt
+  val serverSocket = new ServerSocket(port)
+  println(s"Server listening on port $port")
+
+  // Method to handle a single client connection
+  def handleClient(clientSocket: Socket): Unit = {
+    try {
+      println(s"Client connected: ${clientSocket.getInetAddress}:${clientSocket.getPort}")
+
+      // Set up input and output streams for communication with the client
+      val in: InputStream = clientSocket.getInputStream
+      val out: OutputStream = clientSocket.getOutputStream
+
+      // Create and launch the language server for the connected client
+      val server = MyLanguageServer
+      val launcher: Launcher[LanguageClient] = LSPLauncher.createServerLauncher(server, in, out)
+      val client: LanguageClient = launcher.getRemoteProxy
+      server.connect(client)
+      val future = launcher.startListening()
+
+      future.get() // Wait for the server to finish listening
+    } catch {
+      case e: Exception =>
+        System.err.println(s"Error handling client: ${e.getMessage}")
+        e.printStackTrace()
+    } finally {
+      try {
+        clientSocket.close()
+      } catch {
+        case e: Exception =>
+          System.err.println(s"Error closing client socket: ${e.getMessage}")
+          e.printStackTrace()
+      }
+    }
+  }
+
+  try {
+    while (true) {
+      try {
+        // Accept a single client connection
+        val clientSocket = serverSocket.accept()
+        handleClient(clientSocket)
+      } catch {
+        case e: Exception =>
+          System.err.println(s"Error accepting client connection: ${e.getMessage}")
+          e.printStackTrace()
+      }
+    }
+  } catch {
+    case e: Exception =>
+      System.err.println(s"Server error: ${e.getMessage}")
+      e.printStackTrace()
+  } finally {
+    try {
+      serverSocket.close()
+      println("Server socket closed.")
+    } catch {
+      case e: Exception =>
+        System.err.println(s"Error closing server socket: ${e.getMessage}")
+        e.printStackTrace()
+    }
+  }
 }
