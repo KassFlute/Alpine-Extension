@@ -72,6 +72,7 @@ export function deactivate(): Thenable<void> | undefined {
 		client.stop();
 	}
 
+	// Take care of the socket to let the server know we are closing the connection
 	if (socket) {
 		socket.end();
 		socket.destroy();
