@@ -10,7 +10,7 @@
     "Other"
   ],
   "activationEvents": [
-    "onLanguage:alpine",
+    "onLanguage:alpine"
   ],
   "main": "./out/extension.js",
   "contributes": {
