@@ -11,7 +11,7 @@ import java.net.ServerSocket
 import java.net.Socket
 
 object Logger {
-  private val logFile = new PrintWriter(new File("/Users/cassien/Desktop/server.log"))
+  private val logFile = new PrintWriter(new File(LocalStrings.serverLogPath))
 
   def log(message: String): Unit = {
     logFile.write(s"${LocalDateTime.now}: $message\n")
