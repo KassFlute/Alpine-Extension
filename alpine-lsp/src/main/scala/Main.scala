@@ -58,7 +58,6 @@ object MyLanguageServer extends LanguageServer with LanguageClientAware {
     Logger.log("initialize called with params = " + params.toString())
     
     val capabilities = new ServerCapabilities()
-    // Define your server capabilities here
     CompletableFuture.completedFuture(new InitializeResult(capabilities))
   }
 
