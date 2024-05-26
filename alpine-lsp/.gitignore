@@ -42,4 +42,4 @@ classes/
 # Visual Studio Code
 .vscode
 
-LocalStrings.scala
+**/LocalStrings.scala
