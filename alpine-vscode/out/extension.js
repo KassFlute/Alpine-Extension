@@ -24,13 +24,12 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.deactivate = exports.activate = void 0;
-// The module 'vscode' contains the VS Code extensibility API
-// Import the module and reference it with the alias vscode in your code below
 const vscode = __importStar(require("vscode"));
-const path = __importStar(require("path"));
+const net = __importStar(require("net"));
 const node_1 = require("vscode-languageclient/node");
 // Alpine LSP server
 let client;
+let socket;
 // This method is called when your extension is activated
 // Your extension is activated the very first time the command is executed
 function activate(context) {
@@ -46,28 +45,23 @@ function activate(context) {
         vscode.window.showInformationMessage('Hello World from alpine-vscode!');
     });
     context.subscriptions.push(disposable);
-    // Run alpine LSP server
-    const serverModule = context.asAbsolutePath(path.join('..', 'alpine-lsp', 'target', 'scala-2.13', 'alpine-lsp-assembly-1.0.jar'));
-    const debugOptions = { execArgv: ['--nolazy', '--inspect=6009'] };
-    // const serverOptions: ServerOptions = {
-    // 	run: { module: serverModule, transport: TransportKind.ipc },
-    // 	debug: { module: serverModule, transport: TransportKind.ipc, options: debugOptions }
-    // };
-    const serverOptions = {
-        run: {
-            command: 'java',
-            transport: node_1.TransportKind.stdio,
-            args: ['-jar', serverModule],
-        },
-        debug: {
-            command: 'java',
-            transport: node_1.TransportKind.stdio,
-            args: ['-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5005', '-jar', serverModule],
-        }
+    let connectionInfo = {
+        port: 5007,
+        host: "127.0.0.1"
+    };
+    const serverOptions = () => {
+        // Connect to language server via socket
+        socket = net.connect(connectionInfo);
+        let result = {
+            writer: socket,
+            reader: socket
+        };
+        return Promise.resolve(result);
     };
     const clientOptions = {
-        documentSelector: [{ scheme: 'file', language: 'alpine' }],
+        documentSelector: [{ scheme: 'file', language: 'alpine' }, 'plaintext'],
         synchronize: {
+            configurationSection: 'alpine',
             fileEvents: vscode.workspace.createFileSystemWatcher('**/.clientrc')
         },
         outputChannel: vscode.window.createOutputChannel('Alpine LSP')
@@ -78,10 +72,14 @@ function activate(context) {
 exports.activate = activate;
 // This method is called when your extension is deactivated
 function deactivate() {
-    if (!client) {
-        return undefined;
+    if (client) {
+        client.stop();
     }
-    return client.stop();
+    if (socket) {
+        socket.end();
+        socket.destroy();
+    }
+    return undefined;
 }
 exports.deactivate = deactivate;
 //# sourceMappingURL=extension.js.map
