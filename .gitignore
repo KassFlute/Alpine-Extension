@@ -15,4 +15,6 @@
 # Built Visual Studio Code Extensions
 **/*.vsix
 
+.metals
+
 alpine-lsp/server.log
