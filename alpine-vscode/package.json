@@ -33,6 +33,9 @@
       {
         "command": "alpine-vscode.helloWorld",
         "title": "Hello World"
+      },{
+        "command": "alpine-vscode.toggleLogs",
+        "title": "Toggle Logs"
       }
     ]
   },

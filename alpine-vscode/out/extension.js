@@ -28,7 +28,7 @@ const vscode = __importStar(require("vscode"));
 const net = __importStar(require("net"));
 const node_1 = require("vscode-languageclient/node");
 // Alpine LSP server
-let client;
+let currentClient;
 let socket;
 // This method is called when your extension is activated
 // Your extension is activated the very first time the command is executed
@@ -36,20 +36,11 @@ function activate(context) {
     // Use the console to output diagnostic information (console.log) and errors (console.error)
     // This line of code will only be executed once when your extension is activated
     console.log('Congratulations, your extension "alpine-vscode" is now active!');
-    // The command has been defined in the package.json file
-    // Now provide the implementation of the command with registerCommand
-    // The commandId parameter must match the command field in package.json
-    let disposable = vscode.commands.registerCommand('alpine-vscode.helloWorld', () => {
-        // The code you place here will be executed every time your command is executed
-        // Display a message box to the user
-        vscode.window.showInformationMessage('Hello World from alpine-vscode!');
-    });
-    context.subscriptions.push(disposable);
     let connectionInfo = {
         port: 5007,
         host: "127.0.0.1"
     };
-    const serverOptions = () => {
+    const serverOptions = ()=> {
         // Connect to language server via socket
         socket = net.connect(connectionInfo);
         let result = {
@@ -66,7 +57,27 @@ function activate(context) {
         },
         outputChannel: vscode.window.createOutputChannel('Alpine LSP')
     };
-    client = new node_1.LanguageClient('alpine-lsp', 'Alpine LSP', serverOptions, clientOptions);
+    const client = new node_1.LanguageClient('alpine-lsp', 'Alpine LSP', serverOptions, clientOptions);
+	currentClient = client;
+	function registerCommand(command, callback) {
+	  context.subscriptions.push(vscode.commands.registerCommand(command, callback));
+	}
+	registerCommand('alpine-vscode.helloWorld', () => {
+		// The code you place here will be executed every time your command is executed
+		// Display a message box to the user
+		vscode.window.showInformationMessage('Hello World from alpine-vscode!');
+	});
+
+	let channelOpen = false;
+	registerCommand('alpine-vscode.toggleLogs', () => {
+		if (channelOpen) {
+		  client.outputChannel.hide();
+		  channelOpen = false;
+		} else {
+		  client.outputChannel.show(true);
+		  channelOpen = true;
+		}
+	  });
     client.start();
 }
 exports.activate = activate;

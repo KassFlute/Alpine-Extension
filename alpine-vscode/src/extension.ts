@@ -9,7 +9,7 @@ import { workspace, Disposable, ExtensionContext } from 'vscode';
 import { LanguageClient, LanguageClientOptions, ServerOptions, TransportKind, StreamInfo } from 'vscode-languageclient/node';
 
 // Alpine LSP server
-let client: LanguageClient;
+let currentClient: LanguageClient;
 let socket: net.Socket;
 
 // This method is called when your extension is activated
@@ -19,18 +19,6 @@ export function activate(context: vscode.ExtensionContext) {
 	// Use the console to output diagnostic information (console.log) and errors (console.error)
 	// This line of code will only be executed once when your extension is activated
 	console.log('Congratulations, your extension "alpine-vscode" is now active!');
-
-	// The command has been defined in the package.json file
-	// Now provide the implementation of the command with registerCommand
-	// The commandId parameter must match the command field in package.json
-	let disposable = vscode.commands.registerCommand('alpine-vscode.helloWorld', () => {
-		// The code you place here will be executed every time your command is executed
-		// Display a message box to the user
-		vscode.window.showInformationMessage('Hello World from alpine-vscode!');
-	});
-
-	context.subscriptions.push(disposable);
-
 
 	let connectionInfo = {
 		port: 5007,
@@ -56,22 +44,41 @@ export function activate(context: vscode.ExtensionContext) {
 		outputChannel: vscode.window.createOutputChannel('Alpine LSP')
 	};
 
-	client = new LanguageClient(
+	const client = new LanguageClient(
 		'alpine-lsp',
 		'Alpine LSP',
 		serverOptions,
 		clientOptions
 	);
+	currentClient = client;
+	function registerCommand(command: string, callback: (...args: any[]) => any) {
+	  context.subscriptions.push(vscode.commands.registerCommand(command, callback));
+	}registerCommand('alpine-vscode.helloWorld', () => {
+		// The code you place here will be executed every time your command is executed
+		// Display a message box to the user
+		vscode.window.showInformationMessage('Hello World from alpine-vscode!');
+	});
+
+	let channelOpen = false;
+	registerCommand('alpine-vscode.toggleLogs', () => {
+		if (channelOpen) {
+		  client.outputChannel.hide();
+		  channelOpen = false;
+		} else {
+		  client.outputChannel.show(true);
+		  channelOpen = true;
+		}
+	  });
 
 	client.start();
+
 }
 
 // This method is called when your extension is deactivated
 export function deactivate(): Thenable<void> | undefined {
-	if (client) {
-		client.stop();
+	if (currentClient) {
+		currentClient.stop();
 	}
-
 	// Take care of the socket to let the server know we are closing the connection
 	if (socket) {
 		socket.end();

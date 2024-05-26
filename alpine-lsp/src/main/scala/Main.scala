@@ -138,13 +138,13 @@ object Main extends App {
       println(s"Client connected: ${clientSocket.getInetAddress}:${clientSocket.getPort}")
 
       // Set up input and output streams for communication with the client
-      val in: InputStream = clientSocket.getInputStream
-      val out: OutputStream = clientSocket.getOutputStream
+      val in: InputStream = clientSocket.getInputStream()
+      val out: OutputStream = clientSocket.getOutputStream()
 
       // Create and launch the language server for the connected client
       val server = MyLanguageServer
       val launcher: Launcher[LanguageClient] = LSPLauncher.createServerLauncher(server, in, out)
-      val client: LanguageClient = launcher.getRemoteProxy
+      val client: LanguageClient = launcher.getRemoteProxy()
       server.connect(client)
       val future = launcher.startListening()
 
@@ -165,7 +165,8 @@ object Main extends App {
   }
 
   try {
-    while (true) {
+    var x = 0
+    while (x < 1) {
       try {
         // Accept a single client connection
         val clientSocket = serverSocket.accept()
@@ -176,6 +177,7 @@ object Main extends App {
           System.err.println(s"Error accepting client connection: ${e.getMessage}")
           e.printStackTrace()
       }
+      x = 1
     }
   } catch {
     case e: Exception =>

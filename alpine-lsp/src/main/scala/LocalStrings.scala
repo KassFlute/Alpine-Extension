@@ -1,3 +1,3 @@
 object LocalStrings{
-    var serverLogPath = "/Users/cassien/Desktop/server.log"
+    var serverLogPath = "/Users/grego/Desktop/server1.log"
 }
