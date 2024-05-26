@@ -170,6 +170,7 @@ object Main extends App {
         // Accept a single client connection
         val clientSocket = serverSocket.accept()
         handleClient(clientSocket)
+        println("Client connection closed")
       } catch {
         case e: Exception =>
           System.err.println(s"Error accepting client connection: ${e.getMessage}")
