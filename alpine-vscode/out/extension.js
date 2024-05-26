@@ -59,7 +59,7 @@ function activate(context) {
         return Promise.resolve(result);
     };
     const clientOptions = {
-        documentSelector: [{ scheme: 'file', language: 'alpine' }, 'plaintext'],
+        documentSelector: [{ scheme: 'file', language: 'alpine' }],
         synchronize: {
             configurationSection: 'alpine',
             fileEvents: vscode.workspace.createFileSystemWatcher('**/.clientrc')

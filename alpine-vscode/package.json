@@ -11,7 +11,6 @@
   ],
   "activationEvents": [
     "onLanguage:alpine",
-    "onLanguage:plaintext"
   ],
   "main": "./out/extension.js",
   "contributes": {
