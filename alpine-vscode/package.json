@@ -15,6 +15,21 @@
   ],
   "main": "./out/extension.js",
   "contributes": {
+    "languages": [
+      {
+          "id": "alpine",
+          "aliases": ["Alpine", "alpine"],
+          "extensions": [".alpine"],
+          "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+          "language": "alpine",
+          "scopeName": "source.alpine",
+          "path": "./syntaxes/alpine.tmLanguage.json"
+      }
+    ],
     "commands": [
       {
         "command": "alpine-vscode.helloWorld",
