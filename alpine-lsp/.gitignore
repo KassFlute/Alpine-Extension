@@ -1,11 +1,14 @@
-# Generated Metals (Scala Language Server) files
-# Reference: https://scalameta.org/metals/
-.metals/
-.bloop/
-**/metals.sbt
+# https://github.com/scala/scala3-example-project/blob/main/.gitignore
 
-# Simple Build Tool
-# http://www.scala-sbt.org/release/docs/Getting-Started/Directories.html#configuring-version-control
+.DS_Store
+*.class
+*.log
+*~
+
+# make/run
+out/
+
+# sbt specific
 dist/*
 target/
 lib_managed/
@@ -14,5 +17,27 @@ project/boot/
 project/plugins/project/
 project/local-plugins.sbt
 .history
+.bsp
+.bloop
+.metals
+
+# Scala-IDE specific
+.scala_dependencies
 .cache
-.lib/
+.classpath
+.project
+.settings
+classes/
+**/metals.sbt
+
+# idea
+.idea
+.idea_modules
+/.worksheet/
+
+# Dotty-IDE
+.dotty-ide-artifact
+.dotty-ide.json
+
+# Visual Studio Code
+.vscode
