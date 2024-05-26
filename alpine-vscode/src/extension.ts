@@ -4,11 +4,13 @@ import * as fs from "fs";
 import * as vscode from 'vscode';
 import * as path from 'path';
 import * as net from 'net';
-import * as child_process from "child_process";
+import * as childProcess from "child_process";
+import { workspace, Disposable, ExtensionContext } from 'vscode';
 import { LanguageClient, LanguageClientOptions, ServerOptions, TransportKind, StreamInfo } from 'vscode-languageclient/node';
 
 // Alpine LSP server
 let client: LanguageClient;
+let socket: net.Socket;
 
 // This method is called when your extension is activated
 // Your extension is activated the very first time the command is executed
@@ -29,28 +31,20 @@ export function activate(context: vscode.ExtensionContext) {
 
 	context.subscriptions.push(disposable);
 
-	// Run alpine LSP server
-	const serverModule = context.asAbsolutePath(
-		path.join('..', 'alpine-lsp', 'target', 'scala-2.13', 'alpine-lsp-assembly-1.0.jar')
-	);
-	const debugOptions = { execArgv: ['--nolazy', '--inspect=6009'] };
 
-	// const serverOptions: ServerOptions = {
-	// 	run: { module: serverModule, transport: TransportKind.ipc },
-	// 	debug: { module: serverModule, transport: TransportKind.ipc, options: debugOptions }
-	// };
+	let connectionInfo = {
+		port: 5007,
+		host: "127.0.0.1"
+	};
 
-	const serverOptions: ServerOptions = {
-		run: {
-			command: 'java',
-			transport: TransportKind.stdio,
-			args: ['-jar', serverModule],
-		},
-		debug: {
-			command: 'java',
-			transport: TransportKind.stdio,
-			args: ['-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5005', '-jar', serverModule],
-		}
+	const serverOptions: ServerOptions = () => {
+		// Connect to language server via socket
+		socket = net.connect(connectionInfo);
+		let result: StreamInfo = {
+			writer: socket,
+			reader: socket
+		};
+		return Promise.resolve(result);
 	};
 
 	const clientOptions: LanguageClientOptions = {
@@ -74,8 +68,14 @@ export function activate(context: vscode.ExtensionContext) {
 
 // This method is called when your extension is deactivated
 export function deactivate(): Thenable<void> | undefined {
-	if (!client) {
-		return undefined;
+	if (client) {
+		client.stop();
 	}
-	return client.stop();
+
+	if (socket) {
+		socket.end();
+		socket.destroy();
+	}
+
+	return undefined;
 }
