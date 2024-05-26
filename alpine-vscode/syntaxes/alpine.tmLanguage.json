@@ -1,6 +1,10 @@
 {
     "scopeName": "source.alpine",
     "patterns": [
+        {
+            "name": "comment.line.double-semicol.alpine",
+            "match": ";;.*$"
+        }
     ],
     "repository": {}
 }
