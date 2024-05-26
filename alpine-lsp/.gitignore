@@ -41,3 +41,5 @@ classes/
 
 # Visual Studio Code
 .vscode
+
+LocalStrings.scala
