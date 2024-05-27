@@ -64,49 +64,58 @@ class MyLanguageServer {
     CompletableFuture.completedFuture(new InitializeResult(capabilities))
   }
 
+  @JsonNotification("initialized")
+  def initialized(): Unit = {
+    println("initialized called")
+  }
+
+  @JsonRequest("shutdown")
   def shutdown(): CompletableFuture[AnyRef] = {
     println("shutdown called")
     CompletableFuture.completedFuture(null)
   }
 
+  @JsonNotification("exit")
   def exit(): Unit = {
     println("exit called")
     System.exit(0)
   }
 
-  def getTextDocumentService(): TextDocumentService = new TextDocumentService {
-    def didOpen(params: DidOpenTextDocumentParams): Unit = {
-      println("Text document opened: " + params.getTextDocument.getUri)
-    }
+  // @JsonRequest("textDocument/completion")
+  // def didOpen(params: DidOpenTextDocumentParams): Unit = {
+  //   println("Text document opened: " + params.getTextDocument.getUri)
+  // }
 
-    def didChange(params: DidChangeTextDocumentParams): Unit = {
-      println("Text document changed: " + params.getTextDocument.getUri)
-    }
+  // @JsonNotification("textDocument/didChange")
+  // def didChange(params: DidChangeTextDocumentParams): Unit = {
+  //   println("Text document changed: " + params.getTextDocument.getUri)
+  // }
 
-    def didClose(params: DidCloseTextDocumentParams): Unit = {
-      println("Text document closed: " + params.getTextDocument.getUri)
-    }
+  // @JsonNotification("textDocument/didClose")
+  // def didClose(params: DidCloseTextDocumentParams): Unit = {
+  //   println("Text document closed: " + params.getTextDocument.getUri)
+  // }
 
-    def didSave(params: DidSaveTextDocumentParams): Unit = {
-      println("Text document saved: " + params.getTextDocument.getUri)
-    }
-  }
+  // @JsonNotification("textDocument/didSave")
+  // def didSave(params: DidSaveTextDocumentParams): Unit = {
+  //   println("Text document saved: " + params.getTextDocument.getUri)
+  // }
 
-  def getWorkspaceService(): WorkspaceService = new WorkspaceService {
-    def didChangeConfiguration(params: DidChangeConfigurationParams): Unit = {
-      println("Configuration changed")
-    }
+  // @JsonNotification("workspace/didChangeConfiguration")
+  // def didChangeConfiguration(params: DidChangeConfigurationParams): Unit = {
+  //   println("Configuration changed")
+  // }
 
-    def didChangeWatchedFiles(params: DidChangeWatchedFilesParams): Unit = {
-      println("Watched files changed")
-    }
-  }
+  // @JsonNotification("workspace/didChangeWatchedFiles")
+  // def didChangeWatchedFiles(params: DidChangeWatchedFilesParams): Unit = {
+  //   println("Watched files changed")
+  // }
 
-  def cancelProgress(params: WorkDoneProgressCancelParams): Unit = 
-    throw new UnsupportedOperationException()
+  // def cancelProgress(params: WorkDoneProgressCancelParams): Unit = 
+  //   throw new UnsupportedOperationException()
 
   def connect(client: LanguageClient): Unit = {
-    println("Client connected")
+    println("connect called")
     this.client = client
   }
 
