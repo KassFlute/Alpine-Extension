@@ -58,48 +58,47 @@ class MyLanguageServer {
 
   @JsonRequest("initialize")
   def initialize(params: InitializeParams): CompletableFuture[InitializeResult] = {
-    //println("initialize called")
-    //Logger.log("initialize called with params = " + params.toString())
+    println("initialize called")
     
     val capabilities = new ServerCapabilities()
     CompletableFuture.completedFuture(new InitializeResult(capabilities))
   }
 
   def shutdown(): CompletableFuture[AnyRef] = {
-    Logger.log("shutdown called")
+    println("shutdown called")
     CompletableFuture.completedFuture(null)
   }
 
   def exit(): Unit = {
-    Logger.log("exit called")
+    println("exit called")
     System.exit(0)
   }
 
   def getTextDocumentService(): TextDocumentService = new TextDocumentService {
     def didOpen(params: DidOpenTextDocumentParams): Unit = {
-      Logger.log("Text document opened: " + params.getTextDocument.getUri)
+      println("Text document opened: " + params.getTextDocument.getUri)
     }
 
     def didChange(params: DidChangeTextDocumentParams): Unit = {
-      Logger.log("Text document changed: " + params.getTextDocument.getUri)
+      println("Text document changed: " + params.getTextDocument.getUri)
     }
 
     def didClose(params: DidCloseTextDocumentParams): Unit = {
-      Logger.log("Text document closed: " + params.getTextDocument.getUri)
+      println("Text document closed: " + params.getTextDocument.getUri)
     }
 
     def didSave(params: DidSaveTextDocumentParams): Unit = {
-      Logger.log("Text document saved: " + params.getTextDocument.getUri)
+      println("Text document saved: " + params.getTextDocument.getUri)
     }
   }
 
   def getWorkspaceService(): WorkspaceService = new WorkspaceService {
     def didChangeConfiguration(params: DidChangeConfigurationParams): Unit = {
-      Logger.log("Configuration changed")
+      println("Configuration changed")
     }
 
     def didChangeWatchedFiles(params: DidChangeWatchedFilesParams): Unit = {
-      Logger.log("Watched files changed")
+      println("Watched files changed")
     }
   }
 
@@ -107,7 +106,7 @@ class MyLanguageServer {
     throw new UnsupportedOperationException()
 
   def connect(client: LanguageClient): Unit = {
-    Logger.log("Client connected")
+    println("Client connected")
     this.client = client
   }
 
