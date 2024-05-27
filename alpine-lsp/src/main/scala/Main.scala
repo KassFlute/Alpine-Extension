@@ -61,6 +61,11 @@ class MyLanguageServer {
     println("initialize called")
     
     val capabilities = new ServerCapabilities()
+
+    val textDocumentSyncOptions = new TextDocumentSyncOptions()
+    textDocumentSyncOptions.setSave(new SaveOptions(true))
+    capabilities.setTextDocumentSync(textDocumentSyncOptions)
+    
     CompletableFuture.completedFuture(new InitializeResult(capabilities))
   }
 
@@ -96,10 +101,20 @@ class MyLanguageServer {
   //   println("Text document closed: " + params.getTextDocument.getUri)
   // }
 
-  // @JsonNotification("textDocument/didSave")
-  // def didSave(params: DidSaveTextDocumentParams): Unit = {
-  //   println("Text document saved: " + params.getTextDocument.getUri)
-  // }
+  @JsonNotification("textDocument/didSave")
+  def didSave(params: DidSaveTextDocumentParams): Unit = {
+    val uri = params.getTextDocument.getUri
+    println(s"Text document saved: $uri")
+    try {
+      val path = java.nio.file.Paths.get(new java.net.URI(uri))
+      val content = new String(java.nio.file.Files.readAllBytes(path))
+      println(s"Content of $uri:\n$content")
+    } catch {
+      case e: Exception =>
+        System.err.println(s"Error reading file $uri: ${e.getMessage}")
+        e.printStackTrace()
+    }
+  }
 
   @JsonNotification("workspace/didChangeConfiguration")
   def didChangeConfiguration(params: DidChangeConfigurationParams): Unit = {
