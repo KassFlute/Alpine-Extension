@@ -52,68 +52,61 @@ class LoggerOutputStream(out: PrintStream) extends java.io.OutputStream {
   }
 }
 
-object MyLanguageServer extends LanguageServer with LanguageClientAware {
+class MyLanguageServer {
 
   private var client: LanguageClient = _
 
-  override def initialize(params: InitializeParams): CompletableFuture[InitializeResult] = {
-    println("initialize called")
-    Logger.log("initialize called with params = " + params.toString())
+  @JsonRequest("initialize")
+  def initialize(params: InitializeParams): CompletableFuture[InitializeResult] = {
+    //println("initialize called")
+    //Logger.log("initialize called with params = " + params.toString())
     
     val capabilities = new ServerCapabilities()
     CompletableFuture.completedFuture(new InitializeResult(capabilities))
   }
 
-  override def initialized(params: InitializedParams): Unit = {
-    Logger.log("initialized called with params = " + params.toString())
-  }
-
-  override def initialized(): Unit = {
-    Logger.log("initialized called")
-  }
-
-  override def shutdown(): CompletableFuture[AnyRef] = {
+  def shutdown(): CompletableFuture[AnyRef] = {
     Logger.log("shutdown called")
     CompletableFuture.completedFuture(null)
   }
 
-  override def exit(): Unit = {
+  def exit(): Unit = {
     Logger.log("exit called")
     System.exit(0)
   }
 
-  override def getTextDocumentService(): TextDocumentService = new TextDocumentService {
-    override def didOpen(params: DidOpenTextDocumentParams): Unit = {
+  def getTextDocumentService(): TextDocumentService = new TextDocumentService {
+    def didOpen(params: DidOpenTextDocumentParams): Unit = {
       Logger.log("Text document opened: " + params.getTextDocument.getUri)
     }
 
-    override def didChange(params: DidChangeTextDocumentParams): Unit = {
+    def didChange(params: DidChangeTextDocumentParams): Unit = {
       Logger.log("Text document changed: " + params.getTextDocument.getUri)
     }
 
-    override def didClose(params: DidCloseTextDocumentParams): Unit = {
+    def didClose(params: DidCloseTextDocumentParams): Unit = {
       Logger.log("Text document closed: " + params.getTextDocument.getUri)
     }
 
-    override def didSave(params: DidSaveTextDocumentParams): Unit = {
+    def didSave(params: DidSaveTextDocumentParams): Unit = {
       Logger.log("Text document saved: " + params.getTextDocument.getUri)
     }
   }
 
-  override def getWorkspaceService(): WorkspaceService = new WorkspaceService {
-    override def didChangeConfiguration(params: DidChangeConfigurationParams): Unit = {
+  def getWorkspaceService(): WorkspaceService = new WorkspaceService {
+    def didChangeConfiguration(params: DidChangeConfigurationParams): Unit = {
       Logger.log("Configuration changed")
     }
 
-    override def didChangeWatchedFiles(params: DidChangeWatchedFilesParams): Unit = {
+    def didChangeWatchedFiles(params: DidChangeWatchedFilesParams): Unit = {
       Logger.log("Watched files changed")
     }
   }
 
-  override def cancelProgress(params: WorkDoneProgressCancelParams): Unit = 
-    super.cancelProgress(params)
+  def cancelProgress(params: WorkDoneProgressCancelParams): Unit = 
+    throw new UnsupportedOperationException()
 
-  override def connect(client: LanguageClient): Unit = {
+  def connect(client: LanguageClient): Unit = {
     Logger.log("Client connected")
     this.client = client
   }
@@ -142,8 +135,15 @@ object Main extends App {
       val out: OutputStream = clientSocket.getOutputStream()
 
       // Create and launch the language server for the connected client
-      val server = MyLanguageServer
-      val launcher: Launcher[LanguageClient] = LSPLauncher.createServerLauncher(server, in, out)
+      val server = new MyLanguageServer()
+      val launcher = new Launcher.Builder[LanguageClient]()
+        .setRemoteInterface(classOf[LanguageClient])
+        .setInput(in)
+        .setOutput(out)
+        .setLocalService(server)
+        .create()
+
+      //val launcher: Launcher[LanguageClient] = LSPLauncher.createServerLauncher(server, in, out)
       val client: LanguageClient = launcher.getRemoteProxy()
       server.connect(client)
       val future = launcher.startListening()
