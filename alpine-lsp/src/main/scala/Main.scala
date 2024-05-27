@@ -101,10 +101,10 @@ class MyLanguageServer {
   //   println("Text document saved: " + params.getTextDocument.getUri)
   // }
 
-  // @JsonNotification("workspace/didChangeConfiguration")
-  // def didChangeConfiguration(params: DidChangeConfigurationParams): Unit = {
-  //   println("Configuration changed")
-  // }
+  @JsonNotification("workspace/didChangeConfiguration")
+  def didChangeConfiguration(params: DidChangeConfigurationParams): Unit = {
+    println("didChangeConfiguration called with: " + params.getSettings)
+  }
 
   // @JsonNotification("workspace/didChangeWatchedFiles")
   // def didChangeWatchedFiles(params: DidChangeWatchedFilesParams): Unit = {
@@ -123,26 +123,49 @@ class MyLanguageServer {
 }
 
 object Main extends App {
-  if (args.length == 0) {
-    println("No ports specified, using default port 5007")
-  } else if (args.length > 1) {
-    println("Too many arguments. Usage: \"run <port>\"")
+  val DefaultPort = 5007
+  val port = args.headOption.map(_.toInt).getOrElse {
+    println(s"No ports specified, using default port $DefaultPort")
+    DefaultPort
   }
 
-  val port = if (args.length == 0) 5007 else args(0).toInt
+  if (args.length > 1) {
+    println("Too many arguments. Usage: \"run <port>\"")
+    sys.exit(1)
+  }
+
   val serverSocket = new ServerSocket(port)
-  println(s"Server listening on port $port")
 
-  // Method to handle a single client connection
-  def handleClient(clientSocket: Socket): Unit = {
+  try {
+    while (true) { // Loop to accept multiple clients
+      try {
+        println(s"Server listening on port $port")
+        val clientSocket = serverSocket.accept()
+        println(s"Client connected: ${clientSocket.getInetAddress}:${clientSocket.getPort}")
+
+        new Thread(() => handleClient(clientSocket)).start()
+      } catch {
+        case e: Exception =>
+          System.err.println(s"Error accepting client connection: ${e.getMessage}")
+          e.printStackTrace()
+      }
+    }
+  } finally {
     try {
-      println(s"Client connected: ${clientSocket.getInetAddress}:${clientSocket.getPort}")
+      serverSocket.close()
+      println("Server socket closed.")
+    } catch {
+      case e: Exception =>
+        System.err.println(s"Error closing server socket: ${e.getMessage}")
+        e.printStackTrace()
+    }
+  }
 
-      // Set up input and output streams for communication with the client
-      val in: InputStream = clientSocket.getInputStream()
-      val out: OutputStream = clientSocket.getOutputStream()
+  def handleClient(clientSocket: java.net.Socket): Unit = {
+    try {
+      val in: InputStream = clientSocket.getInputStream
+      val out: OutputStream = clientSocket.getOutputStream
 
-      // Create and launch the language server for the connected client
       val server = new MyLanguageServer()
       val launcher = new Launcher.Builder[LanguageClient]()
         .setRemoteInterface(classOf[LanguageClient])
@@ -151,7 +174,6 @@ object Main extends App {
         .setLocalService(server)
         .create()
 
-      //val launcher: Launcher[LanguageClient] = LSPLauncher.createServerLauncher(server, in, out)
       val client: LanguageClient = launcher.getRemoteProxy()
       server.connect(client)
       val future = launcher.startListening()
@@ -169,36 +191,6 @@ object Main extends App {
           System.err.println(s"Error closing client socket: ${e.getMessage}")
           e.printStackTrace()
       }
-    }
-  }
-
-  try {
-    var x = 0
-    while (x < 1) {
-      try {
-        // Accept a single client connection
-        val clientSocket = serverSocket.accept()
-        handleClient(clientSocket)
-        println("Client connection closed")
-      } catch {
-        case e: Exception =>
-          System.err.println(s"Error accepting client connection: ${e.getMessage}")
-          e.printStackTrace()
-      }
-      x = 1
-    }
-  } catch {
-    case e: Exception =>
-      System.err.println(s"Server error: ${e.getMessage}")
-      e.printStackTrace()
-  } finally {
-    try {
-      serverSocket.close()
-      println("Server socket closed.")
-    } catch {
-      case e: Exception =>
-        System.err.println(s"Error closing server socket: ${e.getMessage}")
-        e.printStackTrace()
     }
   }
 }
