@@ -103,7 +103,7 @@ class MyLanguageServer {
 
   @JsonNotification("workspace/didChangeConfiguration")
   def didChangeConfiguration(params: DidChangeConfigurationParams): Unit = {
-    println("didChangeConfiguration called with: " + params.getSettings)
+    println("didChangeConfiguration called with: " + params.toString())
   }
 
   // @JsonNotification("workspace/didChangeWatchedFiles")
