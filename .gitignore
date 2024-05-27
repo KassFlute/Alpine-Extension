@@ -19,3 +19,4 @@
 
 alpine-lsp/server.log
 **/LocalStrings.scala
+alpine-lsp/src/main/scala/LocalStrings.scala
