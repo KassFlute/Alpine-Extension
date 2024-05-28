@@ -8,6 +8,9 @@ let x = #pair(1, 2)
 let y = true
 let z = false
 
+;; String
+let s = "Hello, World!"
+
 ;; Mixed record
 let u = #number(42, endianness: #little)
 
