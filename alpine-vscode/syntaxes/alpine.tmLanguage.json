@@ -12,7 +12,7 @@
         },
         {
             "name": "keyword.operator.alpine",
-            "match": "\\b(@|@!|@?)\\b"
+            "match": "\\+|-|\\*|\\/|@!|@\\?|\\||::"
         },
         {
             "name": "constant.language.alpine",
