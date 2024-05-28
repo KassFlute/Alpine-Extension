@@ -20,6 +20,22 @@
         {
             "name": "constant.numeric.alpine",
             "match": "\\b\\d+\\.?\\d*\\b"
+        },
+        {
+            "name": "string.quoted.double.alpine",
+            "begin": "\"",
+            "beginCaptures": {
+                "0": {
+                    "name": "punctuation.definition.string.begin.alpine"
+                }
+            },
+            "end": "\"",
+            "endCaptures": {
+                "0": {
+                    "name": "punctuation.definition.string.end.alpine"
+                }
+            },
+            "patterns": []
         }
     ],
     "repository": {}
