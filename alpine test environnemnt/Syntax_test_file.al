@@ -8,6 +8,10 @@ let x = #pair(1, 2)
 let y = true
 let z = false
 
+;; Numerics
+let x = 8
+let y = 9.0
+
 ;; String
 let s = "Hello, World!"
 
