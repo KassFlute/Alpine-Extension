@@ -4,6 +4,10 @@
         {
             "name": "comment.line.double-semicol.alpine",
             "match": ";;.*$"
+        },
+        {
+            "name": "keyword.control.alpine",
+            "match": "\\b(let|fun|type|match|case|then|else)\\b"
         }
     ],
     "repository": {}
