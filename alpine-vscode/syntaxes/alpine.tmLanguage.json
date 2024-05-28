@@ -8,6 +8,10 @@
         {
             "name": "keyword.control.alpine",
             "match": "\\b(let|fun|type|match|case|then|else)\\b"
+        },
+        {
+            "name": "keyword.operator.alpine",
+            "match": "\\b(@|@!|@?)\\b"
         }
     ],
     "repository": {}
