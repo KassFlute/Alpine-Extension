@@ -19,7 +19,7 @@
         },
         {
             "name": "constant.numeric.alpine",
-            "match": "\\b\\d+\\.?\\d*\\b"
+            "match": "\\b\\d+(\\.\\d+)?\\b"
         },
         {
             "name": "string.quoted.double.alpine",
