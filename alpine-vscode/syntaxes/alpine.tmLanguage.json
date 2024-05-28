@@ -1,5 +1,6 @@
 {
     "scopeName": "source.alpine",
+    "fileTypes": ["alpine"],
     "patterns": [
         {
             "name": "comment.line.double-semicol.alpine",
