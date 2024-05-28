@@ -16,6 +16,10 @@
         {
             "name": "constant.language.alpine",
             "match": "\\b(true|false)\\b"
+        },
+        {
+            "name": "constant.numeric.alpine",
+            "match": "\\b\\d+\\.?\\d*\\b"
         }
     ],
     "repository": {}
