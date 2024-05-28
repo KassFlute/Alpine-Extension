@@ -12,6 +12,10 @@
         {
             "name": "keyword.operator.alpine",
             "match": "\\b(@|@!|@?)\\b"
+        },
+        {
+            "name": "constant.language.alpine",
+            "match": "\\b(true|false)\\b"
         }
     ],
     "repository": {}
