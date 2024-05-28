@@ -4,6 +4,10 @@ let main = print("Hello, World!")
 ;; Record
 let x = #pair(1, 2)
 
+;; Boolean
+let y = true
+let z = false
+
 ;; Mixed record
 let u = #number(42, endianness: #little)
 
