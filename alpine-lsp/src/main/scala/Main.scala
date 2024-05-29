@@ -10,6 +10,9 @@ import java.time.LocalDateTime
 import java.net.ServerSocket
 import java.net.Socket
 
+import file.*
+import alpine.{SourceFile}
+
 object Logger {
   private val logFile = new PrintWriter(new File(LocalStrings.serverLogPath))
 
@@ -55,6 +58,7 @@ class LoggerOutputStream(out: PrintStream) extends java.io.OutputStream {
 class MyLanguageServer {
 
   private var client: LanguageClient = _
+  private val checker = new Checker()
 
   @JsonRequest("initialize")
   def initialize(params: InitializeParams): CompletableFuture[InitializeResult] = {
@@ -105,15 +109,12 @@ class MyLanguageServer {
   def didSave(params: DidSaveTextDocumentParams): Unit = {
     val uri = params.getTextDocument.getUri
     println(s"Text document saved: $uri")
-    try {
       val path = java.nio.file.Paths.get(new java.net.URI(uri))
+      val fileName = path.getFileName.toString
       val content = new String(java.nio.file.Files.readAllBytes(path))
-      println(s"Content of $uri:\n$content")
-    } catch {
-      case e: Exception =>
-        System.err.println(s"Error reading file $uri: ${e.getMessage}")
-        e.printStackTrace()
-    }
+      println("PARSE")
+      val sourceFile = new SourceFile(fileName, content.codePoints().toArray())
+      checker.check(sourceFile)
   }
 
   @JsonNotification("workspace/didChangeConfiguration")
