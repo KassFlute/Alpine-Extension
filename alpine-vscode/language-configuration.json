@@ -1,6 +1,6 @@
 {
     "comments": {
-        "lineComment": ";;", // line comment in Alpine. (No block comments)
+        "lineComment": "//", // line comment in Alpine. (No block comments)
     },
     "brackets": [
         ["{", "}"],

@@ -4,7 +4,7 @@
     "patterns": [
         {
             "name": "comment.line.double-semicol.alpine",
-            "match": ";;.*$"
+            "match": "//.*$"
         },
         {
             "name": "keyword.control.alpine",
