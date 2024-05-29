@@ -11,7 +11,7 @@ import java.net.ServerSocket
 import java.net.Socket
 
 import file.*
-import alpine.{SourceFile}
+import alpine.{SourceFile, DiagnosticSet}
 
 object Logger {
   private val logFile = new PrintWriter(new File(LocalStrings.serverLogPath))
@@ -58,7 +58,7 @@ class LoggerOutputStream(out: PrintStream) extends java.io.OutputStream {
 class MyLanguageServer {
 
   private var client: LanguageClient = _
-  private val checker = new Checker()
+  private var checker: Checker = _
 
   @JsonRequest("initialize")
   def initialize(params: InitializeParams): CompletableFuture[InitializeResult] = {
@@ -112,9 +112,15 @@ class MyLanguageServer {
       val path = java.nio.file.Paths.get(new java.net.URI(uri))
       val fileName = path.getFileName.toString
       val content = new String(java.nio.file.Files.readAllBytes(path))
+      println("UPDATE_FILE")
+      checker.update_file(fileName, content)
       println("PARSE")
-      val sourceFile = new SourceFile(fileName, content.codePoints().toArray())
-      checker.check(sourceFile)
+      try {
+        checker.check_syntax(fileName)
+      } catch {
+        case e: DiagnosticSet =>
+         e.log()
+      }
   }
 
   @JsonNotification("workspace/didChangeConfiguration")
@@ -133,6 +139,7 @@ class MyLanguageServer {
   def connect(client: LanguageClient): Unit = {
     println("connect called")
     this.client = client
+    this.checker = new Checker(client)
   }
 
   // Implement other methods like textDocument/didOpen, didChange, etc.
