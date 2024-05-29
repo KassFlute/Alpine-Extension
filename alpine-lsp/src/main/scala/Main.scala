@@ -110,18 +110,18 @@ class MyLanguageServer {
   def didSave(params: DidSaveTextDocumentParams): Unit = {
     val uri = params.getTextDocument.getUri
     println(s"Text document saved: $uri")
-      val path = java.nio.file.Paths.get(new java.net.URI(uri))
-      val fileName = path.getFileName.toString
-      val content = new String(java.nio.file.Files.readAllBytes(path))
-      println("UPDATE_FILE")
-      checker.update_file(fileName, content)
-      println("PARSE")
-      try {
-        checker.check_syntax(fileName)
-      } catch {
-        case e: DiagnosticSet =>
-         e.log()
-      }
+    val path = java.nio.file.Paths.get(new java.net.URI(uri))
+    val fileName = path.getFileName.toString
+    val content = new String(java.nio.file.Files.readAllBytes(path))
+    println("UPDATE_FILE")
+    checker.update_file(fileName, content)
+    println("PARSE")
+    try {
+      checker.check_syntax(fileName)
+    } catch {
+      case e: DiagnosticSet =>
+        e.log()
+    }
   }
 
   @JsonNotification("workspace/didChangeConfiguration")
