@@ -68,6 +68,7 @@ class MyLanguageServer {
 
     val textDocumentSyncOptions = new TextDocumentSyncOptions()
     textDocumentSyncOptions.setSave(new SaveOptions(true))
+    textDocumentSyncOptions.setChange(TextDocumentSyncKind.Full)
     capabilities.setTextDocumentSync(textDocumentSyncOptions)
     
     CompletableFuture.completedFuture(new InitializeResult(capabilities))
@@ -95,10 +96,10 @@ class MyLanguageServer {
   //   println("Text document opened: " + params.getTextDocument.getUri)
   // }
 
-  // @JsonNotification("textDocument/didChange")
-  // def didChange(params: DidChangeTextDocumentParams): Unit = {
-  //   println("Text document changed: " + params.getTextDocument.getUri)
-  // }
+  @JsonNotification("textDocument/didChange")
+  def didChange(params: DidChangeTextDocumentParams): Unit = {
+    println("Text document changed: " + params.getTextDocument.getUri)
+  }
 
   // @JsonNotification("textDocument/didClose")
   // def didClose(params: DidCloseTextDocumentParams): Unit = {
