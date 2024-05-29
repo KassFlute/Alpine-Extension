@@ -122,7 +122,15 @@ class MyLanguageServer {
     println("UPDATE_FILE")
     checker.update_file(uri, content)
     println("PARSE")
-    checker.check_syntax(uri)
+    val correct_file = checker.check_syntax(uri)
+
+    val messageParams = correct_file match {
+      case true => 
+        new MessageParams(MessageType.Info, "File saved with no syntax errors")
+      case false => 
+        new MessageParams(MessageType.Error, "File saved with syntax errors")
+    }
+    client.showMessage(messageParams)
   }
 
   @JsonNotification("workspace/didChangeConfiguration")
