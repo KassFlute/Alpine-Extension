@@ -17,22 +17,19 @@ import scala.collection.JavaConverters._
 import java.sql.Driver
 
 class Checker(client: LanguageClient) {
-    private var files: Map[String, String] = Map()
+    private var files: Map[String, String] = Map() // Map of file uri to file content
 
-    def update_file(name: String, content: String): Unit = {
-        files = files.updated(name, content)
+    def update_file(uri: String, content: String): Unit = {
+        files = files.updated(uri, content)
     }
 
-    def check_syntax(name: String): Unit = {
-        val sourceFile = SourceFile(name, files(name).codePoints().toArray()) // Create a SourceFile needed for the Parser
+    def check_syntax(uri: String): Unit = {
+        val name = uri.substring(uri.lastIndexOf("/") + 1)
+        val sourceFile = SourceFile(name, files(uri).codePoints().toArray()) // Create a SourceFile needed for the Parser
         val parser = Parser(sourceFile)
         val syntax = parser.program()
         val ds = parser.diagnostics
         //ds.throwOnError() // TODO see if it contains more info than the .log
-        val diag = ds.elements.head
-        val site = diag.site
-        val level = diag.level
-        val message = diag.summary
         ds.log()
 
         // Convert diagnostics to LSP4J diagnostics
@@ -40,8 +37,8 @@ class Checker(client: LanguageClient) {
             val start = sourceFile.lineAndColumn(d.site.start)
             val end = sourceFile.lineAndColumn(d.site.end)
             val range = new Range(
-                new Position(start._1, start._2),
-                new Position(end._1, end._2)
+                new Position(start._1 - 1, start._2 - 1),
+                new Position(end._1 - 1, end._2 - 1)
             )
             val severity = d.level match {
                 case alpine.Diagnostic.Level.Warning => DiagnosticSeverity.Warning
@@ -51,7 +48,7 @@ class Checker(client: LanguageClient) {
         }
 
         // Create PublishDiagnosticsParams and send to client
-        val params = new PublishDiagnosticsParams(name, diagnostics.toList.asJava)
+        val params = new PublishDiagnosticsParams(uri, diagnostics.toList.asJava)
         client.publishDiagnostics(params)
     }
 }
