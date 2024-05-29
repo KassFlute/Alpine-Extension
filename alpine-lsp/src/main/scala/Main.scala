@@ -150,6 +150,8 @@ class MyLanguageServer {
     println("connect called")
     this.client = client
     this.checker = new Checker(client)
+    val connMessageParams = new MessageParams(MessageType.Info, "ALPINE-LSP Language Server connected")
+    client.showMessage(connMessageParams)
   }
 
   // Implement other methods like textDocument/didOpen, didChange, etc.
