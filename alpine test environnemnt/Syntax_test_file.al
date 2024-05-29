@@ -1,48 +1,48 @@
 ;; Function
 let main = print("Hello, World!")
 
-;; Record
+// Record
 let x = #pair(1, 2)
 
-;; Boolean
+// Boolean
 let y = true
 let z = false
 
-;; Numerics
+// Numerics
 let x = 8
 let y = 9.0
 
-;; String
+// String
 let s = "Hello, World!"
 
-;; Mixed record
+// Mixed record
 let u = #number(42, endianness: #little)
 
-;; Big function with record fields selection
+// Big function with record fields selection
 fun scale(_ p: #vector2(x: Float, y: Float), by f: Float) -> #vector2(x: Float, y: Float) {
   #vector2(x: f * p.x, y: f * p.1)
 }
 
 let main = print(scale(#vector2(x: 1.3, y: 2.1), by: 2.0))
 
-;; Function
+// Function
 fun duplicate(_ x: Any) -> #pair(Any, Any) {
   #pair(x, x)
 }
 
 let main = print(duplicate(#unit))
 
-;; Downcasting
+// Downcasting
 let x: Any = 40
 let main = print((x @! Int) + 2)
 
-;; Type widening
+// Type widening
 let x = 42 @ Any
 
-;; Union type
+// Union type
 let x: #a | #b = #a
 
-;; function
+// function
 fun is_anonymous(_ p: #person | #person(name: String)) -> Bool {
   match p {
     case #person then true
@@ -52,7 +52,7 @@ fun is_anonymous(_ p: #person | #person(name: String)) -> Bool {
 
 let main = print(is_anonymous(#person(name: "AMOGUS")))
 
-;; function
+// function
 fun name(of p: #person | #person(name: String)) -> #none | #some(String) {
   match p {
     case #person then #none
@@ -60,7 +60,7 @@ fun name(of p: #person | #person(name: String)) -> #none | #some(String) {
   }
 }
 
-;; Another way
+// Another way
 fun name(of p: #person | #person(name: String)) -> #none | #some(String) {
   match p {
     case #person then #none
@@ -68,20 +68,20 @@ fun name(of p: #person | #person(name: String)) -> #none | #some(String) {
   }
 }
 
-;; @? operator
+// @? operator
 fun is_human(_ p: #person | #person(name: String) | #alien(name: String)) -> Bool {
   (p @? #alien(String)) != #none
 }
 
-;; Type def
+// Type def
 type Vector2 = #vector2(x: Float, y: Float)
 type Circle = #circle(origin: Vector2, radius: Float)
 type Rectangle = #rectangle(origin: Vector2, dimension: Vector2)
 
-;; Recursive type
+// Recursive type
 type List = #empty | #list(head: Any, tail: List)
 
-;; Instances
+// Instances
 let v = #vector2(x: 1.0, y: 2.0)
 let c = #circle(origin: v, radius: 5.0)
 let r = #rectangle(origin: v, dimension: #vector2(x: 3.0, y: 4.0))
@@ -90,9 +90,10 @@ let main = print(v)
 let main = print(c)
 let main = print(r)
 
-;; List
+// List
 let empty_list = #empty
 let non_empty_list = #list(head: 1, tail: #list(head: 2, tail: #empty))
 
 let main = print(empty_list)
 let main = print(non_empty_list)
+
