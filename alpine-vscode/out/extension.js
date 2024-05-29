@@ -40,7 +40,7 @@ function activate(context) {
         port: 5007,
         host: "127.0.0.1"
     };
-    const serverOptions = ()=> {
+    const serverOptions = () => {
         // Connect to language server via socket
         socket = net.connect(connectionInfo);
         let result = {
@@ -58,33 +58,33 @@ function activate(context) {
         outputChannel: vscode.window.createOutputChannel('Alpine LSP')
     };
     const client = new node_1.LanguageClient('alpine-lsp', 'Alpine LSP', serverOptions, clientOptions);
-	currentClient = client;
-	function registerCommand(command, callback) {
-	  context.subscriptions.push(vscode.commands.registerCommand(command, callback));
-	}
-	registerCommand('alpine-vscode.helloWorld', () => {
-		// The code you place here will be executed every time your command is executed
-		// Display a message box to the user
-		vscode.window.showInformationMessage('Hello World from alpine-vscode!');
-	});
-
-	let channelOpen = false;
-	registerCommand('alpine-vscode.toggleLogs', () => {
-		if (channelOpen) {
-		  client.outputChannel.hide();
-		  channelOpen = false;
-		} else {
-		  client.outputChannel.show(true);
-		  channelOpen = true;
-		}
-	  });
+    currentClient = client;
+    function registerCommand(command, callback) {
+        context.subscriptions.push(vscode.commands.registerCommand(command, callback));
+    }
+    registerCommand('alpine-vscode.helloWorld', () => {
+        // The code you place here will be executed every time your command is executed
+        // Display a message box to the user
+        vscode.window.showInformationMessage('Hello World from alpine-vscode!');
+    });
+    let channelOpen = false;
+    registerCommand('alpine-vscode.toggleLogs', () => {
+        if (channelOpen) {
+            client.outputChannel.hide();
+            channelOpen = false;
+        }
+        else {
+            client.outputChannel.show(true);
+            channelOpen = true;
+        }
+    });
     client.start();
 }
 exports.activate = activate;
 // This method is called when your extension is deactivated
 function deactivate() {
-    if (client) {
-        client.stop();
+    if (currentClient) {
+        currentClient.stop();
     }
     // Take care of the socket to let the server know we are closing the connection
     if (socket) {
