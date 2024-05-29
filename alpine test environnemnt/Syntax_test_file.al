@@ -50,7 +50,7 @@ fun is_anonymous(_ p: #person | #person(name: String)) -> Bool {
   }
 }
 
-let main = print(is_anonymous(#person(name: "Hannah")))
+let main = print(is_anonymous(#person(name: "AMOGUS")))
 
 ;; function
 fun name(of p: #person | #person(name: String)) -> #none | #some(String) {
