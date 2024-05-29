@@ -99,6 +99,13 @@ class MyLanguageServer {
   @JsonNotification("textDocument/didChange")
   def didChange(params: DidChangeTextDocumentParams): Unit = {
     println("Text document changed: " + params.getTextDocument.getUri)
+    val uri = params.getTextDocument.getUri
+    val path = java.nio.file.Paths.get(new java.net.URI(uri))
+    val content = new String(params.getContentChanges.get(0).getText)
+    println("UPDATE_FILE")
+    checker.update_file(uri, content)
+    println("PARSE")
+    checker.check_syntax(uri)
   }
 
   // @JsonNotification("textDocument/didClose")
@@ -108,20 +115,14 @@ class MyLanguageServer {
 
   @JsonNotification("textDocument/didSave")
   def didSave(params: DidSaveTextDocumentParams): Unit = {
+    println(s"Text document saved: " + params.getTextDocument.getUri)
     val uri = params.getTextDocument.getUri
-    println(s"Text document saved: $uri")
     val path = java.nio.file.Paths.get(new java.net.URI(uri))
-    val fileName = path.getFileName.toString
     val content = new String(java.nio.file.Files.readAllBytes(path))
     println("UPDATE_FILE")
-    checker.update_file(fileName, content)
+    checker.update_file(uri, content)
     println("PARSE")
-    try {
-      checker.check_syntax(fileName)
-    } catch {
-      case e: DiagnosticSet =>
-        e.log()
-    }
+    checker.check_syntax(uri)
   }
 
   @JsonNotification("workspace/didChangeConfiguration")
