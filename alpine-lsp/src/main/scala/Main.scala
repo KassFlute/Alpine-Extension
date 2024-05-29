@@ -152,18 +152,26 @@ object Main extends App {
   val serverSocket = new ServerSocket(port)
 
   try {
-    while (true) { // Loop to accept multiple clients
-      try {
-        println(s"Server listening on port $port")
-        val clientSocket = serverSocket.accept()
-        println(s"Client connected: ${clientSocket.getInetAddress}:${clientSocket.getPort}")
+    if (acceptMultipleClients) {
+      while (true) { // Loop to accept multiple clients
+        try {
+          println(s"Server listening on port $port")
+          val clientSocket = serverSocket.accept()
+          println(s"Client connected: ${clientSocket.getInetAddress}:${clientSocket.getPort}")
 
-        new Thread(() => handleClient(clientSocket)).start()
-      } catch {
-        case e: Exception =>
-          System.err.println(s"Error accepting client connection: ${e.getMessage}")
-          e.printStackTrace()
+          new Thread(() => handleClient(clientSocket)).start()
+        } catch {
+          case e: Exception =>
+            System.err.println(s"Error accepting client connection: ${e.getMessage}")
+            e.printStackTrace()
+        }
       }
+    } else {
+      println(s"Server listening on port $port")
+      val clientSocket = serverSocket.accept()
+      println(s"Client connected: ${clientSocket.getInetAddress}:${clientSocket.getPort}")
+
+      handleClient(clientSocket)
     }
   } finally {
     try {
