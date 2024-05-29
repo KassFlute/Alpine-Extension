@@ -23,7 +23,7 @@ class Checker(client: LanguageClient) {
         files = files.updated(uri, content)
     }
 
-    def check_syntax(uri: String): Unit = {
+    def check_syntax(uri: String): Boolean = {
         val name = uri.substring(uri.lastIndexOf("/") + 1)
         val sourceFile = SourceFile(name, files(uri).codePoints().toArray()) // Create a SourceFile needed for the Parser
         val parser = Parser(sourceFile)
@@ -50,5 +50,7 @@ class Checker(client: LanguageClient) {
         // Create PublishDiagnosticsParams and send to client
         val params = new PublishDiagnosticsParams(uri, diagnostics.toList.asJava)
         client.publishDiagnostics(params)
+
+        ds.elements.isEmpty
     }
 }
