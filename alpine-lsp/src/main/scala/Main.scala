@@ -138,15 +138,15 @@ class MyLanguageServer {
 }
 
 object Main extends App {
-  val DefaultPort = 5007
-  val port = args.headOption.map(_.toInt).getOrElse {
-    println(s"No ports specified, using default port $DefaultPort")
-    DefaultPort
-  }
-
-  if (args.length > 1) {
-    println("Too many arguments. Usage: \"run <port>\"")
-    sys.exit(1)
+  val defaultPort = 5007
+  val port = args match {
+    case null => 
+      println(s"No ports specified, using default port $defaultPort")
+      defaultPort
+    case Array(port) => port.toInt
+    case _ =>
+      println("Too many arguments. Usage: \"run <port>\"")
+      sys.exit(1)
   }
 
   val serverSocket = new ServerSocket(port)
