@@ -139,6 +139,7 @@ class MyLanguageServer {
 }
 
 object Main extends App {
+  val acceptMultipleClients = false
   val defaultPort = 5007
   val port = args match {
     case null => 
