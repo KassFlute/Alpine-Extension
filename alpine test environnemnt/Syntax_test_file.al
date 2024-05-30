@@ -1,4 +1,4 @@
-;; Function
+// Function
 let main = print("Hello, World!")
 
 // Record
@@ -42,14 +42,6 @@ let x = 42 @ Any
 // Union type
 let x: #a | #b = #a
 
-// function
-fun name(of p: #person | #person(name: String)) -> #none | #some(String) {
-  match p {
-    case #person then #none
-    case #person(name: let n) then #some(n)
-  }
-}
-
 // Another way
 fun name(of p: #person | #person(name: String)) -> #none | #some(String) {
   match p {
@@ -57,16 +49,6 @@ fun name(of p: #person | #person(name: String)) -> #none | #some(String) {
     case let q: #person(name: String) then #some(q.name)
   }
 }
-
-// @? operator
-fun is_human(_ p: #person | #person(name: String) | #alien(name: String)) -> Bool {
-  (p @? #alien(String)) != #none
-}
-
-// Type def
-type Vector2 = #vector2(x: Float, y: Float)
-type Circle = #circle(origin: Vector2, radius: Float)
-type Rectangle = #rectangle(origin: Vector2, dimension: Vector2)
 
 // Recursive type
 type List = #empty | #list(head: Any, tail: List)
