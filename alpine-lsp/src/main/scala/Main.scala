@@ -132,12 +132,8 @@ class MyLanguageServer {
     val uri = params.getTextDocument.getUri
     val path = java.nio.file.Paths.get(new java.net.URI(uri))
     val content = new String(java.nio.file.Files.readAllBytes(path))
-    println("UPDATE_FILE")
     checker.update_file(uri, content)
-    println("PARSE")
     val correct_file = checker.check_syntax(uri)
-    println("SEND_DIAGNOSTICS")
-    checker.publish_diagnostics(uri)
 
     val messageParams = correct_file match {
       case true => 
@@ -146,6 +142,8 @@ class MyLanguageServer {
         new MessageParams(MessageType.Error, f"File saved with syntax errors. At line ${checker.get_diagnostics(uri).head.getRange().getStart().getLine()+1}")
     }
     client.showMessage(messageParams)
+
+    checker.publish_diagnostics(uri)
   }
 
   @JsonNotification("workspace/didChangeConfiguration")
