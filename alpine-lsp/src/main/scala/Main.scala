@@ -131,6 +131,8 @@ class MyLanguageServer {
     val content = new String(java.nio.file.Files.readAllBytes(path))
     checker.update_file(uri, content)
     val correct_syntax = checker.check_syntax(uri)
+    val correct_types = checker.check_typing(uri)
+    checker.publish_diagnostics(uri)
 
     val messageParams = (correct_syntax, correct_types) match {
       case (true, true) => 
