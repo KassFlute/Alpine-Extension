@@ -132,7 +132,7 @@ class MyLanguageServer {
       case true => 
         new MessageParams(MessageType.Info, "File saved with no syntax errors")
       case false => 
-        new MessageParams(MessageType.Error, "File saved with syntax errors")
+        new MessageParams(MessageType.Error, f"File saved with syntax errors. At line ${checker.get_diagnostics(uri).head.getRange().getStart().getLine()+1}")
     }
     client.showMessage(messageParams)
   }
