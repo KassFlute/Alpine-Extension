@@ -69,6 +69,7 @@ class MyLanguageServer {
     val textDocumentSyncOptions = new TextDocumentSyncOptions()
     textDocumentSyncOptions.setSave(new SaveOptions(true))
     textDocumentSyncOptions.setChange(TextDocumentSyncKind.Full)
+    textDocumentSyncOptions.setOpenClose(true)
     capabilities.setTextDocumentSync(textDocumentSyncOptions)
     
     CompletableFuture.completedFuture(new InitializeResult(capabilities))
@@ -100,12 +101,20 @@ class MyLanguageServer {
   def didChange(params: DidChangeTextDocumentParams): Unit = {
     println("Text document changed: " + params.getTextDocument.getUri)
     val uri = params.getTextDocument.getUri
-    val path = java.nio.file.Paths.get(new java.net.URI(uri))
     val content = new String(params.getContentChanges.get(0).getText)
-    println("UPDATE_FILE")
     checker.update_file(uri, content)
-    println("PARSE")
     checker.check_syntax(uri)
+    checker.publish_diagnostics(uri)
+  }
+
+  @JsonNotification("textDocument/didOpen")
+  def didOpen(params: DidOpenTextDocumentParams): Unit = {
+    println("Text document opened: " + params.getTextDocument.getUri)
+    val uri = params.getTextDocument.getUri
+    val content = new String(params.getTextDocument.getText)
+    checker.update_file(uri, content)
+    checker.check_syntax(uri)
+    checker.publish_diagnostics(uri)
   }
 
   // @JsonNotification("textDocument/didClose")
@@ -119,18 +128,20 @@ class MyLanguageServer {
     val uri = params.getTextDocument.getUri
     val path = java.nio.file.Paths.get(new java.net.URI(uri))
     val content = new String(java.nio.file.Files.readAllBytes(path))
-    println("UPDATE_FILE")
     checker.update_file(uri, content)
-    println("PARSE")
-    val correct_file = checker.check_syntax(uri)
+    val correct_syntax = checker.check_syntax(uri)
 
-    val messageParams = correct_file match {
+    val messageParams = correct_syntax match {
       case true => 
         new MessageParams(MessageType.Info, "File saved with no syntax errors")
       case false => 
-        new MessageParams(MessageType.Error, "File saved with syntax errors")
+        new MessageParams(MessageType.Error, f"File saved with syntax errors. At line ${checker.get_diagnostics(uri).head.getRange().getStart().getLine()+1}")
     }
     client.showMessage(messageParams)
+
+    val correct_types = checker.check_typing(uri)
+
+    checker.publish_diagnostics(uri)
   }
 
   @JsonNotification("workspace/didChangeConfiguration")
