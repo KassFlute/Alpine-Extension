@@ -69,6 +69,7 @@ class MyLanguageServer {
     val textDocumentSyncOptions = new TextDocumentSyncOptions()
     textDocumentSyncOptions.setSave(new SaveOptions(true))
     textDocumentSyncOptions.setChange(TextDocumentSyncKind.Full)
+    textDocumentSyncOptions.setOpenClose(true)
     capabilities.setTextDocumentSync(textDocumentSyncOptions)
     
     CompletableFuture.completedFuture(new InitializeResult(capabilities))
@@ -107,6 +108,16 @@ class MyLanguageServer {
     println("PARSE")
     checker.check_syntax(uri)
     println("SEND_DIAGNOSTICS")
+    checker.publish_diagnostics(uri)
+  }
+
+  @JsonNotification("textDocument/didOpen")
+  def didOpen(params: DidOpenTextDocumentParams): Unit = {
+    println("Text document opened: " + params.getTextDocument.getUri)
+    val uri = params.getTextDocument.getUri
+    val content = new String(params.getTextDocument.getText)
+    checker.update_file(uri, content)
+    checker.check_syntax(uri)
     checker.publish_diagnostics(uri)
   }
 
