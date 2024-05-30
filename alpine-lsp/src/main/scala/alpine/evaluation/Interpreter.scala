@@ -104,7 +104,6 @@ final class Interpreter(
     val labeledTypes = labels.zip(fieldTypes).map((l, t) => Labeled(l, t))
     
     Value.Record(n.identifier, fields, Type.Record(n.identifier, labeledTypes))
-    Value.Record(n.identifier,for f <- n.fields yield f.value.visit(this),n.tpe(using given_TypedProgram).asInstanceOf[Type.Record])
 
   def visitSelection(n: ast.Selection)(using context: Context): Value =
     n.qualification.visit(this) match
@@ -117,15 +116,14 @@ final class Interpreter(
         throw Panic(s"unexpected qualification of type '${q.dynamicType}'")
 
   def visitApplication(n: ast.Application)(using context: Context): Value =
-    /*// Evaluate function identifier ?? we already have a function expression
+    // Evaluate function identifier ?? we already have a function expression
     val function = n.function.visit(this)
 
     val evaluatedArguments = 
       for arg <- n.arguments
       yield arg.value.visit(this)
 
-    call(function, evaluatedArguments)*/
-    call(n.function.visit(this),n.arguments.map(f => {f.value.visit(this)}))
+    call(function, evaluatedArguments)
 
 
   def visitPrefixApplication(n: ast.PrefixApplication)(using context: Context): Value =
@@ -170,9 +168,8 @@ final class Interpreter(
     n.body.visit(this)(using newContext)
 
   def visitLambda(n: ast.Lambda)(using context: Context): Value =
-    //val captures = context.flattened // not sure the filter is properly necessary
-    Value.Lambda(n.body, n.inputs, Map(), n.tpe)
-    
+    val captures = context.flattened.filter((name, _) => !n.inputs.contains(name)) // not sure the filter is properly necessary
+    Value.Lambda(n.body, n.inputs, captures, n.tpe)
 
   def visitParenthesizedExpression(n: ast.ParenthesizedExpression)(using context: Context): Value =
     try n.inner.visit(this)(using context)
@@ -262,9 +259,7 @@ final class Interpreter(
             globals.put(e, computed)
             Some(computed)
 
-          case _ =>
-            Console.println("getGlobal took case _")
-            ???
+          case _ => ???
 
       case Some(Value.Poison) => throw Panic("initialization cycle")
       case v => v

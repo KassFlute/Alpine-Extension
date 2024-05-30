@@ -53,6 +53,10 @@ private[typing] final class ProofObligations:
       updateKnownBounds(c)
       true
 
+  /** Binds `n` to the entity referred to by `r`. */
+  def bind(n: ast.Tree, r: symbols.EntityReference): Unit =
+    _inferredBinding.put(n, r)
+
   /** Constrains `n` to have type `t`, returning `t`. */
   def constrain(n: ast.Tree, t: Type): Type =
     if t(Type.Flags.HasError) then

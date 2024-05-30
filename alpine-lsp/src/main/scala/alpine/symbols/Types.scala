@@ -20,6 +20,12 @@ trait Type:
       case _: Type.Arrow => true
       case _ => false
 
+  /** Returns `true` iff `this` is built.in. */
+  final def isBuiltin: Boolean =
+    this match
+      case _: Type.Builtin => true
+      case _ => false
+
   /** Returns `true` iff `this` is a variable. */
   final def isVariable: Boolean =
     this match
@@ -90,6 +96,10 @@ object Type:
 
     final def tpe: Type =
       Meta(this)
+
+    def withTypeTransformed(f: Type => Type): Entity =
+      require(f(this) == this)
+      this
 
   end Builtin
 
@@ -363,6 +373,11 @@ object Type:
     /** Returns a sum containing `a` and `b` iff they don't structurally match. */
     def fromPair(a: Type.Record, b: Type.Record): Option[Sum] =
       (new Sum(List(a))).inserting(b)
+
+    def from(tpe: Type): Option[Sum] =
+      tpe match
+        case s: Sum => Some(s)
+        case _ => None
 
   end Sum
 

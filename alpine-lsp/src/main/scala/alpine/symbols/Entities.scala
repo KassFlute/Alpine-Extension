@@ -11,15 +11,28 @@ trait Entity:
   /** The type of the entity. */
   def tpe: Type
 
+  /** Returns a copy of `this` in which types have been transformed by `f`. */
+  def withTypeTransformed(f: Type => Type): Entity
+
 end Entity
 
 object Entity:
 
   /** A built-in entity. */
-  final case class Builtin(name: Name, tpe: Type) extends Entity
+  final case class Builtin(name: Name, tpe: Type) extends Entity:
+
+    def withTypeTransformed(f: Type => Type): Entity =
+      Entity.Builtin(name, f(tpe))
+
+  end Builtin
 
   /** A declaration defined in source. */
-  final case class Declaration(name: Name, tpe: Type) extends Entity
+  final case class Declaration(name: Name, tpe: Type) extends Entity:
+
+    def withTypeTransformed(f: Type => Type): Entity =
+      Entity.Declaration(name, f(tpe))
+
+  end Declaration
 
   /** A field of a record type. */
   final case class Field(whole: Type.Record, index: Int) extends Entity:
@@ -29,6 +42,11 @@ object Entity:
 
     def tpe: Type =
       whole.fields(index).value
+
+    def withTypeTransformed(f: Type => Type): Entity =
+      f(whole) match
+        case t: Type.Record => Entity.Field(t, index)
+        case _ => throw IllegalArgumentException()
 
   end Field
 

@@ -9,7 +9,6 @@ import alpine.util.{Memo, FatalError}
 
 import scala.annotation.tailrec
 import scala.collection.mutable
-import alpine.ast.Typecast
 
 // Visiting a declaration == type checking it
 // Visiting an expression == type inference
@@ -94,7 +93,6 @@ final class Typer(
     assignNameDeclared(d)
 
     val t: Type = context.inScope(d, { (inner) =>
-      // You should get the unchecked type of the function and memoize it. You should then type check the body and it must be a subtype of the output type of the function using checkInstanceOf.
       val arrow = memoizedUncheckedType(d, computedUncheckedType).asInstanceOf[Type.Arrow]
       val body = d.body.visit(this)(using inner)
       checkInstanceOf(d.body,arrow.output)
@@ -135,13 +133,10 @@ final class Typer(
   def visitStringLiteral(e: ast.StringLiteral)(using context: Typer.Context): Type =
     context.obligations.constrain(e, Type.String)
 
-    //`visitRecord` should constrain on the type of a #record
   def visitRecord(e: ast.Record)(using context: Typer.Context): Type =
     val fields = e.fields.map((f) => Type.Labeled(f.label, f.value.visit(this)))
     val rec = Type.Record(e.identifier, fields)
     context.obligations.constrain(e, rec)
-    //Type.Record(String, List[Type.Labeled])
-    // Cassien
 
   def visitSelection(e: ast.Selection)(using context: Typer.Context): Type =
     val q = e.qualification.visit(this)
@@ -149,13 +144,12 @@ final class Typer(
     
     e.selectee match
       case s: ast.Identifier =>
-        val constraint = Constraint.Member(q, m, s.value, e.qualification, Constraint.Origin(e.site))
+        val constraint = Constraint.Member(q, m, s.value, e, Constraint.Origin(e.site))
         context.obligations.add(constraint)
       case s: ast.IntegerLiteral =>
-        val constraint = Constraint.Member(q, m, s.value.toInt, e.qualification, Constraint.Origin(e.site))
+        val constraint = Constraint.Member(q, m, s.value.toInt, e, Constraint.Origin(e.site))
         context.obligations.add(constraint)
     context.obligations.constrain(e, m)
-    // Cassien really not sure about this one
 
   def visitApplication(e: ast.Application)(using context: Typer.Context): Type =
     val f = e.function.visit(this)
@@ -168,7 +162,6 @@ final class Typer(
         val fresh = freshTypeVariable()
         context.obligations.add(Constraint.Apply(f, args, fresh, Constraint.Origin(e.site)))
         context.obligations.constrain(e, fresh)
-    // Cassien
 
 
   def visitPrefixApplication(e: ast.PrefixApplication)(using context: Typer.Context): Type =
@@ -182,7 +175,6 @@ final class Typer(
         val fresh = freshTypeVariable()
         context.obligations.add(Constraint.Apply(f, List(Type.Labeled(None, arg)), fresh, Constraint.Origin(e.site)))
         context.obligations.constrain(e, fresh)
-    // Cassien
 
   def visitInfixApplication(e: ast.InfixApplication)(using context: Typer.Context): Type =
     val f = e.function.visit(this)
@@ -196,7 +188,6 @@ final class Typer(
         val fresh = freshTypeVariable()
         context.obligations.add(Constraint.Apply(f, List(Type.Labeled(None, left), Type.Labeled(None, right)), fresh, Constraint.Origin(e.site)))
         context.obligations.constrain(e, fresh)
-    // Cassien
 
   def visitConditional(e: ast.Conditional)(using context: Typer.Context): Type =
     val condition = checkInstanceOf(e.condition, Type.Bool)
@@ -209,7 +200,6 @@ final class Typer(
       context.obligations.add(Constraint.Subtype(thenBranch, tau, Constraint.Origin(e.successCase.site)))
       context.obligations.add(Constraint.Subtype(elseBranch, tau, Constraint.Origin(e.failureCase.site)))
       context.obligations.constrain(e, tau)
-    // Cassien
 
   def visitMatch(e: ast.Match)(using context: Typer.Context): Type =
     // Scrutinee is checked in isolation.
@@ -237,7 +227,6 @@ final class Typer(
       val body = e.body.visit(this)
       context.obligations.constrain(e, body)
     })
-    // Cassien not sure
 
   def visitLambda(e: ast.Lambda)(using context: Typer.Context): Type =
     assignScopeName(e)
@@ -253,33 +242,31 @@ final class Typer(
           context.obligations.add(Constraint.Subtype(e.body.visit(this), arrow.output, Constraint.Origin(e.site)))
           context.obligations.constrain(e, arrow)
     })
-    // Cassien not sure about the subtype binding
 
   def visitParenthesizedExpression(
       e: ast.ParenthesizedExpression
   )(using context: Typer.Context): Type =
     val inner = e.inner.visit(this)
     context.obligations.constrain(e, inner)
-    // Cassien
 
   def visitAscribedExpression(e: ast.AscribedExpression)(using context: Typer.Context): Type =
-    val result = evaluateTypeTree(e.ascription) 
-    result match
+    val result = evaluateTypeTree(e.ascription) match
       case Type.Error =>
         Type.Error
-        context.obligations.constrain(e, result)
       case ascription =>
         e.operation match
-          case Typecast.Widen =>
+          case ast.Typecast.Widen =>
             context.obligations.add(Constraint.Subtype(e.inner.visit(this), ascription, Constraint.Origin(e.site)))
-            context.obligations.constrain(e, result)
-          case Typecast.Narrow =>
+            ascription
+          case ast.Typecast.Narrow =>
             context.obligations.add(Constraint.Subtype(ascription, e.inner.visit(this), Constraint.Origin(e.site)))
-            context.obligations.constrain(e, Type.option(result))
-          case Typecast.NarrowUnconditionally =>
+            Type.option(e.inner.visit(this))
+          case ast.Typecast.NarrowUnconditionally =>
+            //print(s"${e.site.gnu}: ${e.unparsed}  (i.|${e.inner.unparsed}| a.|${e.ascription.unparsed}| t.|${ascription}|)\n")
+            //checkInstanceOf(e.inner,ascription)
             context.obligations.add(Constraint.Subtype(ascription, e.inner.visit(this), Constraint.Origin(e.site)))
-            context.obligations.constrain(e, result)
-        // Cassien + Grégory
+            e.inner.visit(this)
+    context.obligations.constrain(e, result)
     
 
   def visitTypeIdentifier(e: ast.TypeIdentifier)(using context: Typer.Context): Type =
@@ -292,13 +279,10 @@ final class Typer(
       case _ =>
         report(TypeError(s"ambiguous use of type identifier '${e.value}'", e.site))
         Type.Error
-    // Cassien
 
   def visitRecordType(e: ast.RecordType)(using context: Typer.Context): Type =
     val fields = e.fields.map((f) => Type.Labeled(f.label, evaluateTypeTree(f.value)))
     Type.Record(e.identifier, fields)
-    //Type.Record(String, List[Type.Labeled])
-    // Cassien
 
   def visitTypeApplication(e: ast.TypeApplication)(using context: Typer.Context): Type =
     throw FatalError("unsupported generic parameters", e.site)
@@ -307,8 +291,7 @@ final class Typer(
     val inputs = e.inputs.map((p) => Type.Labeled(p.label, evaluateTypeTree(p.value)))
     val output = evaluateTypeTree(e.output)
     Type.Arrow(inputs, output)
-    //Type.Arrow(List[Type.Labeled], Type)
-    // Cassien
+
 
   def visitSum(e: ast.Sum)(using context: Typer.Context): Type =
     var hasErrorMember = false
@@ -334,10 +317,7 @@ final class Typer(
     if hasErrorMember then Type.Error else partialResult
 
   def visitParenthesizedType(e: ast.ParenthesizedType)(using context: Typer.Context): Type =
-    val innerType = e.inner.visit(this)
-    context.obligations.constrain(e, innerType)
-    innerType
-    // Cassien
+    context.obligations.constrain(e, e.inner.visit(this))
 
   def visitValuePattern(p: ast.ValuePattern)(using context: Typer.Context): Type =
     context.obligations.constrain(p, p.value.visit(this))
@@ -346,12 +326,9 @@ final class Typer(
     val fields = p.fields.map((f) => Type.Labeled(f.label, f.value.visit(this)))
     val rec = Type.Record(p.identifier, fields)
     context.obligations.constrain(p, rec)
-    //Type.Record(String, List[Type.Labeled])
-    // Cassien not exactly sure (exactly like visitRecord ??)
 
   def visitWildcard(p: ast.Wildcard)(using context: Typer.Context): Type =
-    freshTypeVariable()
-    // Cassien
+    context.obligations.constrain(p,freshTypeVariable())
 
   def visitTypeDeclaration(e: ast.TypeDeclaration)(using context: Typer.Context): Type =
     report(TypeError("type declarations are not supported", e.site))
@@ -386,7 +363,6 @@ final class Typer(
     val inputs = computedUncheckedInputTypes(d.inputs)
     val output = d.output.map(evaluateTypeTree).getOrElse(Type.Unit)
     Type.Arrow(inputs, output)
-    // Cassien
 
   /** Computes and returns the unchecked types of the inputs `ps`. */
   private def computedUncheckedInputTypes(
@@ -455,8 +431,8 @@ final class Typer(
       // inferred (i.e., variable in a match case without ascription).
       properties.uncheckedType.updateWith(n)((x) => x.map((_) => Memo.Computed(u)))
 
-    for (n, r) <- solution.binding do
-      val s = symbols.EntityReference(r.entity, solution.substitution.reify(r.tpe))
+    for (n, r) <- (obligations.inferredBinding ++ solution.binding) do
+      val s = r.withTypeTransformed((t) => solution.substitution.reify(t))
       properties.treeToReferredEntity.put(n, s)
 
     reportBatch(solution.diagnostics.elements)
@@ -518,7 +494,7 @@ final class Typer(
       case Nil =>
         context.obligations.constrain(e, Type.Error)
       case pick :: Nil =>
-        properties.treeToReferredEntity.put(e, pick)
+        context.obligations.bind(e, pick)
         context.obligations.constrain(e, pick.tpe)
       case picks =>
         val t = freshTypeVariable()
@@ -726,8 +702,6 @@ final class Typer(
       case n: ast.Parameter =>
         n.identifier
       case _: ast.ErrorTree =>
-        unexpectedVisit(d)
-      case _ =>
         unexpectedVisit(d)
 
   /** Returns a fresh anonymous scope identifier. */
