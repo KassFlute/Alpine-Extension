@@ -18,6 +18,7 @@ import java.sql.Driver
 
 class Checker(client: LanguageClient) {
     private var files: Map[String, String] = Map() // Map of file uri to file content
+    private var diagnostics: Map[String, List[Diagnostic]] = Map() // Map of file uri to diagnostics
 
     def update_file(uri: String, content: String): Unit = {
         files = files.updated(uri, content)
@@ -47,10 +48,18 @@ class Checker(client: LanguageClient) {
             new Diagnostic(range, d.summary, severity, "ALPINE-LSP")
         }
 
-        // Create PublishDiagnosticsParams and send to client
-        val params = new PublishDiagnosticsParams(uri, diagnostics.toList.asJava)
-        client.publishDiagnostics(params)
+        // Store diagnostics
+        this.diagnostics = this.diagnostics.updated(uri, diagnostics.toList)
 
         ds.elements.isEmpty
+    }
+
+    def publish_diagnostics(uri: String): Unit = {
+        val params = new PublishDiagnosticsParams(uri, diagnostics(uri).asJava)
+        client.publishDiagnostics(params)
+    }
+    
+    def get_diagnostics(uri: String): List[Diagnostic] = {
+        diagnostics(uri)
     }
 }

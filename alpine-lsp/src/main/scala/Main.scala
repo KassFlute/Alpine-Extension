@@ -106,6 +106,8 @@ class MyLanguageServer {
     checker.update_file(uri, content)
     println("PARSE")
     checker.check_syntax(uri)
+    println("SEND_DIAGNOSTICS")
+    checker.publish_diagnostics(uri)
   }
 
   // @JsonNotification("textDocument/didClose")
@@ -123,6 +125,8 @@ class MyLanguageServer {
     checker.update_file(uri, content)
     println("PARSE")
     val correct_file = checker.check_syntax(uri)
+    println("SEND_DIAGNOSTICS")
+    checker.publish_diagnostics(uri)
 
     val messageParams = correct_file match {
       case true => 
