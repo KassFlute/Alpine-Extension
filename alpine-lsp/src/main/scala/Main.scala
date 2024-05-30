@@ -129,15 +129,17 @@ class MyLanguageServer {
     val path = java.nio.file.Paths.get(new java.net.URI(uri))
     val content = new String(java.nio.file.Files.readAllBytes(path))
     checker.update_file(uri, content)
-    val correct_file = checker.check_syntax(uri)
+    val correct_syntax = checker.check_syntax(uri)
 
-    val messageParams = correct_file match {
+    val messageParams = correct_syntax match {
       case true => 
         new MessageParams(MessageType.Info, "File saved with no syntax errors")
       case false => 
         new MessageParams(MessageType.Error, f"File saved with syntax errors. At line ${checker.get_diagnostics(uri).head.getRange().getStart().getLine()+1}")
     }
     client.showMessage(messageParams)
+
+    val correct_types = checker.check_typing(uri)
 
     checker.publish_diagnostics(uri)
   }
