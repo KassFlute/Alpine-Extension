@@ -3,16 +3,68 @@
     "fileTypes": ["alpine"],
     "patterns": [
         {
-            "name": "comment.line.double-semicol.alpine",
-            "match": "//.*$"
+            "name": "comment.line.double-slash.todo.alpine",
+            "begin": "//\\p{blank}?",
+            "beginCaptures":{
+                "0":{
+                    "name":"comment.line.double-slash.alpine"
+                }
+            },
+            "end":"\n",
+            "patterns": [
+                {
+                    "begin": "\\G\\p{blank}*?{\\p{blank}?\\b",
+                    "beginCaptures":{
+                        "0":{
+                            "name":"comment.line.double-slash.todo.start.alpine"
+                        }
+                    },
+                    "end": "\\b\\p{blank}?}(:)?",
+                    "endCaptures":{
+                        "0":{
+                            "name":"comment.line.double-slash.todo.end.alpine"
+                        }
+                    },
+                    "patterns": [
+                        {
+                            "match": "\\G(TODO|((T|t)odo))\\b",
+                            "name": "comment.line.double-slash.todo.keyword.alpine"
+                        }
+                    ]
+                },
+                {
+                    "begin": "\\G\\p{blank}*?\\b",
+                    "beginCaptures":{
+                        "0":{
+                            "name":"comment.line.double-slash.todo.start.alpine"
+                        }
+                    },
+                    "end": "\\b(\\p{blank}?)(:|\\p{blank})",
+                    "endCaptures":{
+                        "0":{
+                            "name":"comment.line.double-slash.todo.end.alpine"
+                        }
+                    },
+                    "patterns": [
+                        {
+                            "match": "\\G(TODO|((T|t)odo))\\b",
+                            "name": "comment.line.double-slash.todo.keyword.alpine"
+                        }
+                    ]
+                }
+            ]
         },
+                {
+                    "match":"//.*\n",
+                    "name":"comment.line.double-slash.alpine"
+                },
         {
             "name": "keyword.control.alpine",
             "match": "\\b(let|fun|type|match|case|then|else)\\b"
         },
         {
             "name": "keyword.operator.alpine",
-            "match": "\\+|-|\\*|\\/|@!|@\\?|\\->|\\||::"
+            "match": "(@!)|(@\\?)|@|(->)|\\||(::)|\\+|-|\\*|\\/"
         },
         {
             "name": "constant.language.alpine",
@@ -37,6 +89,10 @@
                 }
             },
             "patterns": []
+        },
+        {
+            "match": "(@selector\\()(.*?)(\\))",
+            "name": "storage.type.var.alpine"
         }
     ],
     "repository": {}
