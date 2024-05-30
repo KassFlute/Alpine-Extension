@@ -101,13 +101,9 @@ class MyLanguageServer {
   def didChange(params: DidChangeTextDocumentParams): Unit = {
     println("Text document changed: " + params.getTextDocument.getUri)
     val uri = params.getTextDocument.getUri
-    val path = java.nio.file.Paths.get(new java.net.URI(uri))
     val content = new String(params.getContentChanges.get(0).getText)
-    println("UPDATE_FILE")
     checker.update_file(uri, content)
-    println("PARSE")
     checker.check_syntax(uri)
-    println("SEND_DIAGNOSTICS")
     checker.publish_diagnostics(uri)
   }
 
