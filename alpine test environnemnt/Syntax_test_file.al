@@ -43,16 +43,6 @@ let x = 42 @ Any
 let x: #a | #b = #a
 
 // function
-fun is_anonymous(_ p: #person | #person(name: String)) -> Bool {
-  match p {
-    case #person then true
-    case #person(name: _) then false
-  }
-}
-
-let main = print(is_anonymous(#person(name: "AMOGUS")))
-
-// function
 fun name(of p: #person | #person(name: String)) -> #none | #some(String) {
   match p {
     case #person then #none
