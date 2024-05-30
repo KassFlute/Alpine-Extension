@@ -1,0 +1,77 @@
+{
+    "name":"default alpine theme",
+    "colorSpaceName":"sRGB",
+    "settings":[
+        {
+            "scope":["comment.line.double-slash.todo.keyword.alpine"],
+            "settings":{
+                "foreground":"#aaaa00"
+            }
+        },
+        {
+            "scope":["comment.line.double-slash.todo.start.alpine", "comment.line.double-slash.todo.end.alpine"],
+            "settings":{
+                "foreground":"#888888"
+            }
+        },
+        {
+            "scope":["comment.line.double-slash.alpine", "comment.line.double-slash.todo.alpine"],
+            "settings":{"foreground":"#6A9955"}
+        },
+        {
+			"scope": [
+				"string",
+				"meta.embedded.assembly"
+			],
+			"settings": {
+				"foreground": "#ce9178"
+			}
+		},
+		{
+			"scope": [
+				"constant.numeric",
+				"variable.other.enummember",
+				"keyword.operator.plus.exponent",
+				"keyword.operator.minus.exponent"
+			],
+			"settings": {
+				"foreground": "#b5cea8"
+			}
+		},
+		{
+			"scope": ["keyword", "constant"],
+			"settings": {
+				"foreground": "#569cd6"
+			}
+		},
+		{
+			"scope": "keyword.control",
+			"settings": {
+				"foreground": "#C586C0"
+			}
+		},
+		{
+			"scope": "keyword.operator",
+			"settings": {
+				"foreground": "#d4d4d4"
+			}
+		},
+		{
+			"scope": [
+				"keyword.operator.new",
+				"keyword.operator.expression",
+				"keyword.operator.cast",
+				"keyword.operator.sizeof",
+				"keyword.operator.alignof",
+				"keyword.operator.typeid",
+				"keyword.operator.alignas",
+				"keyword.operator.instanceof",
+				"keyword.operator.logical.python",
+				"keyword.operator.wordlike"
+			],
+			"settings": {
+				"foreground": "#569cd6"
+			}
+		}
+    ]
+}

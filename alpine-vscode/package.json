@@ -16,24 +16,37 @@
   "contributes": {
     "languages": [
       {
-          "id": "alpine",
-          "aliases": ["Alpine", "alpine"],
-          "extensions": [".alpine", ".al"],
-          "configuration": "./language-configuration.json"
+        "id": "alpine",
+        "aliases": [
+          "Alpine",
+          "alpine"
+        ],
+        "extensions": [
+          ".alpine",
+          ".al"
+        ],
+        "configuration": "./language-configuration.json"
       }
     ],
     "grammars": [
       {
-          "language": "alpine",
-          "scopeName": "source.alpine",
-          "path": "./syntaxes/alpine.tmLanguage.json"
+        "language": "alpine",
+        "scopeName": "source.alpine",
+        "path": "./syntaxes/alpine.tmLanguage.json"
+      }
+    ],
+    "themes": [
+      {
+        "path": "./themes/alpine-default.tmTheme.json",
+        "label": "Default Theme"
       }
     ],
     "commands": [
       {
         "command": "alpine-vscode.helloWorld",
         "title": "Hello World"
-      },{
+      },
+      {
         "command": "alpine-vscode.toggleLogs",
         "title": "Toggle Logs"
       }
