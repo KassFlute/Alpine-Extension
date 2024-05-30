@@ -3,61 +3,37 @@
     "fileTypes": ["alpine"],
     "patterns": [
         {
-            "name": "comment.line.double-slash.todo.alpine",
-            "begin": "//\\p{blank}?",
-            "beginCaptures":{
-                "0":{
+            "match": "(//\\p{blank}?)({(\\p{blank}?(TODO)|(Todo)|(todo)\\p{blank}?)}:?)(.*)$",
+            "captures":{
+                "1":{
                     "name":"comment.line.double-slash.alpine"
-                }
-            },
-            "end":"\n",
-            "patterns": [
-                {
-                    "begin": "\\G\\p{blank}*?{\\p{blank}?\\b",
-                    "beginCaptures":{
-                        "0":{
-                            "name":"comment.line.double-slash.todo.start.alpine"
-                        }
-                    },
-                    "end": "\\b\\p{blank}?}(:)?",
-                    "endCaptures":{
-                        "0":{
-                            "name":"comment.line.double-slash.todo.end.alpine"
-                        }
-                    },
-                    "patterns": [
-                        {
-                            "match": "\\G(TODO|((T|t)odo))\\b",
-                            "name": "comment.line.double-slash.todo.keyword.alpine"
-                        }
-                    ]
                 },
-                {
-                    "begin": "\\G\\p{blank}*?\\b",
-                    "beginCaptures":{
-                        "0":{
-                            "name":"comment.line.double-slash.todo.start.alpine"
-                        }
-                    },
-                    "end": "\\b(\\p{blank}?)(:|\\p{blank})",
-                    "endCaptures":{
-                        "0":{
-                            "name":"comment.line.double-slash.todo.end.alpine"
-                        }
-                    },
-                    "patterns": [
-                        {
-                            "match": "\\G(TODO|((T|t)odo))\\b",
-                            "name": "comment.line.double-slash.todo.keyword.alpine"
-                        }
-                    ]
-                }
-            ]
+                "2":{"name":"comment.line.double-slash.todo.alpine"},
+                "3":{"name":"comment.line.double-slash.todo.keyword.alpine"},
+                "4":{"name":"comment.line.double-slash.todo.keyword.alpine"},
+                "5":{"name":"comment.line.double-slash.todo.keyword.alpine"},
+                "6":{"name":"comment.line.double-slash.todo.keyword.alpine"},
+                "7":{"name":"comment.line.double-slash.alpine"}
+            }
         },
-                {
-                    "match":"//.*\n",
+        {
+            "match": "(//\\p{blank}?)((TODO)|(Todo)|(todo))(:|\\p{blank})(.*)$",
+            "captures":{
+                "1":{
                     "name":"comment.line.double-slash.alpine"
                 },
+                "2":{"name":"comment.line.double-slash.todo.alpine"},
+                "3":{"name":"comment.line.double-slash.todo.keyword.alpine"},
+                "4":{"name":"comment.line.double-slash.todo.keyword.alpine"},
+                "5":{"name":"comment.line.double-slash.todo.keyword.alpine"},
+                "6":{"name":"comment.line.double-slash.todo.alpine"},
+                "7":{"name":"comment.line.double-slash.alpine"}
+            }
+        },
+        {
+            "match":"//\\p{blank}?.*$",
+            "name":"comment.line.double-slash.alpine"
+        },
         {
             "name": "keyword.control.alpine",
             "match": "\\b(let|fun|type|match|case|then|else)\\b"

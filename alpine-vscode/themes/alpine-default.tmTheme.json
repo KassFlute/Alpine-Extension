@@ -9,13 +9,13 @@
             }
         },
         {
-            "scope":["comment.line.double-slash.todo.start.alpine", "comment.line.double-slash.todo.end.alpine"],
+            "scope":["comment.line.double-slash.todo.alpine"],
             "settings":{
                 "foreground":"#888888"
             }
         },
         {
-            "scope":["comment.line.double-slash.alpine", "comment.line.double-slash.todo.alpine"],
+            "scope":["comment.line.double-slash.alpine"],
             "settings":{"foreground":"#6A9955"}
         },
         {
