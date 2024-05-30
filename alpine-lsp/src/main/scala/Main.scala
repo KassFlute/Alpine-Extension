@@ -104,6 +104,7 @@ class MyLanguageServer {
     val content = new String(params.getContentChanges.get(0).getText)
     checker.update_file(uri, content)
     checker.check_syntax(uri)
+    checker.check_typing(uri)
     checker.publish_diagnostics(uri)
   }
 
