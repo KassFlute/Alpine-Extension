@@ -33,25 +33,17 @@ fun duplicate(_ x: Any) -> #pair(Any, Any) {
 let main = print(duplicate(#unit))
 
 // Downcasting
-let x: Any = 40
-let main = print((x @! Int) + 2)
+let x2: Int = 40
+let x3: Int = 2
+let main = print((x2 @! Int) + x3)
 
 // Type widening
 let x = 42 @ Any
 
+let z: Bool = 9
+
 // Union type
 let x: #a | #b = #a
-
-// Another way
-fun name(of p: #person | #person(name: String)) -> #none | #some(String) {
-  match p {
-    case #person then #none
-    case let q: #person(name: String) then #some(q.name)
-  }
-}
-
-// Recursive type
-type List = #empty | #list(head: Any, tail: List)
 
 // Instances
 let v = #vector2(x: 1.0, y: 2.0)

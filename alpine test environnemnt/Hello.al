@@ -1,4 +1,9 @@
-type List = #List(String)
-let s: List = #List("Hello, World!")
+let x = true
+let y = 8
+let z: String = "sdflksj"
+let a = ((8 @ Any) @! Float)
 
-let main = print(s)
+let main = print(8)
+
+
+let b: Bool = true
