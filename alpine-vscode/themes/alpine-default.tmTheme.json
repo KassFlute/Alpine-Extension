@@ -1,30 +1,40 @@
 {
-    "name":"default alpine theme",
-    "colorSpaceName":"sRGB",
-    "settings":[
-        {
-            "scope":["comment.line.double-slash.todo.keyword.alpine"],
-            "settings":{
-                "foreground":"#aaaa00"
-            }
-        },
-        {
-            "scope":["comment.line.double-slash.todo.alpine"],
-            "settings":{
-                "foreground":"#888888"
-            }
-        },
-        {
-            "scope":["comment.line.double-slash.alpine"],
-            "settings":{"foreground":"#6A9955"}
-        },
-        {
+	"name": "default alpine theme",
+	"colorSpaceName": "sRGB",
+	"settings": [
+		{
+			"scope": [
+				"comment.line.double-slash.todo.keyword.alpine"
+			],
+			"settings": {
+				"foreground": "#AAAA00"
+			}
+		},
+		{
+			"scope": [
+				"comment.line.double-slash.todo.alpine"
+			],
+			"settings": {
+				"foreground": "#888888",
+				"style": "italic"
+			}
+		},
+		{
+			"scope": [
+				"comment.line.double-slash.alpine",
+				"comment.line.double-slash"
+			],
+			"settings": {
+				"foreground": "#6A9955"
+			}
+		},
+		{
 			"scope": [
 				"string",
 				"meta.embedded.assembly"
 			],
 			"settings": {
-				"foreground": "#ce9178"
+				"foreground": "#CE9178"
 			}
 		},
 		{
@@ -35,13 +45,16 @@
 				"keyword.operator.minus.exponent"
 			],
 			"settings": {
-				"foreground": "#b5cea8"
+				"foreground": "#B5CEA8"
 			}
 		},
 		{
-			"scope": ["keyword", "constant"],
+			"scope": [
+				"keyword",
+				"constant"
+			],
 			"settings": {
-				"foreground": "#569cd6"
+				"foreground": "#569CD6"
 			}
 		},
 		{
@@ -53,12 +66,24 @@
 		{
 			"scope": "keyword.operator",
 			"settings": {
-				"foreground": "#d4d4d4"
+				"foreground": "#569CD6"
+			}
+		},
+		{
+			"scope":"support.class.alpine",
+			"settings":{
+				"foreground":"#4EC9B0"
+			}
+		},
+		{
+			"scope":"variable.alpine",
+			"settings":{
+				"foreground":"#4FC1FF"
 			}
 		},
 		{
 			"scope": [
-				"keyword.operator.new",
+				"keyword.operator.infix",
 				"keyword.operator.expression",
 				"keyword.operator.cast",
 				"keyword.operator.sizeof",
@@ -70,8 +95,42 @@
 				"keyword.operator.wordlike"
 			],
 			"settings": {
-				"foreground": "#569cd6"
+				"foreground": "#D4D4D4"
+			}
+		},
+		{
+			"scope": [
+				"constant.character.escape"
+			],
+			"settings": {
+				"foreground": "#D7BA7D"
+			}
+		},
+		{
+			"scope": "storage.type.alpine",
+			"settings": {
+				"foreground": "#569CD6"
+			}
+		},
+		{
+			"scope": [
+				"support.type.record.alpine"
+			],
+			"settings": {
+				"foreground": "#DCDCAA"
 			}
 		}
-    ]
+	],
+	"tokenColors": [
+		{
+			"scope": "support.type",
+			"settings": {
+				"foreground": "#569CD6"
+			}
+		}
+	],
+	"semanticHighlighting": true,
+	"semanticTokenColors": {
+		"type": "#569CD6"
+	}
 }
