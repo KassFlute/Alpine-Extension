@@ -1,4 +1,8 @@
-;; Function
+let main = print("asd")
+let foo = #bar("dumm\e.y") //Todo:git commit -am "\"Finish\" basic lsp, nothing works." -m "Client extension should launch lsp automatically."
+let foo1 = print(foo.1) //{TODO}:git commit -am "\"Fix\" lsp, need to start manually from sbt."
+
+//;; Function
 let main = print("Hello, World!")
 
 // Record

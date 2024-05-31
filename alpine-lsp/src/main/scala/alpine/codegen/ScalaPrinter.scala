@@ -6,7 +6,6 @@ import alpine.symbols
 import alpine.symbols.Entity.builtinModule
 import alpine.util.FatalError
 
-import scala.annotation.tailrec
 import scala.collection.mutable
 import alpine.symbols.Type
 import alpine.symbols.Type.Bool
