@@ -39,8 +39,12 @@
             "match": "\\b(let|fun|type|match|case|then|else)\\b"
         },
         {
-            "name": "keyword.operator.alpine",
+            "name": "keyword.operator.infix.alpine",
             "match": "(@!)|(@\\?)|@|(->)|\\||(::)|\\+|-|\\*|\\/"
+        },
+        {
+            "name": "keyword.operator.boolean.alpine",
+            "match": "(>=)|(<=)|(==)|>|<|(\\|\\|)|(&&)"
         },
         {
             "name": "constant.language.alpine",
@@ -64,12 +68,22 @@
                     "name": "punctuation.definition.string.end.alpine"
                 }
             },
-            "patterns": []
+            "patterns": [
+                {
+                    "include":"#escaped_chars",
+                    "name":"constant.character.escape"
+                }
+            ]
         },
         {
-            "match": "(@selector\\()(.*?)(\\))",
-            "name": "storage.type.var.alpine"
+            "name":"variable.other.record.alpine",
+            "match":"(#)(\\w)+"
         }
     ],
-    "repository": {}
+    "repository": {
+        "escaped_chars": {
+            "match":"\\x5C.",
+            "name":"constant.character.escape"
+        }
+    }
 }

@@ -13,6 +13,11 @@
     "onLanguage:alpine"
   ],
   "main": "./out/extension.js",
+  "configutationDefaults":{
+    "alpine":{
+      "editor.semanticHighlighting.enabled":true
+    }
+  },
   "contributes": {
     "languages": [
       {
@@ -38,7 +43,7 @@
     "themes": [
       {
         "path": "./themes/alpine-default.tmTheme.json",
-        "label": "Default Theme"
+        "label": "Alpine Default Theme"
       }
     ],
     "commands": [
