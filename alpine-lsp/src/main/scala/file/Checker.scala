@@ -15,7 +15,6 @@ import alpine.typing.*
 
 import scala.util.{Success, Failure}
 import scala.collection.JavaConverters._
-import java.sql.Driver
 
 class Checker(client: LanguageClient) {
     private var files: Map[String, String] = Map() // Map of file uri to file content
