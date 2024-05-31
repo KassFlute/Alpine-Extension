@@ -35,16 +35,24 @@
             "name":"comment.line.double-slash.alpine"
         },
         {
+            "name": "keyword.operator.alpine",
+            "match": "\\b(in|of|as|by)\\b"
+        },
+        {
             "name": "keyword.control.alpine",
             "match": "\\b(let|fun|type|match|case|then|else)\\b"
         },
         {
-            "name": "keyword.operator.alpine",
+            "name": "keyword.operator.infix.alpine",
             "match": "(@!)|(@\\?)|@|(->)|\\||(::)|\\+|-|\\*|\\/"
         },
         {
+            "name": "keyword.operator.boolean.alpine",
+            "match": "(>=)|(<=)|(==)|>|<|(\\|\\|)|(&&)"
+        },
+        {
             "name": "constant.language.alpine",
-            "match": "\\b(true|false)\\b"
+            "match": "\\b(true|false|null)\\b"
         },
         {
             "name": "constant.numeric.alpine",
@@ -64,12 +72,34 @@
                     "name": "punctuation.definition.string.end.alpine"
                 }
             },
-            "patterns": []
+            "patterns": [
+                {
+                    "include":"#escaped_chars",
+                    "name":"constant.character.escape"
+                }
+            ]
         },
         {
-            "match": "(@selector\\()(.*?)(\\))",
-            "name": "storage.type.var.alpine"
+            "name":"storage.type.alpine",
+            "match":"\\b(Any|_)\\b"
+        },
+        {
+            "name":"support.class.alpine",
+            "match":"\\b([A-Z]){1}([a-z]){0,}\\b"
+        },
+        {
+            "name":"variable.alpine",
+            "match":"\\b([a-z0-9]|_){1,}\\b"
+        },
+        {
+            "name":"support.type.record.alpine",
+            "match":"(#)(\\w)+"
         }
     ],
-    "repository": {}
+    "repository": {
+        "escaped_chars": {
+            "match":"\\x5C.",
+            "name":"constant.character.escape"
+        }
+    }
 }
