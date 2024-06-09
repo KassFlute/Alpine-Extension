@@ -1,4 +1,4 @@
-# Alpine VSCode
+# Alpine VSCode Extension
 
 An extension for Alpine language support.
 Alpine is the language used by the CS-320 course at EPFL to study compilers.
