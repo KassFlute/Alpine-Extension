@@ -25,7 +25,8 @@ export function activate(context: vscode.ExtensionContext) {
 		host: "127.0.0.1"
 	};
 
-	const serverOptions: ServerOptions = () => {
+	// Connect to manually started server
+	const manual_serverOptions: ServerOptions = () => {
 		// Connect to language server via socket
 		socket = net.connect(connectionInfo);
 		let result: StreamInfo = {
@@ -35,19 +36,53 @@ export function activate(context: vscode.ExtensionContext) {
 		return Promise.resolve(result);
 	};
 
-	const clientOptions: LanguageClientOptions = {
-		documentSelector: [{ scheme: 'file', language: 'alpine' }],
-		synchronize: {
-			configurationSection: 'alpine',
-			fileEvents: vscode.workspace.createFileSystemWatcher('**/.clientrc')
-		},
-		outputChannel: vscode.window.createOutputChannel('Alpine LSP')
+	// Start the language server using the client library
+	const serverOptions: ServerOptions = () => {
+		const jarPath = vscode.Uri.joinPath(context.extensionUri, '../ALPINE-LSP/target/scala-3.3.1/alpine-lsp-assembly-1.0.jar').fsPath;
+		const serverProcess = childProcess.spawn('java', ['-jar', jarPath]);
+
+		serverProcess.stdout.on('data', (data) => {
+			console.log(`server stdout: ${data}`);
+		});
+
+		serverProcess.stderr.on('data', (data) => {
+			console.error(`server stderr: ${data}`);
+		});
+
+		// Wait for the server to start listening on the port
+		return new Promise<StreamInfo>((resolve, reject) => {
+			const tryConnect = () => {
+				const socket = net.connect(connectionInfo, () => {
+					console.log('Connected to language server');
+					resolve({
+						writer: socket,
+						reader: socket
+					});
+				});
+
+				socket.on('error', (err) => {
+					console.error(`Socket connection error: ${err}`);
+					setTimeout(tryConnect, 1000); // Retry after 1 second
+				});
+			};
+
+			tryConnect();
+		});
 	};
+
+    const clientOptions: LanguageClientOptions = {
+        documentSelector: [{ scheme: 'file', language: 'alpine' }],
+        synchronize: {
+            configurationSection: 'alpine',
+            fileEvents: vscode.workspace.createFileSystemWatcher('**/.clientrc')
+        },
+        outputChannel: vscode.window.createOutputChannel('Alpine LSP')
+    };
 
 	const client = new LanguageClient(
 		'alpine-lsp',
 		'Alpine LSP',
-		serverOptions,
+		serverOptions, // 'manual_serverOptions' for connecting to manually started server
 		clientOptions
 	);
 	currentClient = client;
