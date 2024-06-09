@@ -20,6 +20,10 @@ Alpine is the language used by the CS-320 course at EPFL to study compilers.
 2. Open an Alpine project.
 3. Start coding!
 
+## Screenshots
+
+![Screenshot](images/example.png)
+
 ## Contributing
 
 If you would like to contribute, please fork the repository and submit a pull request.
