@@ -1,12 +1,14 @@
 {
   "name": "alpine-vscode",
-  "displayName": "alpine-vscode",
-  "description": "VS-Code extension for the CS-320 alpine language",
-  "version": "0.0.1",
+  "displayName": "Alpine Extension",
+  "description": "language support extension for the EPFL CS-320 Alpine language",
+  "version": "0.0.2",
   "repository": {
     "type": "git",
     "url": "https://github.com/KassFlute/Alpine-Extension"
   },
+  "icon": "images/logo.png",
+  "publisher": "alpine-vscode",
   "engines": {
     "vscode": "^1.89.0"
   },
