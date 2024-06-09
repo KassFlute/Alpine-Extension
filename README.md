@@ -5,7 +5,7 @@ A VS-Code extension for the Alpine language
 
 ## 💾 Installation
 
-Alpine-extension can be installed via the VS Code [Marketplace](https://marketplace.visualstudio.com).
+Alpine-extension can be installed via the VS Code [Marketplace](https://marketplace.visualstudio.com/items?itemName=alpine-vscode.alpine-vscode).
 
 ## 👽 Testing and Debugging
 
@@ -34,6 +34,7 @@ Alpine-extension can be installed via the VS Code [Marketplace](https://marketpl
 * The extension is now connected to the language server and it can be tested in the opened VS-Code test window
 
 ## 🐣 Create release
-* Compile scala project with sbt compile
-* Create jar with sbt assembly
+* Compile scala project with ```sbt compile```
+* Create jar with ```sbt assembly```
 * Copy produced jar to ALPINE-VSCODE/server/
+* run ```vsce publish```
