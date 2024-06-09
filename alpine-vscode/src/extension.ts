@@ -38,7 +38,7 @@ export function activate(context: vscode.ExtensionContext) {
 
 	// Start the language server using the client library
 	const serverOptions: ServerOptions = () => {
-		const jarPath = vscode.Uri.joinPath(context.extensionUri, '../ALPINE-LSP/target/scala-3.3.1/alpine-lsp-assembly-1.0.jar').fsPath;
+		const jarPath = vscode.Uri.joinPath(context.extensionUri, 'server/alpine-lsp-assembly-1.0.jar').fsPath;
 		const serverProcess = childProcess.spawn('java', ['-jar', jarPath]);
 
 		serverProcess.stdout.on('data', (data) => {
@@ -79,10 +79,11 @@ export function activate(context: vscode.ExtensionContext) {
         outputChannel: vscode.window.createOutputChannel('Alpine LSP')
     };
 
+	const useDebuggingServer = false; // Set this to true if you want to connect to a manually started server (that you then have to start yourself)
 	const client = new LanguageClient(
 		'alpine-lsp',
 		'Alpine LSP',
-		serverOptions, // 'manual_serverOptions' for connecting to manually started server
+		useDebuggingServer ? manual_serverOptions : serverOptions,
 		clientOptions
 	);
 	currentClient = client;
