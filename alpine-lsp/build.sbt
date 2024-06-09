@@ -15,3 +15,9 @@ scalacOptions += "-Xmixin-force-forwarders:false"
 
 // Specify the main class for the project
 mainClass in Compile := Some("Main")
+
+// Merge strategy for sbt-assembly
+assemblyMergeStrategy in assembly := {
+ case PathList("META-INF", _*) => MergeStrategy.discard
+ case _                        => MergeStrategy.first
+}
