@@ -3,6 +3,10 @@
   "displayName": "alpine-vscode",
   "description": "VS-Code extension for the CS-320 alpine language",
   "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/KassFlute/Alpine-Extension"
+  },
   "engines": {
     "vscode": "^1.89.0"
   },
