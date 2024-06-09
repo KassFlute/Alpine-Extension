@@ -32,3 +32,8 @@ Alpine-extension can be installed via the VS Code [Marketplace](https://marketpl
     the extension will try to connect to a server on port 5007
 
 * The extension is now connected to the language server and it can be tested in the opened VS-Code test window
+
+## 🐣 Create release
+* Compile scala project with sbt compile
+* Create jar with sbt assembly
+* Copy produced jar to ALPINE-VSCODE/server/
